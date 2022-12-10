@@ -1,0 +1,443 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white_background"
+    android:paddingBottom="@dimen/_10sdp"
+   android:id="@+id/mainActivity"
+    tools:context=".MainActivity">
+
+//background img.......................
+
+    <ImageView
+        android:layout_width="@dimen/_400sdp"
+        android:layout_height="@dimen/_400sdp"
+        android:src="@drawable/circle"
+        android:layout_marginTop="-250dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_35sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_235sdp"
+        android:src="@drawable/circle_white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    app:layout_constraintTop_toTopOf="parent"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:id="@+id/toolbarLayout"
+
+    >
+
+<!--    <soup.neumorphism.NeumorphCardView-->
+<!--        android:layout_width="@dimen/_300sdp"-->
+<!--        android:layout_height="@dimen/_55sdp"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:neumorph_shapeType="basin"-->
+<!--        style="@style/Widget.Neumorph.CardView"-->
+<!--        app:neumorph_shadowElevation="@dimen/_1sdp"-->
+<!--        app:neumorph_shadowColorLight="@color/white"-->
+<!--        app:neumorph_backgroundColor="@color/white"-->
+<!--        app:neumorph_strokeColor="@color/gray_50"-->
+<!--        app:neumorph_strokeWidth="@dimen/_1sdp"-->
+
+<!--        android:layout_marginStart="-50dp"-->
+
+<!--        >-->
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_100sdp"
+            android:text="Khowledge"
+            android:background="@drawable/toolback"
+            android:textColor="@color/black_textColor"
+            android:textStyle="bold"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_4sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:id="@+id/appname"
+            android:textSize="@dimen/_20sdp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            />
+
+
+
+<!--    </soup.neumorphism.NeumorphCardView>-->
+
+
+
+
+
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="@dimen/_35sdp"
+        android:layout_height="@dimen/_35sdp"
+        android:src="@drawable/mypic"
+        android:id="@+id/myProfile"
+        android:layout_gravity="end"
+        app:civ_border_width="@dimen/_1sdp"
+        app:civ_border_color="@color/sky"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_2sdp"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_marginStart="@dimen/_15sdp"
+        android:layout_marginEnd="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:id="@+id/bannercard"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:background="@color/gray_50_backgroundd"
+        app:layout_constraintTop_toBottomOf="@id/toolbarLayout"
+        >
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/biological_icon3"
+            android:id="@+id/bannerImg"
+            />
+
+    </androidx.cardview.widget.CardView>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/bannercard"
+        app:layout_constraintBottom_toBottomOf="parent"
+
+        >
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/scrollviewLiner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Department"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:textColor="@color/black_textColor"
+        android:textStyle="bold"
+        android:id="@+id/departnameTitle"
+        android:textSize="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/bannercard"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+<!--<androidx.recyclerview.widget.RecyclerView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="@dimen/_100sdp"-->
+<!--    android:orientation="horizontal"-->
+<!--    app:spanCount="3"-->
+<!--    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
+<!--    tools:listitem="@layout/department_design"-->
+<!--    android:id="@+id/departmentRecycler"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/departnameTitle"-->
+<!--    />-->
+
+
+<!--<HorizontalScrollView-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="@dimen/_100sdp"-->
+<!--    app:layout_constraintTop_toBottomOf="@id/departnameTitle"-->
+<!--    android:id="@+id/horiscrl"-->
+<!--    >-->
+
+    <LinearLayout
+        app:layout_constraintTop_toBottomOf="@id/departnameTitle"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:orientation="horizontal"
+        android:id="@+id/department"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:layout_marginStart="@dimen/_4sdp"
+        >
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:id="@+id/scienceCard"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/myProfile"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/gray_50_backgroundd"
+                android:padding="@dimen/_3sdp"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/science"
+                    android:id="@+id/scienceImg"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Science"
+                    android:textSize="@dimen/_16sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/sky"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/_3sdp"
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:id="@+id/commerceCard"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/myProfile"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="@dimen/_3sdp"
+                android:background="@color/gray_50_backgroundd"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/commers1"
+                    android:id="@+id/commerceImg"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Commerce"
+                    android:textSize="@dimen/_15sdp"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:textColor="@color/sky"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/_3sdp"
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:layout_width="@dimen/_90sdp"
+            android:layout_height="@dimen/_90sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:id="@+id/artsCard"
+            app:cardCornerRadius="@dimen/_8sdp"
+            app:layout_constraintTop_toBottomOf="@id/myProfile"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:background="@color/gray_50_backgroundd"
+                android:padding="@dimen/_3sdp"
+                >
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_60sdp"
+                    android:src="@drawable/humanities"
+                    android:id="@+id/artsImg"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Humanities"
+                    android:textSize="@dimen/_15sdp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:ellipsize="marquee"
+                    android:textColor="@color/sky"
+                    android:layout_gravity="center"
+                    android:paddingBottom="@dimen/_3sdp"
+                    />
+
+
+            </LinearLayout>
+
+
+
+        </androidx.cardview.widget.CardView>
+<!--        <androidx.cardview.widget.CardView-->
+<!--            android:layout_width="@dimen/_90sdp"-->
+<!--            android:layout_height="@dimen/_90sdp"-->
+<!--            android:layout_marginStart="@dimen/_15sdp"-->
+<!--            android:layout_margin="@dimen/_8sdp"-->
+<!--            android:id="@+id/ComputerDpt"-->
+<!--            app:cardCornerRadius="@dimen/_8sdp"-->
+<!--            app:layout_constraintTop_toBottomOf="@id/myProfile"-->
+<!--            >-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:orientation="vertical"-->
+<!--                >-->
+<!--                <ImageView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="@dimen/_65sdp"-->
+<!--                    android:src="@drawable/chemistry_icon2"-->
+<!--                    android:id="@+id/computer"-->
+<!--                    />-->
+
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="Science"-->
+<!--                    android:textSize="@dimen/_16sdp"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:gravity="center"-->
+<!--                    android:textColor="@color/sky"-->
+<!--                    android:layout_gravity="center"-->
+<!--                    android:paddingBottom="@dimen/_3sdp"-->
+<!--                    />-->
+
+
+<!--            </LinearLayout>-->
+
+
+
+<!--        </androidx.cardview.widget.CardView>-->
+
+    </LinearLayout>
+
+
+<!--</HorizontalScrollView>-->
+
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Genegal Subject "
+        android:textColor="@color/black_textColor"
+        android:textStyle="bold"
+        android:id="@+id/subjectTitle"
+        android:textSize="@dimen/_18sdp"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginBottom="@dimen/_15sdp"
+        android:padding="@dimen/_5sdp"
+        app:layout_constraintTop_toBottomOf="@id/department"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_marginEnd="@dimen/_3sdp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:listitem="@layout/subject_design"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="3"
+                android:id="@+id/dsubjectRecycler"
+                app:layout_constraintTop_toBottomOf="@id/subjectTitle"
+                />
+
+
+
+<!--            <ImageView-->
+<!--                app:layout_constraintTop_toBottomOf="@id/dsubjectRecycler"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:layout_width="@dimen/_200sdp"-->
+<!--                android:layout_height="@dimen/_100sdp"-->
+<!--                android:src="@drawable/biological_icon3"-->
+
+<!--                />-->
+
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
