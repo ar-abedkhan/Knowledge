@@ -4,16 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.abedkhan.knowledge.Modelclass.DepartmentModelClass;
 import com.abedkhan.knowledge.Modelclass.SubjectModelClass;
 import com.abedkhan.knowledge.R;
-import com.abedkhan.knowledge.Viewholders.DepartmentViewholder;
 import com.abedkhan.knowledge.Viewholders.SubjectViewholder;
 import com.bumptech.glide.Glide;
 

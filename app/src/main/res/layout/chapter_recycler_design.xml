@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_margin="@dimen/_5sdp"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp"
+   android:id="@+id/chapterCard"
+    android:background="@color/sky"
+    android:layout_height="wrap_content">
+
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/_5sdp"
+        >
+
+
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="অধ্যায় : "
+            android:id="@+id/chapter"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18sdp"
+            />
+        <TextView
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toEndOf="@id/chapter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="01"
+            android:id="@+id/chapterNumber"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18sdp"
+            />
+
+
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/chapter"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_width="wrap_content"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:layout_height="wrap_content"
+            android:text="This is the name of a chapter topic"
+            android:textColor="@color/sky"
+            android:singleLine="true"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:ellipsize="marquee"
+            android:id="@+id/chapterTopicName"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18sdp"
+            />
+
+
+        <TextView
+            app:layout_constraintTop_toBottomOf="@id/chapterTopicName"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Abed khan"
+            android:singleLine="true"
+            android:textColor="@android:color/holo_green_dark"
+            android:id="@+id/topicWriterName"
+            android:textStyle="bold"
+            android:textSize="@dimen/_18sdp"
+            />
+
+
+
+
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

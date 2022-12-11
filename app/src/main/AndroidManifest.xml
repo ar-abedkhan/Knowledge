@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Knowledge"
         tools:targetApi="31">
         <activity
-            android:name=".Department"
+            android:name=".ReadAndExam"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

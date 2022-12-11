@@ -67,6 +67,7 @@
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
                 app:cardCornerRadius="@dimen/_8sdp"
+                android:id="@+id/finance"
                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                 >
 
@@ -108,6 +109,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/hisabbiggan"
                 app:cardCornerRadius="@dimen/_8sdp"
                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                 >
@@ -167,9 +169,10 @@
                 android:layout_height="@dimen/_90sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:id="@+id/scienceCard"
+                android:id="@+id/biggan"
                 app:cardCornerRadius="@dimen/_8sdp"
                 app:layout_constraintTop_toBottomOf="@id/myProfile"
+
                 >
 
                 <LinearLayout
@@ -209,7 +212,7 @@
                 android:layout_marginStart="@dimen/_10sdp"
                 android:layout_marginTop="@dimen/_8sdp"
                 android:layout_marginBottom="@dimen/_8sdp"
-                android:id="@+id/commerceCard"
+                android:id="@+id/bebsaiUddag"
                 app:cardCornerRadius="@dimen/_8sdp"
                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                 >
