@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="box_clicked">#656D73</color>
+
     <color name="white_background">#FF000000</color>
     <color name="black_textColor">#FFFFFF</color>
     <color name="gray_50_backgroundd">#12FAFAFA</color>
     <color name="sky">#797C80</color>
+    <color name="sky_text">#F9F9FA</color>
 
 
 </resources>

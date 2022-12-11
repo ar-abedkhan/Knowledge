@@ -10,8 +10,10 @@
 
 
 
+    <color name="box_clicked">#D6DCE1</color>
 
     <color name="sky">#9DC4FD</color>
+    <color name="sky_text">#9DC4FD</color>
     <color name="gray_50">#FAFAFA</color>
     <color name="gray_50_backgroundd">#FAFAFA</color>
     <color name="gray_100">#F5F5F5</color>

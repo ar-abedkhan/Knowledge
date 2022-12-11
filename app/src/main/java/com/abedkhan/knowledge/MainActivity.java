@@ -187,12 +187,20 @@ departmentListData();
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.scienceCard:
-                    binding.scienceCard.setBackgroundColor(R.color.sky);
+                    // TODO: What if background colour is already sky colour selected
+//                    binding.scienceCard.setBackgroundColor(R.color.sky);
+//                    --------------- Setting background after clicked ------------
+                    binding.scienceCard.setBackgroundResource(R.drawable.department_clicked);
+                    binding.commerceCard.setBackgroundColor(R.color.gray_50_backgroundd);
+                    binding.artsCard.setBackgroundColor(R.color.gray_50_backgroundd);
+
+//                    ------------------- setting clickable --------------
                     binding.scienceCard.setEnabled(false);
                     binding.commerceCard.setEnabled(true);
                     binding.artsCard.setEnabled(true);
                     ScienceDepartmentFragment scienceDepartmentFragment = new ScienceDepartmentFragment();
                     getSupportFragmentManager().beginTransaction().add(R.id.scienceDepShow, new ScienceDepartmentFragment()).commit();
+
                     binding.departmentLayout.setVisibility(View.GONE);
                     binding.commerceDepShow.setVisibility(View.GONE);
                     binding.artsDepShow.setVisibility(View.GONE);
@@ -200,31 +208,45 @@ departmentListData();
 
                     break;
                 case R.id.commerceCard:
-                    binding.commerceCard.setBackgroundColor(R.color.sky);
+                    // TODO: What if background colour is already sky colour selected
+//                    binding.commerceCard.setBackgroundColor(R.color.sky);
+                    //                    --------------- Setting background after clicked ------------
+                    binding.commerceCard.setBackgroundResource(R.drawable.department_clicked);
+                    binding.scienceCard.setBackgroundColor(R.color.gray_50_backgroundd);
+                    binding.artsCard.setBackgroundColor(R.color.gray_50_backgroundd);
+
                     binding.scienceCard.setEnabled(true);
                     binding.commerceCard.setEnabled(false);
                     binding.artsCard.setEnabled(true);
                     CommerceDepartmentFragment commerceDepartmentFragment=new CommerceDepartmentFragment();
                     getSupportFragmentManager().beginTransaction().add(R.id.commerceDepShow,new CommerceDepartmentFragment()).commit();
+
                     binding.departmentLayout.setVisibility(View.GONE);
                     binding.scienceDepShow.setVisibility(View.GONE);
                     binding.artsDepShow.setVisibility(View.GONE);
                     binding.commerceDepShow.setVisibility(View.VISIBLE);
                     break;
                 case R.id.artsCard:
-                    binding.artsCard.setBackgroundColor(R.color.sky);
+                    // TODO: What if background colour is already sky colour selected
+//                    binding.artsCard.setBackgroundColor(R.color.sky);
+                    //                    --------------- Setting background after clicked ------------
+                    binding.artsCard.setBackgroundResource(R.drawable.department_clicked);
+                    binding.commerceCard.setBackgroundColor(R.color.gray_50_backgroundd);
+                    binding.scienceCard.setBackgroundColor(R.color.gray_50_backgroundd);
+
                     binding.scienceCard.setEnabled(true);
                     binding.commerceCard.setEnabled(true);
                     binding.artsCard.setEnabled(false);
                     HuminitiesDepartmentFragment huminitiesDepartmentFragment=new HuminitiesDepartmentFragment();
                     getSupportFragmentManager().beginTransaction().add(R.id.artsDepShow,new HuminitiesDepartmentFragment()).commit();
+
                     binding.departmentLayout.setVisibility(View.GONE);
                     binding.commerceDepShow.setVisibility(View.GONE);
                     binding.scienceDepShow.setVisibility(View.GONE);
                     binding.artsDepShow.setVisibility(View.VISIBLE);
                     break;
-                default:
-                    break;
+//                default:
+//                    break;
             }
         }
     }

@@ -10,7 +10,7 @@
    android:id="@+id/mainActivity"
     tools:context=".MainActivity">
 
-//background img.......................
+<!--//background img.......................-->
 
     <ImageView
         android:layout_width="@dimen/_400sdp"
@@ -223,7 +223,7 @@
                     android:textSize="@dimen/_16sdp"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:textColor="@color/sky"
+                    android:textColor="@color/sky_text"
                     android:layout_gravity="center"
                     android:paddingBottom="@dimen/_3sdp"
                     />
@@ -268,7 +268,7 @@
                     android:ellipsize="marquee"
                     android:textStyle="bold"
                     android:gravity="center"
-                    android:textColor="@color/sky"
+                    android:textColor="@color/sky_text"
                     android:layout_gravity="center"
                     android:paddingBottom="@dimen/_3sdp"
                     />
@@ -313,7 +313,7 @@
                     android:gravity="center"
                     android:singleLine="true"
                     android:ellipsize="marquee"
-                    android:textColor="@color/sky"
+                    android:textColor="@color/sky_text"
                     android:layout_gravity="center"
                     android:paddingBottom="@dimen/_3sdp"
                     />
