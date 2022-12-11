@@ -180,6 +180,7 @@ departmentListData();
 
     }
 
+//    ---------This Method handles the actions after clicking the Departments---------
     public class Click implements View.OnClickListener{
 
         @SuppressLint("ResourceAsColor")
@@ -249,5 +250,13 @@ departmentListData();
 //                    break;
             }
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+//        super.onBackPressed();
+        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
