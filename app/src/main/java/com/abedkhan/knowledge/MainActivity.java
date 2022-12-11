@@ -2,12 +2,17 @@ package com.abedkhan.knowledge;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.abedkhan.knowledge.Adapters.SubjectAdapter;
 import com.abedkhan.knowledge.Fragments.CommerceDepartmentFragment;
+import com.abedkhan.knowledge.Fragments.HuminitiesDepartmentFragment;
+import com.abedkhan.knowledge.Fragments.ScienceDepartmentFragment;
 import com.abedkhan.knowledge.Modelclass.DepartmentModelClass;
 import com.abedkhan.knowledge.Modelclass.SubjectModelClass;
 import com.abedkhan.knowledge.databinding.ActivityMainBinding;
@@ -19,15 +24,20 @@ public class MainActivity extends AppCompatActivity {
 ActivityMainBinding binding;
 List<DepartmentModelClass>departmentModelClassList;
 List<SubjectModelClass>subjectModelClassList;
-
+boolean isScienceClicked =false ,isCommerceClicked =false ,isArtsClicked =false;
+int depclick;
 //FragmentManager fragmentManager=getFragmentManager();
 //FragmentTransaction fragmentTransaction= fragmentManager.beginTransaction();
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+    binding.scienceCard.setOnClickListener(new Click());
+            binding.commerceCard.setOnClickListener(new Click());
+            binding.artsCard.setOnClickListener(new Click());
 
 
 subjectModelClassList=new ArrayList<>();
@@ -39,14 +49,83 @@ departmentListData();
 
 
 
-//
-//binding.commerceCard.setOnClickListener(view -> {
-//    CommerceDepartmentFragment commerceDepartmentFragment=new CommerceDepartmentFragment();
-//    getSupportFragmentManager().beginTransaction().add(R.id.framlayout,new CommerceDepartmentFragment()).commit();
+//if (isCommerceClicked==true){
+
+//    binding.commerceCard.setOnClickListener(view -> {
+//        binding.commerceCard.setBackgroundColor(R.color.sky);
+//        binding.commerceCard.setEnabled(false);
+//        CommerceDepartmentFragment commerceDepartmentFragment=new CommerceDepartmentFragment();
+//        getSupportFragmentManager().beginTransaction().add(R.id.commerceDepShow,new CommerceDepartmentFragment()).commit();
+//        binding.departmentLayout.setVisibility(View.GONE);
+//        binding.commerceDepShow.setVisibility(View.VISIBLE);
 ////    AppCompatActivity appCompatActivity= (AppCompatActivity) view.getContext();
 ////    appCompatActivity.getSupportFragmentManager().beginTransaction().show()
-//});
 //
+//    });
+
+//}else if (isScienceClicked==true) {
+
+//    binding.scienceCard.setOnClickListener(view -> {
+//        binding.scienceCard.setBackgroundColor(R.color.sky);
+//        binding.scienceCard.setEnabled(false);
+//        ScienceDepartmentFragment scienceDepartmentFragment = new ScienceDepartmentFragment();
+//        getSupportFragmentManager().beginTransaction().add(R.id.scienceDepShow, new ScienceDepartmentFragment()).commit();
+//
+//        binding.departmentLayout.setVisibility(View.GONE);
+//        binding.scienceDepShow.setVisibility(View.VISIBLE);
+//
+//    });
+
+//}else if (isArtsClicked==true){
+
+
+//    binding.artsCard.setOnClickListener(view -> {
+//        binding.artsCard.setBackgroundColor(R.color.sky);
+//        binding.artsCard.setEnabled(false);
+//        HuminitiesDepartmentFragment huminitiesDepartmentFragment=new HuminitiesDepartmentFragment();
+//        getSupportFragmentManager().beginTransaction().add(R.id.artsDepShow,new HuminitiesDepartmentFragment()).commit();
+//        binding.departmentLayout.setVisibility(View.GONE);
+//        binding.artsDepShow.setVisibility(View.VISIBLE);
+//    });
+
+//}
+
+//switch (depclick){
+//    case 1:
+//        binding.scienceCard.setOnClickListener(view -> {
+//            binding.scienceCard.setBackgroundColor(R.color.sky);
+//            binding.scienceCard.setEnabled(false);
+//            ScienceDepartmentFragment scienceDepartmentFragment=new ScienceDepartmentFragment();
+//            getSupportFragmentManager().beginTransaction().add(R.id.scienceDepShow,new ScienceDepartmentFragment()).commit();
+//            binding.departmentLayout.setVisibility(View.GONE);
+//            binding.scienceDepShow.setVisibility(View.VISIBLE);
+//        });
+//        break;
+//
+//        case 2:
+//            binding.commerceCard.setOnClickListener(view -> {
+//                binding.commerceCard.setBackgroundColor(R.color.sky);
+//                binding.commerceCard.setEnabled(false);
+//                CommerceDepartmentFragment commerceDepartmentFragment = new CommerceDepartmentFragment();
+//                getSupportFragmentManager().beginTransaction().add(R.id.commerceDepShow, new CommerceDepartmentFragment()).commit();
+//                binding.departmentLayout.setVisibility(View.GONE);
+//                binding.commerceDepShow.setVisibility(View.VISIBLE);
+//            });
+//            break;
+//    case 3:
+//        binding.artsCard.setOnClickListener(view -> {
+//            binding.artsCard.setBackgroundColor(R.color.sky);
+//            binding.artsCard.setEnabled(false);
+//            HuminitiesDepartmentFragment huminitiesDepartmentFragment=new HuminitiesDepartmentFragment();
+//            getSupportFragmentManager().beginTransaction().add(R.id.artsDepShow,new HuminitiesDepartmentFragment()).commit();
+//            binding.departmentLayout.setVisibility(View.GONE);
+//            binding.artsDepShow.setVisibility(View.VISIBLE);
+//        });
+//        break;
+//    default:
+//
+//
+//}
 
 
 
@@ -61,8 +140,7 @@ departmentListData();
 
 
 
-
-        SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,this);
+            SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,this);
         binding.dsubjectRecycler.setAdapter(subjectAdapter);
 
 //       DepartmentAdapter departmentAdapter=new DepartmentAdapter(departmentModelClassList,this);
@@ -100,5 +178,54 @@ departmentListData();
         subjectModelClassList.add(new SubjectModelClass("Christian and Moral Education",R.drawable.cristhan));
         subjectModelClassList.add(new SubjectModelClass("Buddhist and Moral Education",R.drawable.buddhist));
 
+    }
+
+    public class Click implements View.OnClickListener{
+
+        @SuppressLint("ResourceAsColor")
+        @Override
+        public void onClick(View view) {
+            switch (view.getId()){
+                case R.id.scienceCard:
+                    binding.scienceCard.setBackgroundColor(R.color.sky);
+                    binding.scienceCard.setEnabled(false);
+                    binding.commerceCard.setEnabled(true);
+                    binding.artsCard.setEnabled(true);
+                    ScienceDepartmentFragment scienceDepartmentFragment = new ScienceDepartmentFragment();
+                    getSupportFragmentManager().beginTransaction().add(R.id.scienceDepShow, new ScienceDepartmentFragment()).commit();
+                    binding.departmentLayout.setVisibility(View.GONE);
+                    binding.commerceDepShow.setVisibility(View.GONE);
+                    binding.artsDepShow.setVisibility(View.GONE);
+                    binding.scienceDepShow.setVisibility(View.VISIBLE);
+
+                    break;
+                case R.id.commerceCard:
+                    binding.commerceCard.setBackgroundColor(R.color.sky);
+                    binding.scienceCard.setEnabled(true);
+                    binding.commerceCard.setEnabled(false);
+                    binding.artsCard.setEnabled(true);
+                    CommerceDepartmentFragment commerceDepartmentFragment=new CommerceDepartmentFragment();
+                    getSupportFragmentManager().beginTransaction().add(R.id.commerceDepShow,new CommerceDepartmentFragment()).commit();
+                    binding.departmentLayout.setVisibility(View.GONE);
+                    binding.scienceDepShow.setVisibility(View.GONE);
+                    binding.artsDepShow.setVisibility(View.GONE);
+                    binding.commerceDepShow.setVisibility(View.VISIBLE);
+                    break;
+                case R.id.artsCard:
+                    binding.artsCard.setBackgroundColor(R.color.sky);
+                    binding.scienceCard.setEnabled(true);
+                    binding.commerceCard.setEnabled(true);
+                    binding.artsCard.setEnabled(false);
+                    HuminitiesDepartmentFragment huminitiesDepartmentFragment=new HuminitiesDepartmentFragment();
+                    getSupportFragmentManager().beginTransaction().add(R.id.artsDepShow,new HuminitiesDepartmentFragment()).commit();
+                    binding.departmentLayout.setVisibility(View.GONE);
+                    binding.commerceDepShow.setVisibility(View.GONE);
+                    binding.scienceDepShow.setVisibility(View.GONE);
+                    binding.artsDepShow.setVisibility(View.VISIBLE);
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

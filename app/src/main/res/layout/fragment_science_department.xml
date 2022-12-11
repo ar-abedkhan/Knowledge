@@ -2,255 +2,325 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_8sdp"
+    android:padding="@dimen/_5sdp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragments.ScienceDepartmentFragment">
 
-        <LinearLayout
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:padding="@dimen/_5sdp"
+        >
+
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_gravity="center"
+            android:layout_height="wrap_content"
+            android:elevation="@dimen/_8sdp"
+
+            app:cardCornerRadius="@dimen/_10sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Science Department"
+                android:textStyle="bold"
+
+                android:textSize="@dimen/_20sdp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="@dimen/_5sdp"
+                android:textColor="@color/black_textColor"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_marginTop="@dimen/_20sdp"
+            app:layout_constraintTop_toBottomOf="@id/departnameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
             >
 
             <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:elevation="@dimen/_8sdp"
-                app:cardCornerRadius="@dimen/_100sdp"
-                android:layout_margin="@dimen/_5sdp"
+                android:layout_weight="1"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_8sdp"
+                android:id="@+id/physicsCard"
+                app:layout_constraintTop_toBottomOf="@id/myProfile"
                 >
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Science Department"
-                    android:textStyle="bold"
 
-                    android:textSize="@dimen/_20sdp"
-                    android:layout_gravity="center"
-                    android:gravity="center"
-                    android:padding="@dimen/_5sdp"
-                    android:textColor="@color/sky"
-                    />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_3sdp"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/science"
+                        android:id="@+id/scienceImg"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="পদার্থ বিজ্ঞান"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/black_textColor"
+                        android:layout_gravity="center"
+                        android:paddingBottom="@dimen/_3sdp"
+                        />
+
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_weight="1"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/chemistryCard"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/myProfile"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_3sdp"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/commers1"
+                        android:id="@+id/commerceImg"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="রসায়ন"
+                        android:textSize="@dimen/_15sdp"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/black_textColor"
+                        android:layout_gravity="center"
+                        android:paddingBottom="@dimen/_3sdp"
+                        />
+
+
+                </LinearLayout>
+
+
 
             </androidx.cardview.widget.CardView>
 
 
+        </LinearLayout>
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/departnameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            >
 
-
-
-
-            <LinearLayout
-                app:layout_constraintTop_toBottomOf="@id/departnameTitle"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:weightSum="2"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
+            <androidx.cardview.widget.CardView
+                android:layout_weight="1"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/biologyCard"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/myProfile"
                 >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_weight="1"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    app:cardCornerRadius="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@id/myProfile"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_3sdp"
                     >
-
-                    <LinearLayout
+                    <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_3sdp"
-                        >
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_60sdp"
-                            android:src="@drawable/science"
-                            android:id="@+id/scienceImg"
-                            />
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/science"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="ফিনান্স ও ব্যাঙ্কিং"
-                            android:textSize="@dimen/_16sdp"
-                            android:textStyle="bold"
-                            android:gravity="center"
-                            android:textColor="@color/black_textColor"
-                            android:layout_gravity="center"
-                            android:paddingBottom="@dimen/_3sdp"
-                            />
-
-
-                    </LinearLayout>
-
-
-
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_weight="1"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    app:cardCornerRadius="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@id/myProfile"
-                    >
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_3sdp"
-                        >
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_60sdp"
-                            android:src="@drawable/commers1"
-                            android:id="@+id/commerceImg"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="হিসাববিজ্ঞান"
-                            android:textSize="@dimen/_15sdp"
-                            android:singleLine="true"
-                            android:ellipsize="marquee"
-                            android:textStyle="bold"
-                            android:gravity="center"
-                            android:textColor="@color/black_textColor"
-                            android:layout_gravity="center"
-                            android:paddingBottom="@dimen/_3sdp"
-                            />
+                        android:layout_height="wrap_content"
+                        android:text="জীব বিজ্ঞান"
+                        android:textSize="@dimen/_16sdp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/black_textColor"
+                        android:layout_gravity="center"
+                        android:paddingBottom="@dimen/_3sdp"
+                        />
 
 
-                    </LinearLayout>
+                </LinearLayout>
 
 
 
-                </androidx.cardview.widget.CardView>
-
-
-            </LinearLayout>
-            <LinearLayout
-                app:layout_constraintTop_toBottomOf="@id/departnameTitle"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_100sdp"
-                android:orientation="horizontal"
-                android:id="@+id/department"
-                android:gravity="center"
-                android:weightSum="2"
-                android:layout_marginStart="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
+            </androidx.cardview.widget.CardView>
+            <androidx.cardview.widget.CardView
+                android:layout_weight="1"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/higherMathCard"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/myProfile"
                 >
 
-                <androidx.cardview.widget.CardView
-                    android:layout_weight="1"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:id="@+id/scienceCard"
-                    app:cardCornerRadius="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@id/myProfile"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_3sdp"
                     >
-
-                    <LinearLayout
+                    <ImageView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_3sdp"
-                        >
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_60sdp"
-                            android:src="@drawable/science"
-                            />
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/commers1"
+                        />
 
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="সাধারন বিজ্ঞান"
-                            android:textSize="@dimen/_16sdp"
-                            android:textStyle="bold"
-                            android:gravity="center"
-                            android:textColor="@color/sky"
-                            android:layout_gravity="center"
-                            android:paddingBottom="@dimen/_3sdp"
-                            />
-
-
-                    </LinearLayout>
-
-
-
-                </androidx.cardview.widget.CardView>
-                <androidx.cardview.widget.CardView
-                    android:layout_weight="1"
-                    android:layout_width="@dimen/_90sdp"
-                    android:layout_height="@dimen/_90sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginTop="@dimen/_8sdp"
-                    android:layout_marginBottom="@dimen/_8sdp"
-                    android:id="@+id/commerceCard"
-                    app:cardCornerRadius="@dimen/_8sdp"
-                    app:layout_constraintTop_toBottomOf="@id/myProfile"
-                    >
-
-                    <LinearLayout
+                    <TextView
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:padding="@dimen/_3sdp"
-                        >
-                        <ImageView
-                            android:layout_width="match_parent"
-                            android:layout_height="@dimen/_60sdp"
-                            android:src="@drawable/commers1"
-                            />
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:text="Commerce"
-                            android:textSize="@dimen/_15sdp"
-                            android:singleLine="true"
-                            android:ellipsize="marquee"
-                            android:textStyle="bold"
-                            android:gravity="center"
-                            android:textColor="@color/sky"
-                            android:layout_gravity="center"
-                            android:paddingBottom="@dimen/_3sdp"
-                            />
+                        android:layout_height="wrap_content"
+                        android:text="উচ্চতর গণিত"
+                        android:textSize="@dimen/_15sdp"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/black_textColor"
+                        android:layout_gravity="center"
+                        android:paddingBottom="@dimen/_3sdp"
+                        />
 
 
-                    </LinearLayout>
+                </LinearLayout>
 
 
 
-                </androidx.cardview.widget.CardView>
-
-
-            </LinearLayout>
-
-
-
-
-
-
-
-
-
-
+            </androidx.cardview.widget.CardView>
 
 
         </LinearLayout>
+        <LinearLayout
+            app:layout_constraintTop_toBottomOf="@id/departnameTitle"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_100sdp"
+            android:orientation="horizontal"
+            android:id="@+id/department"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:gravity="center"
+            android:weightSum="2"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            >
+
+            <androidx.cardview.widget.CardView
+                android:layout_weight="1"
+                android:layout_width="@dimen/_90sdp"
+                android:layout_height="@dimen/_90sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:id="@+id/glovalStudiesCard"
+                app:cardCornerRadius="@dimen/_8sdp"
+                app:layout_constraintTop_toBottomOf="@id/myProfile"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:padding="@dimen/_3sdp"
+                    >
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/_60sdp"
+                        android:src="@drawable/commers1"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="বাংলাদেশ ও বিশ্ব পরিচয়"
+                        android:textSize="@dimen/_15sdp"
+                        android:singleLine="true"
+                        android:ellipsize="marquee"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:textColor="@color/black_textColor"
+                        android:layout_gravity="center"
+                        android:paddingBottom="@dimen/_3sdp"
+                        />
+
+
+                </LinearLayout>
+
+
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
 
 </FrameLayout>
