@@ -20,4 +20,50 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="26dp" />
 
+
+    <TextView
+        android:id="@+id/addOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_40sdp"
+        android:text="ADD++"
+        android:textAlignment="center"
+        android:textColor="#209525"
+        android:textSize="@dimen/_25sdp"
+
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/textView"
+        tools:layout_editor_absoluteX="26dp" />
+
+
+    <TextView
+        android:id="@+id/editOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_20sdp"
+        android:text="Edit |_|/"
+        android:textAlignment="center"
+        android:textColor="#119516"
+        android:textSize="@dimen/_25sdp"
+
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/addOption"
+        tools:layout_editor_absoluteX="26dp" />
+
+
+    <TextView
+        android:id="@+id/deleteOption"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_30sdp"
+        android:text="DELETE!!"
+        android:textAlignment="center"
+        android:textColor="#F44336"
+        android:textSize="@dimen/_25sdp"
+
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/editOption"
+        tools:layout_editor_absoluteX="26dp" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

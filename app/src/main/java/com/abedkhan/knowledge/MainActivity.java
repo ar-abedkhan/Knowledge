@@ -9,6 +9,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import com.abedkhan.knowledge.Activities.AdminLoginActivity;
 import com.abedkhan.knowledge.Adapters.SubjectAdapter;
 import com.abedkhan.knowledge.Modelclass.SubjectModelClass;
 import com.abedkhan.knowledge.databinding.ActivityMainBinding;
@@ -61,7 +62,15 @@ setSubjectListData();
         subjectModelClassList.add(new SubjectModelClass("Christian and Moral Education",R.drawable.cristhan));
         subjectModelClassList.add(new SubjectModelClass("Buddhist and Moral Education",R.drawable.buddhist));
 
+
+        //    --------------- Going to the Admin Login Activity --------------
+        binding.myProfile.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, AdminLoginActivity.class));
+            finish();
+        });
+
     }
+
 
 //    ---------This Method handles the actions after clicking the Departments---------
     public class Click implements View.OnClickListener{
@@ -133,7 +142,6 @@ setSubjectListData();
 
     @Override
     public void onBackPressed() {
-//        super.onBackPressed();
         if (isDepartmentClicked) {
             isDepartmentClicked = false;
             Intent intent = new Intent(MainActivity.this, MainActivity.class);
@@ -165,8 +173,5 @@ setSubjectListData();
 
         }
 
-//        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-//        startActivity(intent);
-//        finish();
     }
 }
