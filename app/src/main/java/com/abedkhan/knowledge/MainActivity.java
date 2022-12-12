@@ -10,9 +10,6 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.abedkhan.knowledge.Adapters.SubjectAdapter;
-import com.abedkhan.knowledge.Fragments.CommerceDepartmentFragment;
-import com.abedkhan.knowledge.Fragments.HuminitiesDepartmentFragment;
-import com.abedkhan.knowledge.Fragments.ScienceDepartmentFragment;
 import com.abedkhan.knowledge.Modelclass.SubjectModelClass;
 import com.abedkhan.knowledge.databinding.ActivityMainBinding;
 
@@ -84,8 +81,8 @@ setSubjectListData();
                     binding.scienceCard.setEnabled(false);
                     binding.commerceCard.setEnabled(true);
                     binding.artsCard.setEnabled(true);
-                    ScienceDepartmentFragment scienceDepartmentFragment = new ScienceDepartmentFragment();
-                    getSupportFragmentManager().beginTransaction().add(R.id.scienceDepShow, new ScienceDepartmentFragment()).commit();
+//                    ScienceDepartmentFragment scienceDepartmentFragment = new ScienceDepartmentFragment();
+//                    getSupportFragmentManager().beginTransaction().add(R.id.scienceDepShow, new ScienceDepartmentFragment()).commit();
 
                     binding.departmentLayout.setVisibility(View.GONE);
                     binding.commerceDepShow.setVisibility(View.GONE);
@@ -103,8 +100,8 @@ setSubjectListData();
                     binding.scienceCard.setEnabled(true);
                     binding.commerceCard.setEnabled(false);
                     binding.artsCard.setEnabled(true);
-                    CommerceDepartmentFragment commerceDepartmentFragment=new CommerceDepartmentFragment();
-                    getSupportFragmentManager().beginTransaction().add(R.id.commerceDepShow,new CommerceDepartmentFragment()).commit();
+//                    CommerceDepartmentFragment commerceDepartmentFragment=new CommerceDepartmentFragment();
+//                    getSupportFragmentManager().beginTransaction().add(R.id.commerceDepShow,new CommerceDepartmentFragment()).commit();
 
                     binding.departmentLayout.setVisibility(View.GONE);
                     binding.scienceDepShow.setVisibility(View.GONE);
@@ -121,8 +118,8 @@ setSubjectListData();
                     binding.scienceCard.setEnabled(true);
                     binding.commerceCard.setEnabled(true);
                     binding.artsCard.setEnabled(false);
-                    HuminitiesDepartmentFragment huminitiesDepartmentFragment=new HuminitiesDepartmentFragment();
-                    getSupportFragmentManager().beginTransaction().add(R.id.artsDepShow,new HuminitiesDepartmentFragment()).commit();
+//                    HuminitiesDepartmentFragment huminitiesDepartmentFragment=new HuminitiesDepartmentFragment();
+//                    getSupportFragmentManager().beginTransaction().add(R.id.artsDepShow,new HuminitiesDepartmentFragment()).commit();
 
                     binding.departmentLayout.setVisibility(View.GONE);
                     binding.commerceDepShow.setVisibility(View.GONE);
