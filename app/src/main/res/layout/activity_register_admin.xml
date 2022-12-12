@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Activities.RegisterAdmin">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -77,6 +76,8 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/adminRegisterBtn"
+                android:visibility="visible"
+
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="44dp"
@@ -86,6 +87,18 @@
                 android:textSize="@dimen/_22sdp"
                 app:layout_constraintTop_toBottomOf="@+id/adminRePassword"
                 tools:layout_editor_absoluteX="0dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:visibility="gone"
+
+                android:progressTint="@color/black_textColor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="@id/adminRegisterBtn"
+                app:layout_constraintBottom_toBottomOf="@id/adminRegisterBtn"
+                app:layout_constraintStart_toStartOf="@id/adminRegisterBtn"
+                app:layout_constraintEnd_toEndOf="@id/adminRegisterBtn"/>
 
             <TextView
                 android:id="@+id/adminLoginOption"

@@ -144,6 +144,7 @@ setSubjectListData();
             AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
 
             builder.setTitle("Exit!");
+            builder.setIcon(R.drawable.warning_icon);
             builder.setMessage("Do you want to exit from the application?");
 
             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
