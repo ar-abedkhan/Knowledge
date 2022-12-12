@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "304071884657",
+    "project_id": "exam-preparation-9-10",
+    "storage_bucket": "exam-preparation-9-10.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:304071884657:android:9249ac5ee87fb50bbe40d0",
+        "android_client_info": {
+          "package_name": "com.abedkhan.knowledge"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "304071884657-s7b79djp63pm5iifcgoefoglpk7s3r3c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeN1tiWuzmntpXG9eCTxuRbcwknXFeDHU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "304071884657-s7b79djp63pm5iifcgoefoglpk7s3r3c.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
