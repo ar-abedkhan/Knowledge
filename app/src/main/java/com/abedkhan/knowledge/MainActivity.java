@@ -1,8 +1,10 @@
 package com.abedkhan.knowledge;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -20,6 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 ActivityMainBinding binding;
 List<SubjectModelClass>subjectModelClassList;
+boolean isDepartmentClicked= false;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -36,26 +39,8 @@ subjectModelClassList=new ArrayList<>();
 setSubjectListData();
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
             SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,this);
         binding.dsubjectRecycler.setAdapter(subjectAdapter);
-
-
-
-
-
 
     }
 
@@ -89,8 +74,7 @@ setSubjectListData();
         public void onClick(View view) {
             switch (view.getId()){
                 case R.id.scienceCard:
-                    // TODO: What if background colour is already sky colour selected
-//                    binding.scienceCard.setBackgroundColor(R.color.sky);
+                    isDepartmentClicked = true;
 //                    --------------- Setting background after clicked ------------
                     binding.scienceCard.setBackgroundResource(R.drawable.department_clicked);
                     binding.commerceCard.setBackgroundColor(R.color.gray_50_backgroundd);
@@ -110,8 +94,7 @@ setSubjectListData();
 
                     break;
                 case R.id.commerceCard:
-                    // TODO: What if background colour is already sky colour selected
-//                    binding.commerceCard.setBackgroundColor(R.color.sky);
+                    isDepartmentClicked = true;
                     //                    --------------- Setting background after clicked ------------
                     binding.commerceCard.setBackgroundResource(R.drawable.department_clicked);
                     binding.scienceCard.setBackgroundColor(R.color.gray_50_backgroundd);
@@ -129,8 +112,7 @@ setSubjectListData();
                     binding.commerceDepShow.setVisibility(View.VISIBLE);
                     break;
                 case R.id.artsCard:
-                    // TODO: What if background colour is already sky colour selected
-//                    binding.artsCard.setBackgroundColor(R.color.sky);
+                    isDepartmentClicked = true;
                     //                    --------------- Setting background after clicked ------------
                     binding.artsCard.setBackgroundResource(R.drawable.department_clicked);
                     binding.commerceCard.setBackgroundColor(R.color.gray_50_backgroundd);
@@ -147,8 +129,7 @@ setSubjectListData();
                     binding.scienceDepShow.setVisibility(View.GONE);
                     binding.artsDepShow.setVisibility(View.VISIBLE);
                     break;
-//                default:
-//                    break;
+
             }
         }
     }
@@ -156,8 +137,38 @@ setSubjectListData();
     @Override
     public void onBackPressed() {
 //        super.onBackPressed();
-        Intent intent = new Intent(MainActivity.this, MainActivity.class);
-        startActivity(intent);
-        finish();
+        if (isDepartmentClicked) {
+            isDepartmentClicked = false;
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
+
+            builder.setTitle("Exit!");
+            builder.setMessage("Do you want to exit from the application?");
+
+            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+                    MainActivity.super.onBackPressed();
+                }
+            });
+
+            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                @Override
+                public void onClick(DialogInterface dialogInterface, int i) {
+
+                }
+            });
+            AlertDialog dialog = builder.create();
+            dialog.show();
+
+        }
+
+//        Intent intent = new Intent(MainActivity.this, MainActivity.class);
+//        startActivity(intent);
+//        finish();
     }
 }

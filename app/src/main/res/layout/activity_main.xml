@@ -152,7 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Department"
-        android:layout_marginTop="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_8sdp"
         android:textColor="@color/black_textColor"
         android:textStyle="bold"
         android:id="@+id/departnameTitle"
@@ -348,8 +348,8 @@
         android:id="@+id/subjectTitle"
         android:textSize="@dimen/_18sdp"
         android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginTop="@dimen/_15sdp"
-        android:layout_marginBottom="@dimen/_15sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         android:padding="@dimen/_5sdp"
         app:layout_constraintTop_toBottomOf="@id/department"
         app:layout_constraintStart_toStartOf="parent"
@@ -361,6 +361,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/subject_design"
+        android:background="@color/recycler_back"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
@@ -374,7 +375,7 @@
 
 
 
-
+<!--.................... Department Settings .................-->
 
             <LinearLayout
                 android:layout_width="match_parent"
