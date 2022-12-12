@@ -21,44 +21,44 @@ public class ReadFragment extends Fragment {
     public ReadFragment() {
     }
     FragmentReadBinding binding;
-List<ChapterModelClass>chapterModelClassList;
-int chapterno;
+    List<ChapterModelClass> chapterModelClassList;
+    int chapterno;
 
 
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-binding=FragmentReadBinding.inflate(getLayoutInflater(),container,false);
+        binding=FragmentReadBinding.inflate(getLayoutInflater(),container,false);
 
-chapterModelClassList=new ArrayList<>();
+        chapterModelClassList=new ArrayList<>();
 
-chapterno=chapterModelClassList.size()+1;
+        chapterno=chapterModelClassList.size()+1;
 
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
-chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
 
 
-        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext());
+        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), false);
         binding.readRecycler.setAdapter(chapterAdapter);
 
 

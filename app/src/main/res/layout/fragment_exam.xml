@@ -15,6 +15,7 @@
         android:id="@+id/examRecycler"
         tools:listitem="@layout/chapter_recycler_design"
         android:layout_marginTop="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_10sdp"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 

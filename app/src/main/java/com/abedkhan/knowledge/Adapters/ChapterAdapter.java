@@ -18,10 +18,12 @@ import java.util.List;
 public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
     List<ChapterModelClass>chapterModelClasses;
     Context context;
+    boolean isExam;
 
-    public ChapterAdapter(List<ChapterModelClass> chapterModelClasses, Context context) {
+    public ChapterAdapter(List<ChapterModelClass> chapterModelClasses, Context context, boolean isExam) {
         this.chapterModelClasses = chapterModelClasses;
         this.context = context;
+        this.isExam = isExam;
     }
 
     @NonNull
@@ -41,8 +43,13 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
 //        holder.chapterNo.setText(chapterModelClass.getChapterNumber());
         holder.chapterName.setText(chapterModelClass.getChapterName());
         holder.chapterWriter.setText(chapterModelClass.getChapterWriter());
+        holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.animation));
 
-        holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(),R.anim.animation));
+// TODO: Exam == true hole apni exam activity te niye jaben and false hole apni Reading activity te niye jaben.... (Same adapter ta Exam fragment eo use hobe)
+        if (isExam){}
+        else {
+
+        }
 
     }
 
