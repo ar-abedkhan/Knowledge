@@ -38,7 +38,9 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
     public void onBindViewHolder(@NonNull ChapterViewholder holder, int position) {
 
         ChapterModelClass chapterModelClass=chapterModelClasses.get(position);
+
 //"অধ্যায় : "
+
         holder.chapter.setText(chapterModelClass.getChapter());
 //        holder.chapterNo.setText(chapterModelClass.getChapterNumber());
         holder.chapterName.setText(chapterModelClass.getChapterName());
