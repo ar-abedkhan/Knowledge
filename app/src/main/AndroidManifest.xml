@@ -14,7 +14,7 @@
         android:theme="@style/Theme.Knowledge"
         tools:targetApi="31">
         <activity
-            android:name=".AdminDashboard"
+            android:name=".Activities.AdminDashboard"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
