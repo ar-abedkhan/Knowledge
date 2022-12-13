@@ -3,6 +3,7 @@ package com.abedkhan.knowledge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.abedkhan.knowledge.Adapters.ReadExamFragmentAdapter;
@@ -36,5 +37,12 @@ binding.tabLayout.setupWithViewPager(binding.readExamViewpager);
 
 
 
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this,MainActivity.class));
+        finish();
     }
 }

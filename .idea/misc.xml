@@ -3,19 +3,26 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Knowledge/app/src/main/res/drawable-v24/department_clicked_nullBack.xml" value="0.2035" />
         <entry key="..\:/Knowledge/app/src/main/res/drawable/circle.xml" value="0.1885" />
         <entry key="..\:/Knowledge/app/src/main/res/drawable/circle_white.xml" value="0.219" />
+        <entry key="..\:/Knowledge/app/src/main/res/drawable/department_clicked.xml" value="0.2035" />
+        <entry key="..\:/Knowledge/app/src/main/res/drawable/ic_baseline_access_time_24.xml" value="0.1735" />
         <entry key="..\:/Knowledge/app/src/main/res/drawable/toolback.xml" value="0.219" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/activity_department.xml" value="0.23645833333333333" />
+        <entry key="..\:/Knowledge/app/src/main/res/layout/activity_give_exam.xml" value="0.19410004275331338" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/activity_main.xml" value="0.19410004275331338" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/activity_read_and_exam.xml" value="0.19410004275331338" />
+        <entry key="..\:/Knowledge/app/src/main/res/layout/activity_register_admin.xml" value="0.19410004275331338" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/chapter_recycler_design.xml" value="0.19324497648567765" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/department_design.xml" value="0.23645833333333333" />
+        <entry key="..\:/Knowledge/app/src/main/res/layout/exam_recycler_design.xml" value="0.19410004275331338" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/fragment_commerce_department.xml" value="0.22239583333333332" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/fragment_exam.xml" value="0.18255664814023087" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/fragment_huminities_department.xml" value="0.22239583333333332" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/fragment_read.xml" value="0.19410004275331338" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/fragment_science_department.xml" value="0.23645833333333333" />
+        <entry key="..\:/Knowledge/app/src/main/res/layout/read_recycler.xml" value="0.19410004275331338" />
         <entry key="..\:/Knowledge/app/src/main/res/layout/subject_design.xml" value="0.23645833333333333" />
       </map>
     </option>

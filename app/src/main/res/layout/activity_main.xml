@@ -163,24 +163,7 @@
         app:layout_constraintStart_toStartOf="parent"
         />
 
-<!--<androidx.recyclerview.widget.RecyclerView-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="@dimen/_100sdp"-->
-<!--    android:orientation="horizontal"-->
-<!--    app:spanCount="3"-->
-<!--    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"-->
-<!--    tools:listitem="@layout/department_design"-->
-<!--    android:id="@+id/departmentRecycler"-->
-<!--    app:layout_constraintTop_toBottomOf="@id/departnameTitle"-->
-<!--    />-->
 
-
-<!--<HorizontalScrollView-->
-<!--    android:layout_width="match_parent"-->
-<!--    android:layout_height="@dimen/_100sdp"-->
-<!--    app:layout_constraintTop_toBottomOf="@id/departnameTitle"-->
-<!--    android:id="@+id/horiscrl"-->
-<!--    >-->
 
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@id/departnameTitle"
@@ -206,7 +189,7 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical"
                 android:id="@+id/scienceCard"
-                android:background="@color/gray_50_backgroundd"
+                android:background="@drawable/department_clicked_null_back"
                 android:padding="@dimen/_3sdp"
                 >
                 <ImageView
@@ -328,7 +311,7 @@
     </LinearLayout>
 
 
-<!--</HorizontalScrollView>-->
+
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -359,7 +342,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_marginEnd="@dimen/_3sdp"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/_500sdp"
         tools:listitem="@layout/subject_design"
         android:background="@color/recycler_back"
         app:layout_constraintStart_toStartOf="parent"
@@ -404,7 +387,6 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:elevation="@dimen/_8sdp"
-
                             app:cardCornerRadius="@dimen/_10sdp"
                             android:layout_marginStart="@dimen/_5sdp"
                             android:layout_marginEnd="@dimen/_5sdp"
@@ -462,7 +444,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/science"
+                                        android:src="@drawable/physics"
                                         />
 
                                     <TextView
@@ -504,7 +486,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/chemistry_icon2"
                                         />
 
                                     <TextView
@@ -562,7 +544,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/science"
+                                        android:src="@drawable/biology_icon1"
                                         />
 
                                     <TextView
@@ -604,7 +586,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/highermaths"
                                         />
 
                                     <TextView
@@ -664,7 +646,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/global_education"
                                         />
 
                                     <TextView
@@ -684,23 +666,9 @@
 
                                 </LinearLayout>
 
-
-
                             </androidx.cardview.widget.CardView>
 
-
                         </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
 
                     </LinearLayout>
 
@@ -781,7 +749,7 @@
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
                                 app:cardCornerRadius="@dimen/_8sdp"
-                                android:id="@+id/finance"
+                                android:id="@+id/financeCard"
                                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                                 >
 
@@ -794,7 +762,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/science"
+                                        android:src="@drawable/banking"
                                         />
 
                                     <TextView
@@ -822,7 +790,7 @@
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:id="@+id/hisabbiggan"
+                                android:id="@+id/hisabbigganCard"
                                 app:cardCornerRadius="@dimen/_8sdp"
                                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                                 >
@@ -836,7 +804,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/accounting"
                                         />
 
                                     <TextView
@@ -881,7 +849,7 @@
                                 android:layout_height="@dimen/_90sdp"
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:id="@+id/biggan"
+                                android:id="@+id/bigganCard"
                                 app:cardCornerRadius="@dimen/_8sdp"
                                 app:layout_constraintTop_toBottomOf="@id/myProfile"
 
@@ -896,7 +864,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/science"
+                                        android:src="@drawable/gscience"
                                         />
 
                                     <TextView
@@ -924,7 +892,7 @@
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
-                                android:id="@+id/bebsaiUddag"
+                                android:id="@+id/bebsaiUddagCard"
                                 app:cardCornerRadius="@dimen/_8sdp"
                                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                                 >
@@ -938,7 +906,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/business"
                                         />
 
                                     <TextView
@@ -958,10 +926,7 @@
 
                                 </LinearLayout>
 
-
-
                             </androidx.cardview.widget.CardView>
-
 
                         </LinearLayout>
 
@@ -1045,6 +1010,7 @@
                                 android:layout_marginTop="@dimen/_8sdp"
                                 android:layout_marginBottom="@dimen/_8sdp"
                                 app:cardCornerRadius="@dimen/_8sdp"
+                                android:id="@+id/bugolCard"
                                 app:layout_constraintTop_toBottomOf="@id/myProfile"
                                 >
 
@@ -1057,7 +1023,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/science"
+                                        android:src="@drawable/bughul_poribesh"
                                         />
 
                                     <TextView
@@ -1087,6 +1053,7 @@
                                 android:layout_marginBottom="@dimen/_8sdp"
                                 app:cardCornerRadius="@dimen/_8sdp"
                                 app:layout_constraintTop_toBottomOf="@id/myProfile"
+                                android:id="@+id/pouronitiCard"
                                 >
 
                                 <LinearLayout
@@ -1098,7 +1065,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/politics"
                                         />
 
                                     <TextView
@@ -1144,6 +1111,7 @@
                             <androidx.cardview.widget.CardView
                                 android:layout_weight="1"
                                 android:layout_width="@dimen/_90sdp"
+                                android:id="@+id/itihashCard"
                                 android:layout_height="@dimen/_90sdp"
                                 android:layout_marginStart="@dimen/_10sdp"
                                 android:layout_marginTop="@dimen/_8sdp"
@@ -1161,7 +1129,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/commers1"
+                                        android:src="@drawable/history"
                                         />
 
                                     <TextView

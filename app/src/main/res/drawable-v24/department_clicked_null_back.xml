@@ -4,6 +4,6 @@
 
     <solid android:color="@color/gray_50_backgroundd"/>
     <corners android:radius="@dimen/_8sdp"/>
-    <stroke android:width="5dp" android:color="@color/sky"/>
+<!--    <stroke android:width="5dp" android:color="@color/sky"/>-->
 
 </shape>

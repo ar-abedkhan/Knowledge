@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp"
+    android:layout_margin="@dimen/_8sdp"
+    android:layout_height="wrap_content">
+
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="@dimen/_5sdp"
+            >
+
+
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Question : "
+                android:paddingStart="@dimen/_2sdp"
+                android:id="@+id/question"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16sdp"
+                />
+            <TextView
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toEndOf="@id/question"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="01"
+                android:id="@+id/questionNumber"
+                android:textStyle="bold"
+                android:textSize="@dimen/_16sdp"
+                />
+
+
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/question"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_3sdp"
+                android:layout_height="wrap_content"
+                android:text="This is the main question"
+                android:textColor="@android:color/holo_red_dark"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:inputType="textMultiLine"
+                android:id="@+id/mainQuestion"
+                android:textStyle="bold"
+                android:textSize="@dimen/_19sdp"
+                />
+
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/mainQuestion"
+                app:layout_constraintStart_toStartOf="parent"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_3sdp"
+                android:layout_height="wrap_content"
+                android:text="Ans :"
+                android:singleLine="true"
+                android:textColor="@color/black_textColor"
+                android:id="@+id/answare"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sdp"
+                />
+
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/mainQuestion"
+                app:layout_constraintStart_toEndOf="@id/answare"
+                android:layout_marginBottom="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:layout_width="wrap_content"
+                android:padding="@dimen/_3sdp"
+                android:layout_height="wrap_content"
+                android:text="this is the ans"
+                android:singleLine="true"
+                android:textColor="@android:color/holo_green_dark"
+                android:id="@+id/mainAnsware"
+                android:textStyle="bold"
+                android:textSize="@dimen/_18sdp"
+                />
+
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+</androidx.cardview.widget.CardView>

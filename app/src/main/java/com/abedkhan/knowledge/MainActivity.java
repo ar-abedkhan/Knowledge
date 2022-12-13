@@ -32,6 +32,8 @@ boolean isDepartmentClicked= false;
             binding.commerceCard.setOnClickListener(new Click());
             binding.artsCard.setOnClickListener(new Click());
 
+            sendSubjectToReadAndExamPage();
+
 
 subjectModelClassList=new ArrayList<>();
 setSubjectListData();
@@ -42,6 +44,65 @@ setSubjectListData();
 
     }
 
+    private void sendSubjectToReadAndExamPage() {
+        binding.physicsCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.chemistryCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.biologyCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.higherMathCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.glovalStudiesCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+
+ //.......................................................................
+
+        binding.financeCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.hisabbigganCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.bigganCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.bebsaiUddagCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+
+  //................................................
+
+        binding.pouronitiCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.itihashCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+        binding.bugolCard.setOnClickListener(view -> {
+            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            finish();
+        });
+
+
+
+    }
 
 
     private void setSubjectListData() {
@@ -83,8 +144,9 @@ setSubjectListData();
                     isDepartmentClicked = true;
 //                    --------------- Setting background after clicked ------------
                     binding.scienceCard.setBackgroundResource(R.drawable.department_clicked);
-                    binding.commerceCard.setBackgroundColor(R.color.gray_50_backgroundd);
-                    binding.artsCard.setBackgroundColor(R.color.gray_50_backgroundd);
+                    binding.commerceCard.setBackgroundColor(R.drawable.department_clicked_null_back);
+                    binding.artsCard.setBackgroundColor(R.drawable.department_clicked_null_back);
+
 
 //                    ------------------- setting clickable --------------
                     binding.scienceCard.setEnabled(false);
@@ -103,8 +165,8 @@ setSubjectListData();
                     isDepartmentClicked = true;
                     //                    --------------- Setting background after clicked ------------
                     binding.commerceCard.setBackgroundResource(R.drawable.department_clicked);
-                    binding.scienceCard.setBackgroundColor(R.color.gray_50_backgroundd);
-                    binding.artsCard.setBackgroundColor(R.color.gray_50_backgroundd);
+                    binding.scienceCard.setBackgroundColor(R.drawable.department_clicked_null_back);
+                    binding.artsCard.setBackgroundColor(R.drawable.department_clicked_null_back);
 
                     binding.scienceCard.setEnabled(true);
                     binding.commerceCard.setEnabled(false);
@@ -121,8 +183,8 @@ setSubjectListData();
                     isDepartmentClicked = true;
                     //                    --------------- Setting background after clicked ------------
                     binding.artsCard.setBackgroundResource(R.drawable.department_clicked);
-                    binding.commerceCard.setBackgroundColor(R.color.gray_50_backgroundd);
-                    binding.scienceCard.setBackgroundColor(R.color.gray_50_backgroundd);
+                    binding.commerceCard.setBackgroundColor(R.drawable.department_clicked_null_back);
+                    binding.scienceCard.setBackgroundColor(R.drawable.department_clicked_null_back);
 
                     binding.scienceCard.setEnabled(true);
                     binding.commerceCard.setEnabled(true);
