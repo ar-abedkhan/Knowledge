@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="right_ans" type="id" />
+    <item name="main_question" type="id" />
+    <item name="writer_name" type="id" />
+</resources>
