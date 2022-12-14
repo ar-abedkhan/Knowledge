@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
@@ -21,17 +22,17 @@ import com.google.firebase.auth.FirebaseUser;
 public class AdminLoginActivity extends AppCompatActivity {
 
     ActivityAdminLoginBinding binding;
-    FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
+    FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivityAdminLoginBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
-
         firebaseAuth = FirebaseAuth.getInstance();
+        firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
 
 //        ----------- Register option ----------
         binding.adminRegisterOption.setOnClickListener(view -> {
@@ -42,10 +43,13 @@ public class AdminLoginActivity extends AppCompatActivity {
 
 //        ---------------- Login Button ----------------
 
-        if (firebaseUser.getUid() != null) {
-
-            startActivity(new Intent(AdminLoginActivity.this, AdminDashboard.class));
-            finish();
+        try {
+            if (firebaseUser.getUid() != null)
+            {
+                startActivity(new Intent(AdminLoginActivity.this, AdminDashboard.class));
+                finish();
+            }
+        }catch (Exception e){
 
             binding.adminLoginBtn.setOnClickListener(view -> {
                 binding.progressBar.setVisibility(View.VISIBLE);
@@ -69,6 +73,9 @@ public class AdminLoginActivity extends AppCompatActivity {
 
             });
         }
+
+
+
     }
 
 
