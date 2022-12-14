@@ -17,6 +17,7 @@
     <string name="subject_name">Subject Name</string>
     <string name="adddata">Add Data</string>
     <string name="download">Download</string>
+    <string name="read_offline">Read Offline</string>
 
 
 </resources>
