@@ -11,6 +11,7 @@ import android.provider.ContactsContract;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Toast;
 
 import com.abedkhan.knowledge.R;
@@ -41,10 +42,23 @@ public class AddFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         binding = FragmentAddBinding.inflate(getLayoutInflater(), container, false);
+
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
+//        -------------------- Spinner settings ----------------
+//        ...TODO: shob gula subject name eikhane add koiren
+        String[] allSubject = {};
+
+        ArrayAdapter<String> subjectAdapter = new ArrayAdapter<>(getContext(),
+                android.R.layout.simple_dropdown_item_1line,
+                allSubject);
+        binding.subjectName.setAdapter(subjectAdapter);
+
+
+//        ----------------------- Add button settings ----------------
         binding.addDataBtn.setOnClickListener(view -> {
 //            subjectName = binding.subjectName.getText().toString();
+            subjectName = binding.subjectName.getSelectedItem().toString();
             chapterName = binding.chapterName.getText().toString();
             chapterNumber = binding.chapterName.getText().toString();
 
@@ -79,6 +93,7 @@ public class AddFragment extends Fragment {
         addData.put("option2", option2);
         addData.put("option3", option3);
 
+//        ------------------ Adding data to the firebase storage ------------------
         databaseReference.child(subjectName).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
