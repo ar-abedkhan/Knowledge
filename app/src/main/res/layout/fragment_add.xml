@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragments.AddFragment">
+
+
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/_25sdp"
+        android:text="@string/add_data"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:padding="@dimen/_5sdp"
+        android:id="@+id/title"
+        />
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:layout_constraintTop_toBottomOf="@id/title"
+    android:layout_marginBottom="@dimen/_100sdp"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        android:layout_margin="@dimen/_10sdp"
+        >
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/subjectName"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/subject_name"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            tools:ignore="RtlSymmetry" />
+
+
+                <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+            android:id="@+id/chapterNumber"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/chapter_no"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+                <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/chapterName"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/chapter_name"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+                <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/writerName"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+            android:hint="@string/writer_name"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+                <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/question"
+            android:background="@drawable/department_clicked"
+                    android:paddingTop="@dimen/_2sdp"
+                    android:paddingBottom="@dimen/_2sdp"
+            android:inputType="textMultiLine"
+            android:hint="@string/main_question"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/WrightAns"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:hint="@string/right_ans"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answarwOne"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:hint="@string/answer_one"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+                        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answareTwo"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/answer_two"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingBottom="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+                        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answarwThree"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/answer_three"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingBottom="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+                        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answarwFour"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/answer_four"
+                            android:paddingTop="@dimen/_2sdp"
+                            android:paddingBottom="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            android:text="@string/add_data"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_15sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/department_clicked"
+            android:id="@+id/addDataBtn"
+            android:layout_marginBottom="@dimen/_100sdp"
+            />
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
