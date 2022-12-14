@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,6 +19,7 @@
         android:padding="@dimen/_5sdp"
         android:id="@+id/title"
         />
+
 <ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -49,28 +51,28 @@
             tools:ignore="RtlSymmetry" />
 
 
-                <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:id="@+id/chapterNumber"
             android:background="@drawable/department_clicked"
             android:inputType="textMultiLine"
             android:hint="@string/chapter_no"
             android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
-            />
+            tools:ignore="TextFields" />
 
 
-                <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
             android:id="@+id/chapterName"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:background="@drawable/department_clicked"
             android:inputType="textMultiLine"
             android:hint="@string/chapter_name"
@@ -79,29 +81,29 @@
             />
 
 
-                <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
             android:id="@+id/writerName"
             android:background="@drawable/department_clicked"
             android:inputType="textMultiLine"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:hint="@string/writer_name"
             android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             />
 
 
-                <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
             android:id="@+id/question"
             android:background="@drawable/department_clicked"
-                    android:paddingTop="@dimen/_2sdp"
-                    android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+             android:paddingBottom="@dimen/_2sdp"
             android:inputType="textMultiLine"
             android:hint="@string/main_question"
             android:paddingStart="@dimen/_10sdp"
@@ -123,9 +125,6 @@
             android:layout_marginBottom="@dimen/_8sdp"
             />
 
-
-
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
@@ -140,7 +139,7 @@
             android:layout_marginBottom="@dimen/_8sdp"
             />
 
-                        <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
@@ -148,13 +147,13 @@
             android:background="@drawable/department_clicked"
             android:inputType="textMultiLine"
             android:hint="@string/answer_two"
-                            android:paddingTop="@dimen/_2sdp"
-                            android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             />
 
-                        <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
@@ -162,13 +161,13 @@
             android:background="@drawable/department_clicked"
             android:inputType="textMultiLine"
             android:hint="@string/answer_three"
-                            android:paddingTop="@dimen/_2sdp"
-                            android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             />
 
-                        <EditText
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
@@ -176,8 +175,8 @@
             android:background="@drawable/department_clicked"
             android:inputType="textMultiLine"
             android:hint="@string/answer_four"
-                            android:paddingTop="@dimen/_2sdp"
-                            android:paddingBottom="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
             />
@@ -200,28 +199,9 @@
 
 
 
-
-
-
-
-
-
     </LinearLayout>
 
-
 </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

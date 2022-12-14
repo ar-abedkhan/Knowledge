@@ -91,7 +91,7 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="@dimen/_35sdp"
         android:layout_height="@dimen/_35sdp"
-        android:src="@drawable/mypic"
+        android:src="@drawable/biological_icon3min"
         android:id="@+id/myProfile"
         android:layout_gravity="end"
         app:civ_border_width="@dimen/_1sdp"
@@ -122,7 +122,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/biological_icon3"
+            android:src="@drawable/biological_icon3min"
             android:id="@+id/bannerImg"
             />
 
@@ -195,7 +195,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_60sdp"
-                    android:src="@drawable/science"
+                    android:src="@drawable/sciencemin"
                     android:id="@+id/scienceImg"
                     />
 
@@ -238,7 +238,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_60sdp"
-                    android:src="@drawable/commers1"
+                    android:src="@drawable/commers1min"
                     android:id="@+id/commerceImg"
                     />
 
@@ -283,7 +283,7 @@
                 <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_60sdp"
-                    android:src="@drawable/humanities"
+                    android:src="@drawable/humanitiesmin"
                     android:id="@+id/artsImg"
                     />
 
@@ -444,7 +444,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/physics"
+                                        android:src="@drawable/physicsmin"
                                         />
 
                                     <TextView
@@ -486,7 +486,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/chemistry_icon2"
+                                        android:src="@drawable/chemistry_icon2min"
                                         />
 
                                     <TextView
@@ -544,7 +544,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/biology_icon1"
+                                        android:src="@drawable/biology_icon1min"
                                         />
 
                                     <TextView
@@ -586,7 +586,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/highermaths"
+                                        android:src="@drawable/highermathsmin"
                                         />
 
                                     <TextView
@@ -646,7 +646,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/global_education"
+                                        android:src="@drawable/global_education_min"
                                         />
 
                                     <TextView
@@ -762,7 +762,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/banking"
+                                        android:src="@drawable/bankingmin"
                                         />
 
                                     <TextView
@@ -804,7 +804,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/accounting"
+                                        android:src="@drawable/accountingmin"
                                         />
 
                                     <TextView
@@ -864,7 +864,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/gscience"
+                                        android:src="@drawable/gsciencemin"
                                         />
 
                                     <TextView
@@ -906,7 +906,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/business"
+                                        android:src="@drawable/businessmin"
                                         />
 
                                     <TextView
@@ -1023,7 +1023,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/bughul_poribesh"
+                                        android:src="@drawable/bughul_poribesh_min"
                                         />
 
                                     <TextView
@@ -1065,7 +1065,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/politics"
+                                        android:src="@drawable/politicsmin"
                                         />
 
                                     <TextView
@@ -1129,7 +1129,7 @@
                                     <ImageView
                                         android:layout_width="match_parent"
                                         android:layout_height="@dimen/_60sdp"
-                                        android:src="@drawable/history"
+                                        android:src="@drawable/historymin"
                                         />
 
                                     <TextView

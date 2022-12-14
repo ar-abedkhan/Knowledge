@@ -23,7 +23,7 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/_40sdp"
-                android:src="@drawable/biological_icon3"
+                android:src="@drawable/biological_icon3min"
                 android:id="@+id/ssubjectImg"
                 />
 

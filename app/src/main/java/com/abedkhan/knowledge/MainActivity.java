@@ -107,21 +107,21 @@ setSubjectListData();
 
     private void setSubjectListData() {
 
-        subjectModelClassList.add(new SubjectModelClass("বাংলা ১ম",R.drawable.banla));
-        subjectModelClassList.add(new SubjectModelClass("বাংলা ২য়",R.drawable.banla));
-        subjectModelClassList.add(new SubjectModelClass("English 1st",R.drawable.eng));
-        subjectModelClassList.add(new SubjectModelClass("English 2nd",R.drawable.eng));
-        subjectModelClassList.add(new SubjectModelClass("G. Math",R.drawable.math1));
-        subjectModelClassList.add(new SubjectModelClass("I.C.T",R.drawable.ict2));
-        subjectModelClassList.add(new SubjectModelClass("Career Education",R.drawable.career));
-        subjectModelClassList.add(new SubjectModelClass("Arts and Crafts",R.drawable.artbook));
-        subjectModelClassList.add(new SubjectModelClass("Agricultural Science",R.drawable.farming));
-        subjectModelClassList.add(new SubjectModelClass("Home Economics",R.drawable.home_economics));
-        subjectModelClassList.add(new SubjectModelClass("Physical Education, Health Science and Sports",R.drawable.physicaleducation));
-        subjectModelClassList.add(new SubjectModelClass("Islam and moral education",R.drawable.islam));
-        subjectModelClassList.add(new SubjectModelClass("Hindu and Moral Education",R.drawable.hindu));
-        subjectModelClassList.add(new SubjectModelClass("Christian and Moral Education",R.drawable.cristhan));
-        subjectModelClassList.add(new SubjectModelClass("Buddhist and Moral Education",R.drawable.buddhist));
+        subjectModelClassList.add(new SubjectModelClass("বাংলা ১ম",R.drawable.banlamin));
+        subjectModelClassList.add(new SubjectModelClass("বাংলা ২য়",R.drawable.banlamin));
+        subjectModelClassList.add(new SubjectModelClass("English 1st",R.drawable.engmin));
+        subjectModelClassList.add(new SubjectModelClass("English 2nd",R.drawable.engmin));
+        subjectModelClassList.add(new SubjectModelClass("G. Math",R.drawable.math1min));
+        subjectModelClassList.add(new SubjectModelClass("I.C.T",R.drawable.ict));
+        subjectModelClassList.add(new SubjectModelClass("Career Education",R.drawable.careermin));
+        subjectModelClassList.add(new SubjectModelClass("Arts and Crafts",R.drawable.artbookmin));
+        subjectModelClassList.add(new SubjectModelClass("Agricultural Science",R.drawable.farmingmin));
+        subjectModelClassList.add(new SubjectModelClass("Home Economics",R.drawable.home_economicsmin));
+        subjectModelClassList.add(new SubjectModelClass("Physical Education, Health Science and Sports",R.drawable.physicaleducationmin));
+        subjectModelClassList.add(new SubjectModelClass("Islam and moral education",R.drawable.islammin));
+        subjectModelClassList.add(new SubjectModelClass("Hindu and Moral Education",R.drawable.hindumin));
+        subjectModelClassList.add(new SubjectModelClass("Christian and Moral Education",R.drawable.cristhanmin));
+        subjectModelClassList.add(new SubjectModelClass("Buddhist and Moral Education",R.drawable.buddhistmin));
 
 
         //    --------------- Going to the Admin Login Activity --------------
