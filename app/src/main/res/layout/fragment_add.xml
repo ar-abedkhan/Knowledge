@@ -10,37 +10,17 @@
 
     <TextView
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_width="@dimen/_200sdp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="@dimen/_25sdp"
         android:text="@string/add_data"
-
         android:gravity="center"
-        app:layout_constraintStart_toStartOf="parent"
         android:textStyle="bold"
         android:padding="@dimen/_5sdp"
         android:id="@+id/title"
         />
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginEnd="@dimen/_10sdp"
-        android:layout_width="@dimen/_100sdp"
-        android:layout_height="@dimen/_40sdp"
-        android:text="@string/download"
-        android:textAllCaps="false"
-        android:textSize="@dimen/_15sdp"
-        android:layout_marginTop="@dimen/_10sdp"
-        android:background="@drawable/department_clicked"
-        android:id="@+id/downloadBtn"
-        android:layout_marginBottom="@dimen/_100sdp"
-        />
-
-
-
-    <ScrollView
+<ScrollView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     app:layout_constraintTop_toBottomOf="@id/title"
@@ -56,62 +36,38 @@
         android:layout_margin="@dimen/_10sdp"
         >
 
-<!--        <com.google.android.material.textfield.TextInputLayout-->
-<!--            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginStart="@dimen/_2sdp"-->
-<!--            android:layout_marginTop="@dimen/_20sdp"-->
-<!--            android:layout_marginEnd="@dimen/_2sdp"-->
-<!--            android:layout_marginBottom="@dimen/_8sdp"-->
-<!--            android:hint="@string/subject_name"-->
-<!--            android:textColorHint="#953F51B5"-->
-<!--            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"-->
-<!--            app:boxCornerRadiusBottomStart="@dimen/_15sdp"-->
-<!--            app:boxCornerRadiusTopEnd="@dimen/_15sdp"-->
-<!--            app:boxCornerRadiusTopStart="@dimen/_15sdp"-->
-<!--            app:boxStrokeColor="#0A0E22"-->
-<!--            app:helperTextTextColor="#EF0606">-->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
-<!--            <input-->
-<!--                android:id="@+id/subjectName"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:inputType="text"-->
-<!--                android:textColor="@color/black"-->
-<!--                android:textSize="@dimen/_18sdp" />-->
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:hint="Subject name"
 
-<!--        </com.google.android.material.textfield.TextInputLayout>-->
+            android:textColorHint="#953F51B5"
+            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+            app:boxCornerRadiusTopStart="@dimen/_15sdp"
 
+            app:boxStrokeColor="#0A0E22"
+            app:helperTextTextColor="#EF0606">
 
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/subjectName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_18sdp" />
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:text="Subject Name  :"
-    android:textSize="@dimen/_16sdp"
-    android:paddingTop="@dimen/_2sdp"
-    android:paddingBottom="@dimen/_2sdp"
-    android:paddingStart="@dimen/_10sdp"
-    android:layout_marginBottom="@dimen/_8sdp"
-    />
-
-<androidx.appcompat.widget.AppCompatSpinner
-    android:layout_width="match_parent"
-    android:layout_height="@dimen/_40sdp"
-    android:id="@+id/subjectName"
-    android:tooltipText="Subject name"
-    android:background="@drawable/department_clicked"
-    android:paddingTop="@dimen/_2sdp"
-    android:paddingBottom="@dimen/_2sdp"
-    android:paddingStart="@dimen/_10sdp"
-    android:layout_marginBottom="@dimen/_8sdp"
-    />
+        </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
@@ -126,235 +82,121 @@
             tools:ignore="TextFields" />
 
 
-<!--        <EditText-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="@dimen/_40sdp"-->
-<!--            app:layout_constraintTop_toBottomOf="@id/title"-->
-<!--            android:id="@+id/chapterName"-->
-<!--            android:paddingTop="@dimen/_2sdp"-->
-<!--            android:paddingBottom="@dimen/_2sdp"-->
-<!--            android:background="@drawable/department_clicked"-->
-<!--            android:inputType="textMultiLine"-->
-<!--            android:hint="@string/chapter_name"-->
-<!--            android:paddingStart="@dimen/_10sdp"-->
-<!--            android:layout_marginBottom="@dimen/_8sdp"-->
-<!--            />-->
-
-
-        <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+        <EditText
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/chapterName"
             android:paddingTop="@dimen/_2sdp"
             android:paddingBottom="@dimen/_2sdp"
             android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:hint="@string/chapter_name"
             android:paddingStart="@dimen/_10sdp"
-            tools:ignore="TextFields"
-            android:hint="Chapter Name"
-            android:inputType="textAutoComplete"
-            android:id="@+id/chapterName"
+            android:layout_marginBottom="@dimen/_8sdp"
             />
 
 
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/writerName"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:hint="@string/writer_name"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@id/writer_name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
-            android:hint="@string/right_ans"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@id/right_ans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
+            />
 
 
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        <EditText
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/question"
+            android:background="@drawable/department_clicked"
+            android:paddingTop="@dimen/_2sdp"
+             android:paddingBottom="@dimen/_2sdp"
+            android:inputType="textMultiLine"
             android:hint="@string/main_question"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@id/main_question"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/rightAns"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:hint="@string/right_ans"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answarwOne"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
             android:hint="@string/answer_one"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/answarwOne"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answareTwo"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
             android:hint="@string/answer_two"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/answareTwo"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answerThree"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
             android:hint="@string/answer_three"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/answarwThree"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_40sdp"
+            app:layout_constraintTop_toBottomOf="@id/title"
+            android:id="@+id/answarwFour"
+            android:background="@drawable/department_clicked"
+            android:inputType="textMultiLine"
             android:hint="@string/answer_four"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
+            android:paddingTop="@dimen/_2sdp"
+            android:paddingBottom="@dimen/_2sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/answarwFour"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
 
 
 

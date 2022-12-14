@@ -72,7 +72,7 @@ public class RegisterAdmin extends AppCompatActivity {
                         user.put("password", password);
 
 //                        --------------- Storing user to the realtime database --------------
-                        databaseReference.child(firebaseUser.getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
+                        databaseReference.child("user").child(firebaseUser.getUid()).setValue(user).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
                             public void onComplete(@NonNull Task<Void> task) {
 

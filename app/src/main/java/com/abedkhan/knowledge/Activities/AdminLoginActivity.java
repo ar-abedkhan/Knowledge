@@ -50,7 +50,6 @@ public class AdminLoginActivity extends AppCompatActivity {
                 finish();
             }
         }catch (Exception e){
-
             binding.adminLoginBtn.setOnClickListener(view -> {
                 binding.progressBar.setVisibility(View.VISIBLE);
                 binding.adminLoginBtn.setVisibility(View.GONE);
