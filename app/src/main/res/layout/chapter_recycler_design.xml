@@ -29,21 +29,46 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="অধ্যায় : "
+            android:text="@string/chapter"
             android:id="@+id/chapter"
             android:textStyle="bold"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_15sdp"
             />
         <TextView
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toEndOf="@id/chapter"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="01"
+            android:text="@string/chapterNo"
             android:id="@+id/chapterNumber"
             android:textStyle="bold"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_15sdp"
             />
+
+
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:background="@drawable/buttonback"
+            android:drawableEnd="@drawable/ic_baseline_download_24"
+            android:drawablePadding="@dimen/_5sdp"
+            android:textStyle="bold"
+            android:clickable="true"
+            android:textColor="@color/black_textColor"
+            android:id="@+id/readOfflineBtn"
+            android:paddingTop="@dimen/_4sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:paddingStart="@dimen/_10sdp"
+            android:paddingEnd="@dimen/_10sdp"
+            android:textSize="@dimen/_14sdp"
+            android:text="@string/read_offline"
+            />
+
+
 
 
 
@@ -52,7 +77,9 @@
             app:layout_constraintStart_toStartOf="parent"
             android:layout_width="wrap_content"
             android:paddingTop="@dimen/_2sdp"
-            android:paddingBottom="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:paddingBottom="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_3sdp"
             android:layout_height="wrap_content"
             android:text="This is the name of a chapter topic"
             android:textColor="@color/sky"
@@ -61,7 +88,7 @@
             android:ellipsize="marquee"
             android:id="@+id/chapterTopicName"
             android:textStyle="bold"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_17sdp"
             />
 
 
@@ -77,7 +104,7 @@
             android:textColor="@android:color/holo_green_dark"
             android:id="@+id/topicWriterName"
             android:textStyle="bold"
-            android:textSize="@dimen/_18sdp"
+            android:textSize="@dimen/_16sdp"
             />
 
 

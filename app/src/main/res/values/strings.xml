@@ -18,6 +18,29 @@
     <string name="adddata">Add Data</string>
     <string name="download">Download</string>
     <string name="read_offline">Read Offline</string>
+    <string name="chapter">অধ্যায় :</string>
+    <string name="chapterNo">01</string>
+    <string name="department">Department</string>
+    <string name="this_is_a_benner">This is a benner</string>
+    <string name="science">Science</string>
+    <string name="commerce">Commerce</string>
+    <string name="humanities">Humanities</string>
+    <string name="genegal_subject">Genegal Subject</string>
+    <string name="science_department">Science Department</string>
+    <string name="bangladeshAndItihash">বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা</string>
+    <string name="pouronitiONagorikota">পৌরনীতি ও নাগরিকতা</string>
+    <string name="bhugolOPoribesh">ভূগোল ও পরিবেশ</string>
+    <string name="arts_department">Arts Department</string>
+    <string name="physics">পদার্থ বিজ্ঞান</string>
+    <string name="chemistry">রসায়ন</string>
+    <string name="biology">জীব বিজ্ঞান</string>
+    <string name="higherMath">উচ্চতর গণিত</string>
+    <string name="globalStudies">বাংলাদেশ ও বিশ্ব পরিচয়</string>
+    <string name="finence">ফিনান্স ও ব্যাঙ্কিং</string>
+    <string name="hisabbiggan">হিসাববিজ্ঞান</string>
+    <string name="gScience">সাধারন বিজ্ঞান</string>
+    <string name="bebshaiUddag">ব্যবসায় উদ্যোগ</string>
+    <string name="question">Question :</string>
 
 
 </resources>

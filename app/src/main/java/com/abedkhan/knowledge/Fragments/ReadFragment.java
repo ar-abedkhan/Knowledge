@@ -49,7 +49,7 @@ public class ReadFragment extends Fragment {
         chapterno=chapterModelClassList.size()+1;
 
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
+        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2  testing multiline chapter recycler...this is also testing line design","Zeeshan",chapterno));
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
@@ -75,25 +75,25 @@ public class ReadFragment extends Fragment {
         binding.readRecycler.setAdapter(chapterAdapter);
 
 
-        binding.readOfflineBtn.setOnClickListener(view -> {
-
- /*           TODO: take the subject from the firebase and save it to the room database
-            databaseReference.child(subjectName).child(currentID).addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError error) {
-
-                }
-            });
-
-            */
-
-
-        });
+//        binding.re.setOnClickListener(view -> {
+//
+// /*           TODO: take the subject from the firebase and save it to the room database
+//            databaseReference.child(subjectName).child(currentID).addValueEventListener(new ValueEventListener() {
+//                @Override
+//                public void onDataChange(@NonNull DataSnapshot snapshot) {
+//
+//                }
+//
+//                @Override
+//                public void onCancelled(@NonNull DatabaseError error) {
+//
+//                }
+//            });
+//
+//            */
+//
+//
+//        });
 
 
 

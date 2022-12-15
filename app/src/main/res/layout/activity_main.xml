@@ -29,7 +29,7 @@
         android:src="@drawable/circle_white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        />
+        android:contentDescription="@string/this_is_a_benner" />
 
 
 <androidx.constraintlayout.widget.ConstraintLayout
@@ -124,7 +124,7 @@
             android:layout_height="match_parent"
             android:src="@drawable/biological_icon3min"
             android:id="@+id/bannerImg"
-            />
+            android:contentDescription="@string/this_is_a_benner" />
 
     </androidx.cardview.widget.CardView>
 
@@ -151,7 +151,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Department"
+        android:text="@string/department"
         android:layout_marginTop="@dimen/_8sdp"
         android:textColor="@color/black_textColor"
         android:textStyle="bold"
@@ -202,7 +202,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Science"
+                    android:text="@string/science"
                     android:textSize="@dimen/_16sdp"
                     android:textStyle="bold"
                     android:gravity="center"
@@ -240,12 +240,12 @@
                     android:layout_height="@dimen/_60sdp"
                     android:src="@drawable/commers1min"
                     android:id="@+id/commerceImg"
-                    />
+                    android:contentDescription="TODO" />
 
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Commerce"
+                    android:text="@string/commerce"
                     android:textSize="@dimen/_15sdp"
                     android:singleLine="true"
                     android:ellipsize="marquee"
@@ -290,7 +290,7 @@
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Humanities"
+                    android:text="@string/humanities"
                     android:textSize="@dimen/_15sdp"
                     android:textStyle="bold"
                     android:gravity="center"
@@ -325,7 +325,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Genegal Subject "
+        android:text="@string/genegal_subject"
         android:textColor="@color/black_textColor"
         android:textStyle="bold"
         android:id="@+id/subjectTitle"
@@ -395,7 +395,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Science Department"
+                                android:text="@string/science_department"
                                 android:textStyle="bold"
 
                                 android:textSize="@dimen/_20sdp"
@@ -450,7 +450,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="পদার্থ বিজ্ঞান"
+                                        android:text="@string/physics"
                                         android:textSize="@dimen/_16sdp"
                                         android:textStyle="bold"
                                         android:gravity="center"
@@ -492,7 +492,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="রসায়ন"
+                                        android:text="@string/chemistry"
                                         android:textSize="@dimen/_15sdp"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"
@@ -550,7 +550,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="জীব বিজ্ঞান"
+                                        android:text="@string/biology"
                                         android:textSize="@dimen/_16sdp"
                                         android:textStyle="bold"
                                         android:gravity="center"
@@ -592,7 +592,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="উচ্চতর গণিত"
+                                        android:text="@string/higherMath"
                                         android:textSize="@dimen/_15sdp"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"
@@ -652,7 +652,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="বাংলাদেশ ও বিশ্ব পরিচয়"
+                                        android:text="@string/globalStudies"
                                         android:textSize="@dimen/_15sdp"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"
@@ -768,7 +768,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="ফিনান্স ও ব্যাঙ্কিং"
+                                        android:text="@string/finence"
                                         android:textSize="@dimen/_16sdp"
                                         android:textStyle="bold"
                                         android:gravity="center"
@@ -810,7 +810,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="হিসাববিজ্ঞান"
+                                        android:text="@string/hisabbiggan"
                                         android:textSize="@dimen/_15sdp"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"
@@ -870,7 +870,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="সাধারন বিজ্ঞান"
+                                        android:text="@string/gScience"
                                         android:textSize="@dimen/_16sdp"
                                         android:textStyle="bold"
                                         android:gravity="center"
@@ -912,7 +912,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="ব্যবসায় উদ্যোগ"
+                                        android:text="@string/bebshaiUddag"
                                         android:textSize="@dimen/_15sdp"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"
@@ -974,7 +974,7 @@
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Arts Department"
+                                android:text="@string/arts_department"
                                 android:textStyle="bold"
 
                                 android:textSize="@dimen/_20sdp"
@@ -1029,7 +1029,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="ভূগোল ও পরিবেশ "
+                                        android:text="@string/bhugolOPoribesh"
                                         android:textSize="@dimen/_16sdp"
                                         android:textStyle="bold"
                                         android:gravity="center"
@@ -1072,7 +1072,7 @@
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
                                         android:textSize="@dimen/_15sdp"
-                                        android:text="পৌরনীতি ও নাগরিকতা"
+                                        android:text="@string/pouronitiONagorikota"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"
                                         android:textStyle="bold"
@@ -1135,7 +1135,7 @@
                                     <TextView
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা "
+                                        android:text="@string/bangladeshAndItihash"
                                         android:textSize="@dimen/_15sdp"
                                         android:singleLine="true"
                                         android:ellipsize="marquee"

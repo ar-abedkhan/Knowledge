@@ -47,7 +47,28 @@ public class AddFragment extends Fragment {
 
 //        -------------------- Spinner settings ----------------
 //        ...TODO: shob gula subject name eikhane add koiren
-        String[] allSubject = {};
+
+        String[] allSubject = {
+
+                "বাংলা সাহিত্য",
+                "বাংলা ভাষার ব্যাকরণ",
+                "English for Toady",
+                "গণিত",
+                "Enlish Grammer and Composition",
+                "তথ্য ও যোগাযোগ প্রযুক্তি",
+                "শারীরিক শিক্ষা",
+                "চারু ও কারুকলা",
+                "ক্যারিয়ার এডুকেশন",
+                "খ্রিষ্টধর্ম ও নৈতিক শিক্ষা",
+                "বৌদ্ধধর্ম ও নৈতিক শিক্ষা",
+                "হিন্দু ধর্ম ও নৈতিক শিক্ষা",
+                "ইসলাম ও নৈতিক শিক্ষা",
+                "গার্হস্থ্য বিজ্ঞান ",
+                "কৃষিশিক্ষা",
+                "পদার্থবিজ্ঞান", "রসায়ন", "জীববিজ্ঞান", "উচ্চতর গণিত","বাংলাদেশ ও বিশ্ব পরিচয়",
+                "ভূগোল ও পরিবেশ ", "পৌরনীতি ও নাগরিকতা", "বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা",
+                "ফিনান্স ও ব্যাঙ্কিং","হিসাববিজ্ঞান","সাধারন বিজ্ঞান","ব্যবসায় উদ্যোগ"
+        };
 
         ArrayAdapter<String> subjectAdapter = new ArrayAdapter<>(getContext(),
                 android.R.layout.simple_dropdown_item_1line,
@@ -57,7 +78,7 @@ public class AddFragment extends Fragment {
 
 //        ----------------------- Add button settings ----------------
         binding.addDataBtn.setOnClickListener(view -> {
-//            subjectName = binding.subjectName.getText().toString();
+            subjectName = binding.subjectName.getSelectedItem().toString();
             subjectName = binding.subjectName.getSelectedItem().toString();
             chapterName = binding.chapterName.getText().toString();
             chapterNumber = binding.chapterName.getText().toString();
@@ -123,7 +144,7 @@ public class AddFragment extends Fragment {
 
     private void blankAllFields() {
 
-//        binding.subjectName.setText("");
+        binding.subjectName.getSelectedItem();
         binding.chapterName.setText("");
         binding.chapterNumber.setText("");
         binding.writerName.setText("");

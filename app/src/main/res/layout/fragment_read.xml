@@ -5,8 +5,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="@dimen/_5sdp"
-    android:paddingBottom="@dimen/_50sdp"
     tools:context=".Fragments.ReadFragment">
 
 
@@ -20,7 +18,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Subject Name"
         android:id="@+id/subjectName"
-        android:textSize="@dimen/_200sdp"
+        android:background="@color/sky"
+        android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
         android:gravity="center"
@@ -35,39 +34,10 @@
     android:layout_height="wrap_content"
     android:id="@+id/readRecycler"
     tools:listitem="@layout/chapter_recycler_design"
-        android:layout_marginBottom="@dimen/_100sdp"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:layout_margin="@dimen/_5sdp"
+        android:paddingBottom="@dimen/_50sdp"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/readOfflineBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/_40sdp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:layout_margin="@dimen/_10sdp"
-        android:background="@drawable/department_clicked"
-        android:textStyle="bold"
-        android:textColor="@color/black_textColor"
-
-        android:paddingStart="@dimen/_10sdp"
-        android:paddingEnd="@dimen/_10sdp"
-        android:paddingTop="@dimen/_5sdp"
-        android:paddingBottom="@dimen/_5sdp"
-        android:textSize="@dimen/_18sdp"
-        android:text="@string/read_offline"
-        />
-
-
-    <LinearLayout
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/_100sdp"
-        android:orientation="vertical"
-        app:layout_constraintTop_toBottomOf="@id/readRecycler"
-        android:id="@+id/nullspace"
-        />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

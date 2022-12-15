@@ -5,4 +5,9 @@
     <string name="answer_one">Answer one</string>
     <string name="download">Download</string>
     <string name="read_offline">Read Offline</string>
+    <string name="chapter">অধ্যায় :</string>
+    <string name="chapterNo">01</string>
+    <string name="department">Department</string>
+    <string name="this_is_a_benner">This is a benner</string>
+    <string name="science">Science</string>
 </resources>
