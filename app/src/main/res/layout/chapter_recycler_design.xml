@@ -49,6 +49,7 @@
 
 
         <TextView
+            android:id="@+id/readOfflineBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
@@ -59,7 +60,7 @@
             android:textStyle="bold"
             android:clickable="true"
             android:textColor="@color/black_textColor"
-            android:id="@+id/readOfflineBtn"
+
             android:paddingTop="@dimen/_4sdp"
             android:paddingBottom="@dimen/_5sdp"
             android:paddingStart="@dimen/_10sdp"

@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
+import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
+import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentReadBinding;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
@@ -23,16 +25,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ReadFragment extends Fragment {
+public class ReadFragment extends Fragment implements RecyclerDataListener {
 
     public ReadFragment() {
     }
     FragmentReadBinding binding;
     List<ChapterModelClass> chapterModelClassList;
+    List<FirebaseSubjectModel> firebaseSubjectModelList;
+
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
 
     int chapterno;
+    String currentID, subjectName;
 
 
 
@@ -45,6 +50,8 @@ public class ReadFragment extends Fragment {
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         chapterModelClassList=new ArrayList<>();
+
+        firebaseSubjectModelList = new ArrayList<>();
 
         chapterno=chapterModelClassList.size()+1;
 
@@ -74,24 +81,8 @@ public class ReadFragment extends Fragment {
         ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), false);
         binding.readRecycler.setAdapter(chapterAdapter);
 
-
-//        binding.re.setOnClickListener(view -> {
 //
-// /*           TODO: take the subject from the firebase and save it to the room database
-//            databaseReference.child(subjectName).child(currentID).addValueEventListener(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot snapshot) {
-//
-//                }
-//
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError error) {
-//
-//                }
-//            });
-//
-//            */
-//
+//        binding.readOfflineBtn.setOnClickListener(view -> {
 //
 //        });
 
@@ -104,6 +95,37 @@ public class ReadFragment extends Fragment {
 
 
 
-return binding.getRoot();
+        return binding.getRoot();
+    }
+
+    @Override
+    public void downloadSubjectData() {
+        //            TODO: take the subject from the firebase and save it to the room database
+        databaseReference.child(subjectName).child(currentID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                firebaseSubjectModelList.clear();
+
+                for (DataSnapshot dataSnapshot: snapshot.getChildren()){
+                    FirebaseSubjectModel subjectModel = dataSnapshot.getValue(FirebaseSubjectModel.class);
+                    firebaseSubjectModelList.add(subjectModel);
+                }
+                //----------------- saveDataToRoom ---------
+                saveDataToRoom(firebaseSubjectModelList);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
+
+    }
+
+    private void saveDataToRoom(List<FirebaseSubjectModel> modelList) {
+//        TODO: save data to the Room Database
     }
 }
