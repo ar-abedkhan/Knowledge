@@ -1,5 +1,6 @@
 package com.abedkhan.knowledge.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
+import com.abedkhan.knowledge.Database.SubjectDatabase;
+import com.abedkhan.knowledge.Database.SubjectModel;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.RecyclerDataListener;
@@ -39,6 +42,8 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
     int chapterno;
     String currentID, subjectName;
 
+    Intent intent;
+
 
 
     @Override
@@ -50,8 +55,13 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
         chapterModelClassList=new ArrayList<>();
+        firebaseSubjectModelList = new ArrayList<>(); //-------- Getting data from firebase ---------
 
-        firebaseSubjectModelList = new ArrayList<>();
+//        _____________________ Getting subject Name from previous Activity _______________________
+        intent = getActivity().getIntent();
+        subjectName = intent.getStringExtra("subjectName");
+
+//        showDataToAdapter(subjectName);
 
         chapterno=chapterModelClassList.size()+1;
 
@@ -98,6 +108,35 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         return binding.getRoot();
     }
 
+    private void showDataToAdapter(String subjectName) {
+
+        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                firebaseSubjectModelList.clear();
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    FirebaseSubjectModel modelList = dataSnapshot.getValue(FirebaseSubjectModel.class);
+                    firebaseSubjectModelList.add(modelList);
+                }
+
+                myAdapterRunner(firebaseSubjectModelList);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+    }
+
+    private void myAdapterRunner(List<FirebaseSubjectModel> firebaseSubjectModelList) {
+        //--------------This method run the Adapter and show data to the user ----------------
+
+//        ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireContext(), false);
+//        binding.readRecycler.setAdapter(chapterAdapter);
+    }
+
     @Override
     public void downloadSubjectData() {
         //            TODO: take the subject from the firebase and save it to the room database
@@ -126,6 +165,24 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
     }
 
     private void saveDataToRoom(List<FirebaseSubjectModel> modelList) {
-//        TODO: save data to the Room Database
+//        ------- TODO: save data to the Room Database ---------
+        FirebaseSubjectModel subjectModel = modelList.get(0);
+
+        SubjectModel model = new SubjectModel(); //----------Room database subject model
+
+//        firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3
+        model.setFirebaseStorageID(subjectModel.getFirebaseStorageID());
+        model.setSubjectName(subjectModel.getSubjectName());
+        model.setChapterNumber(subjectModel.getChapterNumber());
+        model.setChapterName(subjectModel.getChapterName());
+        model.setWriterName(subjectModel.getWriterName());
+        model.setQuestion(subjectModel.getQuestion());
+        model.setRightAnswer(subjectModel.getRightAnswer());
+        model.setOption1(subjectModel.getOption1());
+        model.setOption2(subjectModel.getOption2());
+        model.setOption3(subjectModel.getOption3());
+
+        SubjectDatabase.getInstance(getContext()).getSubjectDao().insert(model);
+
     }
 }
