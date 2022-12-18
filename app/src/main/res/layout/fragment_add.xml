@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/add_bg"
     tools:context=".Fragments.AddFragment">
 
 
@@ -88,6 +89,7 @@
     android:layout_width="match_parent"
     android:layout_height="@dimen/_40sdp"
     android:id="@+id/subjectName"
+
     android:tooltipText="Subject name"
     android:background="@drawable/department_clicked"
     android:paddingTop="@dimen/_2sdp"
@@ -159,7 +161,7 @@
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
+            app:boxStrokeColor="@color/black_textColor"
             app:helperTextTextColor="#EF0606">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -167,36 +169,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_18sdp" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-
-
-        <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_20sdp"
-            android:layout_marginEnd="@dimen/_2sdp"
-            android:layout_marginBottom="@dimen/_8sdp"
-            android:hint="@string/right_ans"
-            android:textColorHint="#953F51B5"
-            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
-            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
-            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
-            app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
-            app:helperTextTextColor="#EF0606">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@id/right_ans"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/black_textColor"
                 android:textSize="@dimen/_18sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -218,7 +191,7 @@
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
+            app:boxStrokeColor="@color/black_textColor"
             app:helperTextTextColor="#EF0606">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -226,7 +199,35 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/black_textColor"
+                android:textSize="@dimen/_18sdp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_2sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:layout_marginEnd="@dimen/_2sdp"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:hint="@string/right_ans"
+            android:textColorHint="#953F51B5"
+            app:boxCornerRadiusBottomEnd="@dimen/_15sdp"
+            app:boxCornerRadiusBottomStart="@dimen/_15sdp"
+            app:boxCornerRadiusTopEnd="@dimen/_15sdp"
+            app:boxCornerRadiusTopStart="@dimen/_15sdp"
+            app:boxStrokeColor="@color/black_textColor"
+            app:helperTextTextColor="#EF0606">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@id/right_ans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textColor="@color/black_textColor"
                 android:textSize="@dimen/_18sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -246,7 +247,7 @@
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
+            app:boxStrokeColor="@color/black_textColor"
             app:helperTextTextColor="#EF0606">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -254,7 +255,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/black_textColor"
                 android:textSize="@dimen/_18sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -275,7 +276,7 @@
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
+            app:boxStrokeColor="@color/black_textColor"
             app:helperTextTextColor="#EF0606">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -283,7 +284,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/black_textColor"
                 android:textSize="@dimen/_18sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -303,7 +304,7 @@
             app:boxCornerRadiusBottomStart="@dimen/_15sdp"
             app:boxCornerRadiusTopEnd="@dimen/_15sdp"
             app:boxCornerRadiusTopStart="@dimen/_15sdp"
-            app:boxStrokeColor="#0A0E22"
+            app:boxStrokeColor="@color/black_textColor"
             app:helperTextTextColor="#EF0606">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -311,7 +312,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="text"
-                android:textColor="@color/black"
+                android:textColor="@color/black_textColor"
                 android:textSize="@dimen/_18sdp" />
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -323,6 +324,7 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_40sdp"
             android:text="@string/add_data"
+            android:textColor="@color/black_textColor"
             android:textAllCaps="false"
             android:textSize="@dimen/_15sdp"
             android:layout_marginTop="@dimen/_10sdp"

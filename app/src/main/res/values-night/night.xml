@@ -2,6 +2,7 @@
 <resources>
 
     <color name="box_clicked">#656D73</color>
+    <color name="add_bg">#B8BCBD</color>
 
     <color name="white_background">#FF000000</color>
     <color name="black_textColor">#FFFFFF</color>

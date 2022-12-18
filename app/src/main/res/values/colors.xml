@@ -11,6 +11,7 @@
 
 
     <color name="box_clicked">#D6DCE1</color>
+    <color name="add_bg">#D6DCE1</color>
     <color name="recycler_back">#E4EEF6</color>
 
     <color name="sky">#9DC4FD</color>
