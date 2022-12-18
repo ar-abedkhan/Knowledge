@@ -88,7 +88,7 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
 
 
-        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), false);
+        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), false, this);
         binding.readRecycler.setAdapter(chapterAdapter);
 
 //
@@ -138,9 +138,9 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
     }
 
     @Override
-    public void downloadSubjectData() {
+    public void downloadSubjectData(String currentFirebaseID) {
         //            TODO: take the subject from the firebase and save it to the room database
-        databaseReference.child(subjectName).child(currentID).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName).child(currentFirebaseID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 firebaseSubjectModelList.clear();

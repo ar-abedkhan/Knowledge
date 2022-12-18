@@ -77,6 +77,15 @@
         app:layout_constraintTop_toBottomOf="@id/editOption"
         tools:layout_editor_absoluteX="26dp" />
 
+        <ImageView
+            android:id="@+id/signOutBtn"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/_22sdp"
+            android:src="@android:drawable/ic_lock_power_off"
+            />
+
     </LinearLayout>
 
 

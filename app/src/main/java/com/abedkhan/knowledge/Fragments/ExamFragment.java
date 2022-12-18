@@ -11,12 +11,13 @@ import android.view.ViewGroup;
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.R;
+import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentExamBinding;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class ExamFragment extends Fragment {
+public class ExamFragment extends Fragment implements RecyclerDataListener {
 
     public ExamFragment() {
     }
@@ -61,9 +62,14 @@ public class ExamFragment extends Fragment {
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterNo));
 
 
-        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), true);
+        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), true, this);
         binding.examRecycler.setAdapter(chapterAdapter);
 
         return binding.getRoot();
+    }
+
+    @Override
+    public void downloadSubjectData(String currentFirebaseID) {
+
     }
 }

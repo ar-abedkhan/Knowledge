@@ -46,57 +46,82 @@ setSubjectListData();
 
     private void sendSubjectToReadAndExamPage() {
         binding.physicsCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+//            ------------------ TODO: Intent er subject name firebase database er subject name same hobe..
+            intent.putExtra("subjectName", "physics");
+            startActivity(intent);
             finish();
         });
         binding.chemistryCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "chemistry");
+            startActivity(intent);
             finish();
         });
         binding.biologyCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "biology");
+            startActivity(intent);
             finish();
         });
         binding.higherMathCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "higherMath");
+            startActivity(intent);
             finish();
         });
         binding.glovalStudiesCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "globalStudies");
+            startActivity(intent);
             finish();
         });
 
  //.......................................................................
 
         binding.financeCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "finance");
+            startActivity(intent);
             finish();
         });
         binding.hisabbigganCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "hisabBiggan");
+            startActivity(intent);
             finish();
         });
         binding.bigganCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "biggan");
+            startActivity(intent);
             finish();
         });
         binding.bebsaiUddagCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "bebsaiUddag");
+            startActivity(intent);
             finish();
         });
 
   //................................................
 
         binding.pouronitiCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "pouroniti");
+            startActivity(intent);
             finish();
         });
         binding.itihashCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "itihash");
+            startActivity(intent);
             finish();
         });
         binding.bugolCard.setOnClickListener(view -> {
-            startActivity(new Intent(MainActivity.this, ReadAndExam.class));
+            Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
+            intent.putExtra("subjectName", "bugol");
+            startActivity(intent);
             finish();
         });
 

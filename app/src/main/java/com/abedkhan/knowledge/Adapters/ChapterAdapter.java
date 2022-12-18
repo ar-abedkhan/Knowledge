@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.R;
+import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.Viewholders.ChapterViewholder;
 
 import java.util.List;
@@ -19,11 +20,13 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
     List<ChapterModelClass>chapterModelClasses;
     Context context;
     boolean isExam;
+    RecyclerDataListener listener;
 
-    public ChapterAdapter(List<ChapterModelClass> chapterModelClasses, Context context, boolean isExam) {
+    public ChapterAdapter(List<ChapterModelClass> chapterModelClasses, Context context, boolean isExam, RecyclerDataListener listener) {
         this.chapterModelClasses = chapterModelClasses;
         this.context = context;
         this.isExam = isExam;
+        this.listener = listener;
     }
 
     @NonNull
@@ -52,6 +55,12 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
         else {
 
         }
+
+//        -------------------TODO: Read offline button clicked ----------------
+//        holder.readOffline.setOnClickListener(view -> {
+//            listener.downloadSubjectData(chapterModelClass.get);
+//
+//        });
 
     }
 

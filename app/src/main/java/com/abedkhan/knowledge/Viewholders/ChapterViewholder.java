@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abedkhan.knowledge.R;
 
 public class ChapterViewholder extends RecyclerView.ViewHolder {
-    public TextView chapter,chapterNo,chapterName,chapterWriter;
+    public TextView chapter,chapterNo,chapterName,chapterWriter, readOffline;
     public CardView cardView;
 
     public ChapterViewholder(@NonNull View itemView) {
@@ -21,5 +21,7 @@ public class ChapterViewholder extends RecyclerView.ViewHolder {
         chapterName=itemView.findViewById(R.id.chapterTopicName);
         chapterWriter=itemView.findViewById(R.id.topicWriterName);
         cardView=itemView.findViewById(R.id.chapterCard);
+
+        readOffline = itemView.findViewById(R.id.readOfflineBtn);
     }
 }

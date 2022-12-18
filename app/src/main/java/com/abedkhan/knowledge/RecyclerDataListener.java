@@ -2,5 +2,5 @@ package com.abedkhan.knowledge;
 
 public interface RecyclerDataListener {
 
-    void downloadSubjectData();
+    void downloadSubjectData(String currentFirebaseID);
 }
