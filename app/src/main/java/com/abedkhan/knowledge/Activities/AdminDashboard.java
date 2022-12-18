@@ -32,7 +32,8 @@ public class AdminDashboard extends AppCompatActivity {
         });
 
         binding.addOption.setOnClickListener(view -> {
-        binding.dashboard.setVisibility(View.GONE);
+//        binding.dashboard.setVisibility(View.GONE);
+        binding.dashboard.setVisibility(View.INVISIBLE);
         getSupportFragmentManager().beginTransaction().add(R.id.fragmentView,new AddFragment()).commit();
 
         });

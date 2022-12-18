@@ -28,18 +28,18 @@ boolean isDepartmentClicked= false;
         super.onCreate(savedInstanceState);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-    binding.scienceCard.setOnClickListener(new Click());
-            binding.commerceCard.setOnClickListener(new Click());
-            binding.artsCard.setOnClickListener(new Click());
+        binding.scienceCard.setOnClickListener(new Click());
+        binding.commerceCard.setOnClickListener(new Click());
+        binding.artsCard.setOnClickListener(new Click());
 
-            sendSubjectToReadAndExamPage();
-
-
-subjectModelClassList=new ArrayList<>();
-setSubjectListData();
+        sendSubjectToReadAndExamPage();
 
 
-            SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,this);
+        subjectModelClassList=new ArrayList<>();
+        setSubjectListData();
+
+
+        SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,this);
         binding.dsubjectRecycler.setAdapter(subjectAdapter);
 
     }
@@ -48,31 +48,31 @@ setSubjectListData();
         binding.physicsCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
 //            ------------------ TODO: Intent er subject name firebase database er subject name same hobe..
-            intent.putExtra("subjectName", "physics");
+            intent.putExtra("subjectName", "পদার্থবিজ্ঞান");
             startActivity(intent);
             finish();
         });
         binding.chemistryCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "chemistry");
+            intent.putExtra("subjectName", "রসায়ন");
             startActivity(intent);
             finish();
         });
         binding.biologyCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "biology");
+            intent.putExtra("subjectName", "জীববিজ্ঞান");
             startActivity(intent);
             finish();
         });
         binding.higherMathCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "higherMath");
+            intent.putExtra("subjectName", "উচ্চতর গণিত");
             startActivity(intent);
             finish();
         });
         binding.glovalStudiesCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "globalStudies");
+            intent.putExtra("subjectName", "বাংলাদেশ ও বিশ্ব পরিচয়");
             startActivity(intent);
             finish();
         });
@@ -81,25 +81,25 @@ setSubjectListData();
 
         binding.financeCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "finance");
+            intent.putExtra("subjectName", "ফিনান্স ও ব্যাঙ্কিং");
             startActivity(intent);
             finish();
         });
         binding.hisabbigganCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "hisabBiggan");
+            intent.putExtra("subjectName", "হিসাববিজ্ঞান");
             startActivity(intent);
             finish();
         });
         binding.bigganCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "biggan");
+            intent.putExtra("subjectName", "সাধারন বিজ্ঞান");
             startActivity(intent);
             finish();
         });
         binding.bebsaiUddagCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "bebsaiUddag");
+            intent.putExtra("subjectName", "ব্যবসায় উদ্যোগ");
             startActivity(intent);
             finish();
         });
@@ -108,19 +108,19 @@ setSubjectListData();
 
         binding.pouronitiCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "pouroniti");
+            intent.putExtra("subjectName", "পৌরনীতি ও নাগরিকতা");
             startActivity(intent);
             finish();
         });
         binding.itihashCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "itihash");
+            intent.putExtra("subjectName", "বাংলাদেশের ইতিহাস ও বিশ্বসভ্যতা");
             startActivity(intent);
             finish();
         });
         binding.bugolCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
-            intent.putExtra("subjectName", "bugol");
+            intent.putExtra("subjectName", "ভূগোল ও পরিবেশ");
             startActivity(intent);
             finish();
         });
