@@ -72,20 +72,6 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
         chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
 
 
         ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), false, this);
@@ -137,6 +123,8 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
 //        binding.readRecycler.setAdapter(chapterAdapter);
     }
 
+
+//    --------------------- Starting download from the firebase -------------------------
     @Override
     public void downloadSubjectData(String currentFirebaseID) {
         //            TODO: take the subject from the firebase and save it to the room database
@@ -170,7 +158,7 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
 
         SubjectModel model = new SubjectModel(); //----------Room database subject model
 
-//        firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3
+//        firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription
         model.setFirebaseStorageID(subjectModel.getFirebaseStorageID());
         model.setSubjectName(subjectModel.getSubjectName());
         model.setChapterNumber(subjectModel.getChapterNumber());
@@ -181,6 +169,7 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         model.setOption1(subjectModel.getOption1());
         model.setOption2(subjectModel.getOption2());
         model.setOption3(subjectModel.getOption3());
+        model.setAnswerDescription(subjectModel.getAnswerDescription());
 
         SubjectDatabase.getInstance(getContext()).getSubjectDao().insert(model);
 

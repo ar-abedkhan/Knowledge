@@ -41,6 +41,7 @@
     <string name="gScience">সাধারন বিজ্ঞান</string>
     <string name="bebshaiUddag">ব্যবসায় উদ্যোগ</string>
     <string name="question">Question :</string>
+    <string name="answer_description">Answer description</string>
 
 
 </resources>

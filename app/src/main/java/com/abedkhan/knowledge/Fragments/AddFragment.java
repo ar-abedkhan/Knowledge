@@ -31,7 +31,7 @@ public class AddFragment extends Fragment {
 
 
     FragmentAddBinding binding;
-    String subjectName, chapterName, writerName, question, rightAnswer, option1, option2, option3;
+    String subjectName, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription;
     String currentID;
     String chapterNumber;
 
@@ -89,8 +89,9 @@ public class AddFragment extends Fragment {
             option1 = binding.answarwOne.getText().toString();
             option2 = binding.answareTwo.getText().toString();
             option3 = binding.answarwThree.getText().toString();
+            answerDescription = binding.answerDescription.getText().toString();
 
-            saveDataToFirebase(subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3);
+            saveDataToFirebase(subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription);
 
         });
 
@@ -99,7 +100,7 @@ public class AddFragment extends Fragment {
         return binding.getRoot();
     }
 
-    private void saveDataToFirebase(String subjectName, String chapterNumber, String chapterName, String writerName, String question, String rightAnswer, String option1, String option2, String option3) {
+    private void saveDataToFirebase(String subjectName, String chapterNumber, String chapterName, String writerName, String question, String rightAnswer, String option1, String option2, String option3, String answerDescription) {
         currentID = databaseReference.push().getKey();
 
         HashMap<String, Object> addData = new HashMap<>();
@@ -113,6 +114,7 @@ public class AddFragment extends Fragment {
         addData.put("option1", option1);
         addData.put("option2", option2);
         addData.put("option3", option3);
+        addData.put("answerDescription", answerDescription);
 
 //        ------------------ Adding data to the firebase storage ------------------
         databaseReference.child(subjectName).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -145,13 +147,14 @@ public class AddFragment extends Fragment {
     private void blankAllFields() {
 
         binding.subjectName.getSelectedItem();
-        binding.chapterName.setText("");
-        binding.chapterNumber.setText("");
+//        binding.chapterName.setText("");
+//        binding.chapterNumber.setText("");
         binding.writerName.setText("");
         binding.mainQuestion.setText("");
         binding.rightAns.setText("");
         binding.answarwOne.setText("");
         binding.answareTwo.setText("");
         binding.answarwThree.setText("");
+        binding.answerDescription.setText("");
     }
 }

@@ -10,7 +10,7 @@ public class SubjectModel {
     int id;
 
     @ColumnInfo
-    private String firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3;
+    private String firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription;
 
     public int getId() {
         return id;
@@ -98,6 +98,15 @@ public class SubjectModel {
 
     public void setOption3(String option3) {
         this.option3 = option3;
+    }
+
+
+    public String getAnswerDescription() {
+        return answerDescription;
+    }
+
+    public void setAnswerDescription(String answerDescription) {
+        this.answerDescription = answerDescription;
     }
 }
 
