@@ -66,10 +66,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
 
 
 //        -------------------TODO: Read offline button clicked ----------------
-        holder.readOffline.setOnClickListener(view -> {
-//            listener.downloadSubjectData(chapterModelClass.get);
-
-        });
+//        holder.readOffline.setOnClickListener(view -> {
+////            listener.downloadSubjectData(chapterModelClass.get);
+//
+//        });
 
     }
 
