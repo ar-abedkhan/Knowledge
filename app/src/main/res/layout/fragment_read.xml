@@ -17,7 +17,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:text="Subject Name"
-        android:id="@+id/subjectName"
+        android:id="@+id/subjectNameTitle"
         android:background="@color/sky"
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
@@ -30,14 +30,41 @@
 
     <androidx.recyclerview.widget.RecyclerView
     android:layout_width="match_parent"
-        app:layout_constraintTop_toBottomOf="@id/subjectName"
+    app:layout_constraintTop_toBottomOf="@id/subjectNameTitle"
     android:layout_height="wrap_content"
     android:id="@+id/readRecycler"
     tools:listitem="@layout/chapter_recycler_design"
-        android:layout_margin="@dimen/_5sdp"
-        android:paddingBottom="@dimen/_50sdp"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    android:layout_margin="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_50sdp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
     />
+
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+    android:layout_width="match_parent"
+    app:layout_constraintTop_toBottomOf="@id/subjectNameTitle"
+    android:layout_height="wrap_content"
+    android:id="@+id/readQuestionListRecycler"
+        android:visibility="gone"
+    tools:listitem="@layout/read_recycler"
+    android:layout_margin="@dimen/_5sdp"
+    android:paddingBottom="@dimen/_50sdp"
+    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+    />
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

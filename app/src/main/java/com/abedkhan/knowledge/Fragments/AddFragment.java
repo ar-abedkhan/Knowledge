@@ -78,11 +78,10 @@ public class AddFragment extends Fragment {
 
 //        ----------------------- Add button settings ----------------
         binding.addDataBtn.setOnClickListener(view -> {
-            subjectName = binding.subjectName.getSelectedItem().toString();
+//            subjectName = binding.subjectName.getSelectedItem().toString();
             subjectName = binding.subjectName.getSelectedItem().toString();
             chapterName = binding.chapterName.getText().toString();
-            chapterNumber = binding.chapterName.getText().toString();
-
+            chapterNumber = binding.chapterNumber.getText().toString();
             writerName = binding.writerName.getText().toString();
             question = binding.mainQuestion.getText().toString();
             rightAnswer = binding.rightAns.getText().toString();

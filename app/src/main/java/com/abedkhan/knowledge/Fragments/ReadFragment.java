@@ -28,23 +28,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class ReadFragment extends Fragment implements RecyclerDataListener {
+public class ReadFragment extends Fragment implements RecyclerDataListener{
 
     public ReadFragment() {
     }
     FragmentReadBinding binding;
-    List<ChapterModelClass> chapterModelClassList;
     List<FirebaseSubjectModel> firebaseSubjectModelList;
-
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
-
     int chapterno;
     String currentID, subjectName;
-
     Intent intent;
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -54,41 +48,20 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        chapterModelClassList=new ArrayList<>();
         firebaseSubjectModelList = new ArrayList<>(); //-------- Getting data from firebase ---------
 
 //        _____________________ Getting subject Name from previous Activity _______________________
         intent = getActivity().getIntent();
         subjectName = intent.getStringExtra("subjectName");
 
-//        showDataToAdapter(subjectName);
+        showDataToAdapter(subjectName);
 
-        chapterno=chapterModelClassList.size()+1;
-
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2  testing multiline chapter recycler...this is also testing line design","Zeeshan",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterno));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterno));
-
-
-        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), false, this);
-        binding.readRecycler.setAdapter(chapterAdapter);
+        chapterno=firebaseSubjectModelList.size()+1;
 
 //
 //        binding.readOfflineBtn.setOnClickListener(view -> {
 //
 //        });
-
-
-
-
-
-
-
-
 
 
         return binding.getRoot();
@@ -99,13 +72,16 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                 firebaseSubjectModelList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel modelList = dataSnapshot.getValue(FirebaseSubjectModel.class);
                     firebaseSubjectModelList.add(modelList);
                 }
 
-                myAdapterRunner(firebaseSubjectModelList);
+//                myAdapterRunner(firebaseSubjectModelList);
+                ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireActivity(),false,ReadFragment.this);
+                binding.readRecycler.setAdapter(chapterAdapter);
 
             }
 
@@ -116,12 +92,12 @@ public class ReadFragment extends Fragment implements RecyclerDataListener {
         });
     }
 
-    private void myAdapterRunner(List<FirebaseSubjectModel> firebaseSubjectModelList) {
-        //--------------This method run the Adapter and show data to the user ----------------
-
+//    private void myAdapterRunner(List<FirebaseSubjectModel> firebaseSubjectModelList) {
+//        //--------------This method run the Adapter and show data to the user ----------------
+//
 //        ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireContext(), false);
 //        binding.readRecycler.setAdapter(chapterAdapter);
-    }
+//    }
 
 
 //    --------------------- Starting download from the firebase -------------------------

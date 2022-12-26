@@ -45,6 +45,7 @@ boolean isDepartmentClicked= false;
     }
 
     private void sendSubjectToReadAndExamPage() {
+
         binding.physicsCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
 //            ------------------ TODO: Intent er subject name firebase database er subject name same hobe..
@@ -126,9 +127,22 @@ boolean isDepartmentClicked= false;
         });
 
 
+  //...........................General subject clicked to read and exam fragment....................
+
+
+
+
+
+
+
+
+
+
 
     }
 
+
+    //...........................General subject List..........................
 
     private void setSubjectListData() {
 
@@ -158,7 +172,8 @@ boolean isDepartmentClicked= false;
     }
 
 
-//    ---------This Method handles the actions after clicking the Departments---------
+//    ---------This Method handles the actions after clicking the Departments-----Start------------------
+
     public class Click implements View.OnClickListener{
 
         @SuppressLint("ResourceAsColor")
@@ -226,7 +241,11 @@ boolean isDepartmentClicked= false;
             }
         }
     }
+//    ---------This Method handles the actions after clicking the Departments-----End----------------------
 
+
+
+ //................................Working on back button and back dialog..............Strart..........................................
     @Override
     public void onBackPressed() {
         if (isDepartmentClicked) {
@@ -261,4 +280,7 @@ boolean isDepartmentClicked= false;
         }
 
     }
+
+    //................................Working on back button and back dialog..............End..........................................
+
 }

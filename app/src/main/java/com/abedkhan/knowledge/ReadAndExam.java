@@ -30,13 +30,6 @@ binding.tabLayout.setupWithViewPager(binding.readExamViewpager);
 
 
 
-
-
-
-
-
-
-
     }
 
     @Override

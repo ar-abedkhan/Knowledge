@@ -1,7 +1,9 @@
 package com.abedkhan.knowledge.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
@@ -10,9 +12,16 @@ import android.view.ViewGroup;
 
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
+import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.R;
 import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentExamBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,9 +33,12 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
 
     FragmentExamBinding binding;
     List<ChapterModelClass> chapterModelClassList;
+    List<FirebaseSubjectModel>firebaseSubjectModelList;
     int chapterNo;
-
-
+    FirebaseAuth firebaseAuth;
+    DatabaseReference databaseReference;
+    Intent intent;
+    String currentID, subjectName;
 
 
     @Override
@@ -34,38 +46,43 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
                              Bundle savedInstanceState) {
         binding=FragmentExamBinding.inflate(getLayoutInflater(),container,false);
 
+        firebaseAuth=FirebaseAuth.getInstance();
+        databaseReference= FirebaseDatabase.getInstance().getReference();
 
-        chapterModelClassList=new ArrayList<>();
+        intent=getActivity().getIntent();
+        subjectName=intent.getStringExtra("subjectName");
+        showDataToAdapter(subjectName);
 
-        chapterNo=chapterModelClassList.size()+1;
-
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 1","Me",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 2","Zeeshan",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 3","Abed",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 4","Abeir",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 5","Yasin",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 6","Ashik",chapterNo));
-        chapterModelClassList.add(new ChapterModelClass("Chapter","Chapter name 7","mehedi",chapterNo));
+        firebaseSubjectModelList=new ArrayList<>();
+        chapterNo=firebaseSubjectModelList.size()+1;
 
 
-        ChapterAdapter chapterAdapter=new ChapterAdapter(chapterModelClassList,requireContext(), true, this);
-        binding.examRecycler.setAdapter(chapterAdapter);
+
 
         return binding.getRoot();
+    }
+
+    private void showDataToAdapter(String subjectName) {
+
+        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                firebaseSubjectModelList.clear();
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    FirebaseSubjectModel firebaseSubjectModel=snapshot.getValue(FirebaseSubjectModel.class);
+                    firebaseSubjectModelList.add(firebaseSubjectModel);
+                }
+                ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireContext(), true, ExamFragment.this);
+                binding.examRecycler.setAdapter(chapterAdapter);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
     }
 
     @Override
