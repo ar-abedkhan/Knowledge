@@ -103,6 +103,10 @@ public class AddFragment extends Fragment {
     private void saveDataToFirebase(String subjectName, String chapterNumber, String chapterName, String writerName, String question, String rightAnswer, String option1, String option2, String option3, String answerDescription) {
         currentID = databaseReference.push().getKey();
 
+        if(answerDescription == null){
+            answerDescription = "";
+        }
+
         HashMap<String, Object> addData = new HashMap<>();
         addData.put("subjectName", subjectName);
         addData.put("ID", currentID);
