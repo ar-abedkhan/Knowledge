@@ -29,7 +29,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ExamFragment extends Fragment implements RecyclerDataListener {
-
     public ExamFragment() {
     }
 

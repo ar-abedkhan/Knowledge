@@ -42,21 +42,6 @@
 
 
 
-    <androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    app:layout_constraintTop_toBottomOf="@id/subjectNameTitle"
-    android:layout_height="wrap_content"
-    android:id="@+id/readQuestionListRecycler"
-        android:visibility="gone"
-    tools:listitem="@layout/read_recycler"
-    android:layout_margin="@dimen/_5sdp"
-    android:paddingBottom="@dimen/_50sdp"
-    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-    />
-
-
-
-
 
 
 

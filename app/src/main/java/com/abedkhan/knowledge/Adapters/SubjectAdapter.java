@@ -46,6 +46,7 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectViewholder> {
 
         holder.itemView.setOnClickListener(view -> {
             Intent intent=new Intent(context, ReadAndExam.class);
+            intent.putExtra("subjectName",subjectModelClass.getSubjectName());
             context.startActivity(intent);
         });
     }

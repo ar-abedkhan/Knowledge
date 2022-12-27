@@ -10,6 +10,7 @@ import android.view.animation.AnimationUtils;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abedkhan.knowledge.Activities.GiveExamOrReadQuestions;
 import com.abedkhan.knowledge.Fragments.ReadFragment;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
@@ -60,13 +61,10 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
 
 holder.itemView.setOnClickListener(view -> {
 
-//                        ReadFragment readFragment=new ReadFragment();
-//                        Fragmentt
-//    ReadAndExam.getfe.beginTransaction().add(R.id.readExamViewpager,new ReadFragment()).commit();
+    Intent intent=new Intent(context, GiveExamOrReadQuestions.class);
+    intent.putExtra("firebaseStorageID",chapterModelClass.getFirebaseStorageID());
+    context.startActivity(intent);
 
-
-//    Intent intent=new Intent(context, ReadFragment.class);
-//    context.startActivity(intent);
 });
 
 //        -------------------TODO: Read offline button clicked ----------------

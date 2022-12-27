@@ -1,5 +1,6 @@
 package com.abedkhan.knowledge;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,8 +12,15 @@ import android.view.View;
 
 import com.abedkhan.knowledge.Activities.AdminLoginActivity;
 import com.abedkhan.knowledge.Adapters.SubjectAdapter;
+import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.Modelclass.SubjectModelClass;
 import com.abedkhan.knowledge.databinding.ActivityMainBinding;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,6 +29,10 @@ public class MainActivity extends AppCompatActivity {
 ActivityMainBinding binding;
 List<SubjectModelClass>subjectModelClassList;
 boolean isDepartmentClicked= false;
+DatabaseReference databaseReference;
+FirebaseAuth firebaseAuth;
+    String currentID, subjectName;
+    Intent intent;
 
     @SuppressLint("ResourceAsColor")
     @Override
@@ -32,15 +44,35 @@ boolean isDepartmentClicked= false;
         binding.commerceCard.setOnClickListener(new Click());
         binding.artsCard.setOnClickListener(new Click());
 
+        firebaseAuth=FirebaseAuth.getInstance();
+        databaseReference= FirebaseDatabase.getInstance().getReference();
         sendSubjectToReadAndExamPage();
 
-
+         intent = getIntent();
+        subjectName = intent.getStringExtra("subjectName");
         subjectModelClassList=new ArrayList<>();
         setSubjectListData();
 
 
-        SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,this);
+//databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+//    @Override
+//    public void onDataChange(@NonNull DataSnapshot snapshot) {
+//        subjectModelClassList.clear();
+//        for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+//            SubjectModelClass modelList = dataSnapshot.getValue(SubjectModelClass.class);
+//            subjectModelClassList.add(modelList);
+//        }
+        SubjectAdapter subjectAdapter=new SubjectAdapter(subjectModelClassList,MainActivity.this);
         binding.dsubjectRecycler.setAdapter(subjectAdapter);
+
+//    }
+//
+//    @Override
+//    public void onCancelled(@NonNull DatabaseError error) {
+//
+//    }
+//});
+
 
     }
 
@@ -146,21 +178,21 @@ boolean isDepartmentClicked= false;
 
     private void setSubjectListData() {
 
-        subjectModelClassList.add(new SubjectModelClass("বাংলা ১ম",R.drawable.banlamin));
-        subjectModelClassList.add(new SubjectModelClass("বাংলা ২য়",R.drawable.banlamin));
-        subjectModelClassList.add(new SubjectModelClass("English 1st",R.drawable.engmin));
-        subjectModelClassList.add(new SubjectModelClass("English 2nd",R.drawable.engmin));
-        subjectModelClassList.add(new SubjectModelClass("G. Math",R.drawable.math1min));
-        subjectModelClassList.add(new SubjectModelClass("I.C.T",R.drawable.ict));
-        subjectModelClassList.add(new SubjectModelClass("Career Education",R.drawable.careermin));
-        subjectModelClassList.add(new SubjectModelClass("Arts and Crafts",R.drawable.artbookmin));
-        subjectModelClassList.add(new SubjectModelClass("Agricultural Science",R.drawable.farmingmin));
-        subjectModelClassList.add(new SubjectModelClass("Home Economics",R.drawable.home_economicsmin));
-        subjectModelClassList.add(new SubjectModelClass("Physical Education, Health Science and Sports",R.drawable.physicaleducationmin));
-        subjectModelClassList.add(new SubjectModelClass("Islam and moral education",R.drawable.islammin));
-        subjectModelClassList.add(new SubjectModelClass("Hindu and Moral Education",R.drawable.hindumin));
-        subjectModelClassList.add(new SubjectModelClass("Christian and Moral Education",R.drawable.cristhanmin));
-        subjectModelClassList.add(new SubjectModelClass("Buddhist and Moral Education",R.drawable.buddhistmin));
+        subjectModelClassList.add(new SubjectModelClass("বাংলা সাহিত্য",R.drawable.banlamin));
+        subjectModelClassList.add(new SubjectModelClass("বাংলা ভাষার ব্যাকরণ",R.drawable.banlamin));
+        subjectModelClassList.add(new SubjectModelClass("English for Toady",R.drawable.engmin));
+        subjectModelClassList.add(new SubjectModelClass("English Grammar and Composition",R.drawable.engmin));
+        subjectModelClassList.add(new SubjectModelClass("গণিত",R.drawable.math1min));
+        subjectModelClassList.add(new SubjectModelClass("তথ্য ও যোগাযোগ প্রযুক্তি",R.drawable.ict));
+        subjectModelClassList.add(new SubjectModelClass("ক্যারিয়ার এডুকেশন",R.drawable.careermin));
+        subjectModelClassList.add(new SubjectModelClass("চারু ও কারুকলা",R.drawable.artbookmin));
+        subjectModelClassList.add(new SubjectModelClass("কৃষিশিক্ষা",R.drawable.farmingmin));
+        subjectModelClassList.add(new SubjectModelClass("গার্হস্থ্য বিজ্ঞান ",R.drawable.home_economicsmin));
+        subjectModelClassList.add(new SubjectModelClass("শারীরিক শিক্ষা",R.drawable.physicaleducationmin));
+        subjectModelClassList.add(new SubjectModelClass("ইসলাম ও নৈতিক শিক্ষা",R.drawable.islammin));
+        subjectModelClassList.add(new SubjectModelClass("হিন্দু ধর্ম ও নৈতিক শিক্ষা",R.drawable.hindumin));
+        subjectModelClassList.add(new SubjectModelClass("খ্রিষ্টধর্ম ও নৈতিক শিক্ষা",R.drawable.cristhanmin));
+        subjectModelClassList.add(new SubjectModelClass("বৌদ্ধধর্ম ও নৈতিক শিক্ষা",R.drawable.buddhistmin));
 
 
         //    --------------- Going to the Admin Login Activity --------------
