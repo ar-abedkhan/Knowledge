@@ -44,17 +44,17 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
             binding.readQuestionListRecycler.setAdapter(questionListAdapter);
 
 
-//
-//            if (intent.getBooleanExtra("isExam", false)){
-////                ..................TODO: ekhane exam dewar jonnu fragment ta open korben...................
-//
-//                FragmentTransaction ft = getFragmentManager().beginTransaction();
-////                ft.add().commit();
-//            }
-//            else {
-//
-////                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
-//            }
+
+            if (intent.getBooleanExtra("isExam", false)){
+//                ..................TODO: ekhane exam dewar jonnu fragment ta open korben...................
+
+                FragmentTransaction ft = getFragmentManager().beginTransaction();
+//                ft.add().commit();
+            }
+            else {
+
+//                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
+            }
         }
 
     }
