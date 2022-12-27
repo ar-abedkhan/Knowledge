@@ -81,11 +81,8 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
                     FirebaseSubjectModel modelList = dataSnapshot.getValue(FirebaseSubjectModel.class);
                     firebaseSubjectModelList.add(modelList);
                 }
-
-//                myAdapterRunner(firebaseSubjectModelList);
                 ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireActivity(),false,ReadFragment.this);
                 binding.readRecycler.setAdapter(chapterAdapter);
-
             }
 
             @Override
@@ -95,12 +92,7 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
         });
     }
 
-//    private void myAdapterRunner(List<FirebaseSubjectModel> firebaseSubjectModelList) {
-//        //--------------This method run the Adapter and show data to the user ----------------
-//
-//        ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireContext(), false);
-//        binding.readRecycler.setAdapter(chapterAdapter);
-//    }
+
 
 
 //    --------------------- Starting download from the firebase -------------------------
