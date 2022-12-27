@@ -10,9 +10,11 @@ import android.view.animation.AnimationUtils;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.abedkhan.knowledge.Fragments.ReadFragment;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.R;
+import com.abedkhan.knowledge.ReadAndExam;
 import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.Viewholders.ChapterViewholder;
 
@@ -21,7 +23,7 @@ import java.util.List;
 public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
     List<FirebaseSubjectModel>chapterModelClasses;
     Context context;
-    boolean isExam=false;
+    boolean isExam;
     RecyclerDataListener listener;
 
     public ChapterAdapter(List<FirebaseSubjectModel> chapterModelClasses, Context context, boolean isExam, RecyclerDataListener listener) {
@@ -50,20 +52,22 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
 //        holder.chapterNo.setText(chapterModelClass.getChapterNumber());
 
 // TODO: Exam == true hole apni exam activity te niye jaben and false hole apni Reading activity te niye jaben.... (Same adapter ta Exam fragment eo use hobe)
-//        if (isExam==){
-//            holder.chapterName.setText(chapterModelClass.getChapterName());
-//            holder.chapterWriter.setText(chapterModelClass.getWriterName());
-//            holder.chapterNo.setText(chapterModelClass.getChapterNumber());
-//            holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.animation));
-//
-//        }
-//        else {
+
             holder.chapterName.setText(chapterModelClass.getChapterName());
             holder.chapterWriter.setText(chapterModelClass.getWriterName());
             holder.chapterNo.setText(chapterModelClass.getChapterNumber());
             holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.animation));
 
+holder.itemView.setOnClickListener(view -> {
 
+//                        ReadFragment readFragment=new ReadFragment();
+//                        Fragmentt
+//    ReadAndExam.getfe.beginTransaction().add(R.id.readExamViewpager,new ReadFragment()).commit();
+
+
+//    Intent intent=new Intent(context, ReadFragment.class);
+//    context.startActivity(intent);
+});
 
 //        -------------------TODO: Read offline button clicked ----------------
 //        holder.readOffline.setOnClickListener(view -> {

@@ -58,6 +58,9 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
 
         chapterno=firebaseSubjectModelList.size()+1;
 
+        FirebaseSubjectModel subjectModel=new FirebaseSubjectModel();
+        binding.subjectNameTitle.setText(subjectModel.getSubjectName());
+
 //
 //        binding.readOfflineBtn.setOnClickListener(view -> {
 //

@@ -32,7 +32,6 @@
         android:id="@+id/examRecycler"
         android:layout_margin="@dimen/_5sdp"
         android:paddingBottom="@dimen/_50sdp"
-
         tools:listitem="@layout/chapter_recycler_design"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />

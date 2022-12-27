@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
+import com.abedkhan.knowledge.Database.SubjectDatabase;
+import com.abedkhan.knowledge.Database.SubjectModel;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.R;
@@ -32,7 +34,6 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
     }
 
     FragmentExamBinding binding;
-    List<ChapterModelClass> chapterModelClassList;
     List<FirebaseSubjectModel>firebaseSubjectModelList;
     int chapterNo;
     FirebaseAuth firebaseAuth;
@@ -56,6 +57,8 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
         firebaseSubjectModelList=new ArrayList<>();
         chapterNo=firebaseSubjectModelList.size()+1;
 
+        SubjectModel subjectModel=new SubjectModel();
+        binding.subjectName.setText(subjectModel.getSubjectName());
 
 
 
@@ -88,5 +91,44 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
     @Override
     public void downloadSubjectData(String currentFirebaseID) {
 
+        databaseReference.child(subjectName).child(currentFirebaseID).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                firebaseSubjectModelList.clear();
+                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
+                    FirebaseSubjectModel firebaseSubjectModel=snapshot.getValue(FirebaseSubjectModel.class);
+                    firebaseSubjectModelList.add(firebaseSubjectModel);
+                }
+                saveDataToRoom(firebaseSubjectModelList);
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
-}
+
+    private void saveDataToRoom(List<FirebaseSubjectModel> firebaseSubjectModelList) {
+
+        FirebaseSubjectModel subjectModel=firebaseSubjectModelList.get(0);
+
+        SubjectModel model=new SubjectModel();
+
+        model.setFirebaseStorageID(subjectModel.getFirebaseStorageID());
+        model.setSubjectName(subjectModel.getSubjectName());
+        model.setChapterNumber(subjectModel.getChapterNumber());
+        model.setChapterName(subjectModel.getChapterName());
+        model.setWriterName(subjectModel.getWriterName());
+        model.setQuestion(subjectModel.getQuestion());
+        model.setRightAnswer(subjectModel.getRightAnswer());
+        model.setOption1(subjectModel.getOption1());
+        model.setOption2(subjectModel.getOption2());
+        model.setOption3(subjectModel.getOption3());
+        model.setAnswerDescription(subjectModel.getAnswerDescription());
+
+        SubjectDatabase.getInstance(getContext()).getSubjectDao().insert(model);
+
+    }
+
+    }
