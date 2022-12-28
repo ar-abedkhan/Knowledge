@@ -39,16 +39,25 @@ public class SubjectAdapter extends RecyclerView.Adapter<SubjectViewholder> {
     public void onBindViewHolder(@NonNull SubjectViewholder holder, int position) {
         SubjectModelClass subjectModelClass=subjectModelClassList.get(position);
 
-        holder.subjectName.setText(subjectModelClass.getSubjectName());
-        Glide.with(context).load(subjectModelClass.getSubjectIMG()).into(holder.subjectImg);
+        String subjectname =subjectModelClass.getSubjectName();
 
+
+        holder.subjectName.setText(subjectname);
+        Glide.with(context).load(subjectModelClass.getSubjectIMG()).into(holder.subjectImg);
         holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(),R.anim.animation));
+
 
         holder.itemView.setOnClickListener(view -> {
             Intent intent=new Intent(context, ReadAndExam.class);
-            intent.putExtra("subjectName",subjectModelClass.getSubjectName());
+            intent.putExtra("subjectName",subjectname);
             context.startActivity(intent);
         });
+
+
+
+
+
+
     }
     @Override
     public int getItemCount() {

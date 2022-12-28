@@ -60,14 +60,15 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
             holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.animation));
 
 holder.itemView.setOnClickListener(view -> {
-
     Intent intent=new Intent(context, GiveExamOrReadQuestions.class);
     intent.putExtra("firebaseStorageID",chapterModelClass.getFirebaseStorageID());
+    intent.putExtra("chapterNo",chapterModelClass.getChapterNumber());
     context.startActivity(intent);
 
 });
 
 //        -------------------TODO: Read offline button clicked ----------------
+
 //        holder.readOffline.setOnClickListener(view -> {
 ////            listener.downloadSubjectData(chapterModelClass.get);
 //

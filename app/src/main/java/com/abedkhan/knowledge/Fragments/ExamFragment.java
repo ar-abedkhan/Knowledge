@@ -6,6 +6,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,8 +57,7 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
         firebaseSubjectModelList=new ArrayList<>();
         chapterNo=firebaseSubjectModelList.size()+1;
 
-        SubjectModel subjectModel=new SubjectModel();
-        binding.subjectName.setText(subjectModel.getSubjectName());
+        binding.subjectName.setText(subjectName);
 
 
 
@@ -69,10 +69,12 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
         databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                Log.i("tag", "exam data: ");
                 firebaseSubjectModelList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    FirebaseSubjectModel firebaseSubjectModel=snapshot.getValue(FirebaseSubjectModel.class);
+                    FirebaseSubjectModel firebaseSubjectModel=dataSnapshot.getValue(FirebaseSubjectModel.class);
                     firebaseSubjectModelList.add(firebaseSubjectModel);
+                    Log.i("tag", "exam data: "+firebaseSubjectModel.getSubjectName());
                 }
                 ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireContext(), true, ExamFragment.this);
                 binding.examRecycler.setAdapter(chapterAdapter);

@@ -17,12 +17,65 @@
 <!--        app:layout_constraintEnd_toEndOf="parent"/>-->
 
 
+    <TextView
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="@string/chapter_name"
+        android:paddingTop="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_6sdp"
+        android:paddingStart="@dimen/_10sdp"
+        android:paddingEnd="@dimen/_8sdp"
+        android:id="@+id/chapterName"
+        android:inputType="textMultiLine"
+        android:background="@color/sky"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black_textColor"
+        android:gravity="center"
+        />
+
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/chapterName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintStart_toStartOf="parent"
+        android:text="@string/chapter"
+        android:id="@+id/chapter"
+        android:paddingStart="@dimen/_10sdp"
+        android:background="@color/sky"
+        android:paddingEnd="@dimen/_5sdp"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black_textColor"
+        android:gravity="center"
+        />
+
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/chapterName"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/_40sdp"
+        app:layout_constraintStart_toEndOf="@id/chapter"
+        android:text="@string/chapter_no"
+        android:paddingEnd="@dimen/_5sdp"
+        android:id="@+id/chapterNo"
+        android:background="@color/sky"
+        android:textSize="@dimen/_20sdp"
+        android:textStyle="bold"
+        android:textColor="@color/black_textColor"
+        android:gravity="center"
+        />
 
 
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/chapterNo"
         android:layout_width="match_parent"
+        android:visibility="visible"
         android:layout_height="wrap_content"
         android:id="@+id/readQuestionListRecycler"
         tools:listitem="@layout/read_recycler"
@@ -36,6 +89,259 @@
 
 
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/examLayout"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/chapterNo"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_width="match_parent"
+            android:background="@color/background"
+            android:layout_height="match_parent">
+
+
+            <ImageView
+                android:layout_width="@dimen/_550sdp"
+                android:layout_height="@dimen/_280sdp"
+                android:layout_marginTop="-0dp"
+                android:src="@drawable/circle"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:layout_width="@dimen/_500sdp"
+                android:layout_height="@dimen/_300sdp"
+                android:src="@drawable/circle"
+                android:layout_marginEnd="@dimen/_190sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
+
+
+
+<!--            <TextView-->
+<!--                app:layout_constraintTop_toTopOf="parent"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="@dimen/_40sdp"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                android:text="Subject Name"-->
+<!--                android:id="@+id/subjectName"-->
+<!--                android:background="@color/sky"-->
+
+<!--                android:textSize="@dimen/_20sdp"-->
+<!--                android:textStyle="bold"-->
+<!--                android:textColor="@color/black_textColor"-->
+<!--                android:gravity="center"-->
+<!--                />-->
+
+            <View
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_1sdp"
+                android:id="@+id/view"
+                android:background="@color/background"
+                />
+
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/topDisplay"
+                app:layout_constraintTop_toBottomOf="@id/view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="@dimen/_15sdp"
+                android:layout_marginStart="@dimen/_10sdp"
+                android:paddingEnd="@dimen/_10sdp"
+                >
+
+
+                <TextView
+
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Question No:"
+                    android:id="@+id/questionNo"
+                    android:textColor="@color/black_textColor"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/_16sdp"
+                    />
+
+                <ImageView
+                    android:layout_width="@dimen/_29sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/ic_baseline_access_time_24"
+                    app:layout_constraintEnd_toStartOf="@id/play_quiz_timer"
+                    tools:ignore="MissingConstraints" />
+
+                <TextView
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:id="@+id/play_quiz_timer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="00:10"
+                    android:textColor="@color/background"
+                    android:textStyle="bold"
+                    android:layout_gravity="end"
+                    android:gravity="start"
+                    android:textSize="@dimen/_27sdp" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            <androidx.cardview.widget.CardView
+                app:layout_constraintTop_toBottomOf="@id/topDisplay"
+                android:id="@+id/Tv"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_160sdp"
+                app:cardElevation="@dimen/_10sdp"
+                android:background="@color/sky"
+                app:cardCornerRadius="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:layout_marginBottom="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    >
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/questionTv"
+                        android:textStyle="normal"
+                        android:text="This a question"
+                        android:inputType="textMultiLine"
+                        android:background="@color/sky"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_marginStart="@dimen/_5sdp"
+                        android:layout_marginEnd="@dimen/_5sdp"
+                        android:padding="@dimen/_5sdp"
+                        android:textSize="@dimen/_18sdp"
+                        android:textColor="@color/black_textColor"
+                        />
+
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@id/Tv"
+                android:padding="@dimen/_10sdp"
+                android:layout_marginTop="@dimen/_15sdp"
+                >
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is option one..................."
+                    android:id="@+id/answarwOne"
+                    android:background="@drawable/department_clicked_null_back"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black_textColor"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:textSize="@dimen/_18sdp"
+                    android:inputType="textMultiLine"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is option Two..................."
+                    android:id="@+id/answareTwo"
+                    android:background="@drawable/department_clicked_null_back"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black_textColor"
+                    android:textSize="@dimen/_18sdp"
+                    android:inputType="textMultiLine"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is option Three..................."
+                    android:id="@+id/answarwThree"
+                    android:background="@drawable/department_clicked_null_back"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black_textColor"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:inputType="textMultiLine"
+                    />
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="This is option Four..................."
+                    android:id="@+id/answarwFour"
+                    android:background="@drawable/department_clicked_null_back"
+                    android:padding="@dimen/_10sdp"
+                    android:textColor="@color/black_textColor"
+                    android:textSize="@dimen/_18sdp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:inputType="textMultiLine"
+                    />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_40sdp"
+                    android:text="Submit Ans"
+                    android:textAllCaps="false"
+                    android:textSize="@dimen/_15sdp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:background="@drawable/department_clicked"
+                    android:id="@+id/submitAns"
+                    />
+
+
+
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 

@@ -48,26 +48,46 @@
 
 
 
-        <TextView
+        <ImageView
             android:id="@+id/readOfflineBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             android:background="@drawable/buttonback"
-            android:drawableEnd="@drawable/ic_baseline_download_24"
+            android:src="@drawable/ic_baseline_download_24"
             android:drawablePadding="@dimen/_5sdp"
             android:textStyle="bold"
             android:clickable="true"
             android:textColor="@color/black_textColor"
-
             android:paddingTop="@dimen/_4sdp"
             android:paddingBottom="@dimen/_5sdp"
             android:paddingStart="@dimen/_10sdp"
             android:paddingEnd="@dimen/_10sdp"
             android:textSize="@dimen/_14sdp"
-            android:text="@string/read_offline"
             />
+
+
+
+<!--        <TextView-->
+<!--            android:id="@+id/readOfflineBtn"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:layout_constraintEnd_toEndOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            android:background="@drawable/buttonback"-->
+<!--            android:drawableEnd="@drawable/ic_baseline_download_24"-->
+<!--            android:drawablePadding="@dimen/_5sdp"-->
+<!--            android:textStyle="bold"-->
+<!--            android:clickable="true"-->
+<!--            android:textColor="@color/black_textColor"-->
+<!--            android:paddingTop="@dimen/_4sdp"-->
+<!--            android:paddingBottom="@dimen/_5sdp"-->
+<!--            android:paddingStart="@dimen/_10sdp"-->
+<!--            android:paddingEnd="@dimen/_10sdp"-->
+<!--            android:textSize="@dimen/_14sdp"-->
+<!--            android:text="@string/read_offline"-->
+<!--            />-->
 
 
 

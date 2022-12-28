@@ -1,6 +1,7 @@
 package com.abedkhan.knowledge.Viewholders;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -10,7 +11,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abedkhan.knowledge.R;
 
 public class ChapterViewholder extends RecyclerView.ViewHolder {
-    public TextView chapter,chapterNo,chapterName,chapterWriter, readOffline;
+    public TextView chapter,chapterNo,chapterName,chapterWriter;
+    public ImageView readOffline;
     public CardView cardView;
 
     public ChapterViewholder(@NonNull View itemView) {
