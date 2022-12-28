@@ -16,12 +16,12 @@ import com.abedkhan.knowledge.Viewholders.QuestionListViewholder;
 import java.util.List;
 
 public class QuestionListAdapter extends RecyclerView.Adapter<QuestionListViewholder>{
-         List<QuestionListModel>questionListModelList;
+//         List<QuestionListModel>questionListModelList;
          List<FirebaseSubjectModel>firebaseSubjectModelList;
          Context context;
 
-    public QuestionListAdapter(List<QuestionListModel> questionListModelList, List<FirebaseSubjectModel> firebaseSubjectModelList, Context context) {
-        this.questionListModelList = questionListModelList;
+    public QuestionListAdapter(List<FirebaseSubjectModel> firebaseSubjectModelList, Context context) {
+//        this.questionListModelList = questionListModelList;
         this.firebaseSubjectModelList = firebaseSubjectModelList;
         this.context = context;
     }
@@ -36,7 +36,7 @@ public class QuestionListAdapter extends RecyclerView.Adapter<QuestionListViewho
     @Override
     public void onBindViewHolder(@NonNull QuestionListViewholder holder, int position) {
 
-        QuestionListModel questionListModel=questionListModelList.get(position);
+//        QuestionListModel questionListModel=questionListModelList.get(position);
         FirebaseSubjectModel firebaseSubjectModel=firebaseSubjectModelList.get(position);
 
         holder.mainQuestion.setText(firebaseSubjectModel.getQuestion());
@@ -47,6 +47,7 @@ public class QuestionListAdapter extends RecyclerView.Adapter<QuestionListViewho
 //        holder.questionNo.setText(questionListModel.getQuestionNo());
 //        holder.mainAns.setText(questionListModel.getMainAnsware());
 //        holder.ansDescription.setText(questionListModel.getAnsDescription());
+
     }
 
     @Override
