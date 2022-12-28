@@ -18,6 +18,9 @@
 
 
     <TextView
+        android:id="@+id/chapterName"
+
+        android:includeFontPadding="false"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,12 +28,12 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/chapter_name"
         android:paddingTop="@dimen/_6sdp"
-        android:paddingBottom="@dimen/_6sdp"
+        android:paddingBottom="@dimen/_1sdp"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_8sdp"
-        android:id="@+id/chapterName"
-        android:inputType="textMultiLine"
-        android:background="@color/sky"
+        android:inputType="text"
+        android:maxLines="1"
+
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
@@ -38,8 +41,21 @@
         />
 
 
+    <LinearLayout
+        android:id="@+id/chapterDetailsBucket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@color/sky"
+        android:gravity="center"
+
+        app:layout_constraintTop_toBottomOf="@id/chapterName">
+
+
     <TextView
         app:layout_constraintTop_toBottomOf="@id/chapterName"
+        android:includeFontPadding="false"
+
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_40sdp"
         app:layout_constraintStart_toStartOf="parent"
@@ -56,6 +72,7 @@
 
     <TextView
         app:layout_constraintTop_toBottomOf="@id/chapterName"
+        android:includeFontPadding="false"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_40sdp"
         app:layout_constraintStart_toEndOf="@id/chapter"
@@ -67,15 +84,18 @@
         android:textColor="@color/black_textColor"
         android:gravity="center"
         />
+    </LinearLayout>
 
 
 
     <androidx.recyclerview.widget.RecyclerView
-        app:layout_constraintTop_toBottomOf="@id/chapterNo"
+        android:id="@+id/readQuestionListRecycler"
+
+        app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         android:layout_width="match_parent"
         android:visibility="visible"
         android:layout_height="wrap_content"
-        android:id="@+id/readQuestionListRecycler"
+
         tools:listitem="@layout/read_recycler"
         android:layout_margin="@dimen/_5sdp"
         android:paddingBottom="@dimen/_50sdp"
@@ -88,11 +108,12 @@
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/examLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/examLayout"
+
         android:visibility="gone"
-        app:layout_constraintTop_toBottomOf="@id/chapterNo"
+        app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         >
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -252,10 +273,11 @@
 
 
                 <TextView
+                    android:id="@+id/answerOne"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="This is option one..................."
-                    android:id="@+id/answarwOne"
+
                     android:background="@drawable/department_clicked_null_back"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black_textColor"
@@ -266,10 +288,11 @@
 
 
                 <TextView
+                    android:id="@+id/answerTwo"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="This is option Two..................."
-                    android:id="@+id/answareTwo"
+
                     android:background="@drawable/department_clicked_null_back"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black_textColor"
@@ -280,10 +303,11 @@
 
 
                 <TextView
+                    android:id="@+id/answerThree"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="This is option Three..................."
-                    android:id="@+id/answarwThree"
+
                     android:background="@drawable/department_clicked_null_back"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black_textColor"
@@ -294,10 +318,11 @@
 
 
                 <TextView
+                    android:id="@+id/answerFour"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="This is option Four..................."
-                    android:id="@+id/answarwFour"
+
                     android:background="@drawable/department_clicked_null_back"
                     android:padding="@dimen/_10sdp"
                     android:textColor="@color/black_textColor"
@@ -308,6 +333,8 @@
 
 
                 <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/submitAns"
+
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Submit Ans"
@@ -315,7 +342,7 @@
                     android:textSize="@dimen/_15sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/department_clicked"
-                    android:id="@+id/submitAns"
+
                     />
 
 

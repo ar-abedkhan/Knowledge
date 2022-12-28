@@ -13,7 +13,6 @@ import android.view.ViewGroup;
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Database.SubjectDatabase;
 import com.abedkhan.knowledge.Database.SubjectModel;
-import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentReadBinding;
@@ -129,7 +128,7 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
         SubjectModel model = new SubjectModel(); //----------Room database subject model
 
 //        firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription
-        model.setFirebaseStorageID(subjectModel.getFirebaseStorageID());
+        model.setFirebaseStorageID(subjectModel.getID());
         model.setSubjectName(subjectModel.getSubjectName());
         model.setChapterNumber(subjectModel.getChapterNumber());
         model.setChapterName(subjectModel.getChapterName());

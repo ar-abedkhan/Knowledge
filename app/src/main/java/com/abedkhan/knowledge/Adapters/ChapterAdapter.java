@@ -62,6 +62,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
 holder.itemView.setOnClickListener(view -> {
     Intent intent=new Intent(context, GiveExamOrReadQuestions.class);
 //    intent.putExtra("firebaseStorageID",chapterModelClass.getFirebaseStorageID());
+    intent.putExtra("subjectName",chapterModelClass.getSubjectName());
     intent.putExtra("chapterNo",chapterModelClass.getChapterNumber());
     intent.putExtra("chaptername",chapterModelClass.getChapterName());
     context.startActivity(intent);

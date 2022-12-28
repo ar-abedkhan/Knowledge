@@ -14,9 +14,7 @@ import android.view.ViewGroup;
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Database.SubjectDatabase;
 import com.abedkhan.knowledge.Database.SubjectModel;
-import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
-import com.abedkhan.knowledge.R;
 import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentExamBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -116,7 +114,7 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
 
         SubjectModel model=new SubjectModel();
 
-        model.setFirebaseStorageID(subjectModel.getFirebaseStorageID());
+        model.setFirebaseStorageID(subjectModel.getID());
         model.setSubjectName(subjectModel.getSubjectName());
         model.setChapterNumber(subjectModel.getChapterNumber());
         model.setChapterName(subjectModel.getChapterName());

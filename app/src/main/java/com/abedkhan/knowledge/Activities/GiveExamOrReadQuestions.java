@@ -32,7 +32,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
     List<FirebaseSubjectModel>firebaseSubjectModelList;
     ViewPager viewPager;
     Intent intent;
-    String storageId,chapterNo,chaptername;
+    String storageId,chapterNo,chaptername, subjectName;
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
 
@@ -51,6 +51,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 //        storageId=intent.getStringExtra("firebaseStorageID");
         chapterNo=intent.getStringExtra("chapterNo");
         chaptername=intent.getStringExtra("chaptername");
+        subjectName=intent.getStringExtra("subjectName");
 
 
 //        questionListModelList=new ArrayList<>();
@@ -68,6 +69,19 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
 
 
+        if (intent.getBooleanExtra("isExam", false)){
+
+            binding.readQuestionListRecycler.setVisibility(View.GONE);
+            binding.examLayout.setVisibility(View.VISIBLE);
+
+        }
+        else {
+//                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
+            QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
+            binding.readQuestionListRecycler.setAdapter(questionListAdapter);
+            Log.i("tag", "question: "+questionListAdapter);
+
+        }
 
 
 
@@ -92,31 +106,27 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
     }
 
     private void showDataToAdapter(String chapterNo) {
-        databaseReference.child(chaptername).addValueEventListener(new ValueEventListener() {
+//        databaseReference.child(chaptername).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 firebaseSubjectModelList.clear();
                 Log.i("tag", "question: ");
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel subjectModel=dataSnapshot.getValue(FirebaseSubjectModel.class);
-                    firebaseSubjectModelList.add(subjectModel);
-                    Log.i("tag", "question: "+subjectModel);
+                    if (subjectModel.getChapterNumber().equals(chapterNo)) {
+
+                        firebaseSubjectModelList.add(subjectModel);
+                    }
+//                    Log.i("tag", "question: "+subjectModel.getQuestion());
+//                    Log.i("tag", "Chapter Number: "+subjectModel.getChapterNumber());
 
                     binding.chapterNo.setText(chapterNo);
                     binding.chapterName.setText(subjectModel.getChapterName());
                 }
-        if (intent.getBooleanExtra("isExam", false)){
 
-            binding.readQuestionListRecycler.setVisibility(View.GONE);
-            binding.examLayout.setVisibility(View.VISIBLE);
 
-        }else {
-//                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
-            QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
-            binding.readQuestionListRecycler.setAdapter(questionListAdapter);
-            Log.i("tag", "question: "+questionListAdapter);
-
-            }
+//        ------------
             }
 
             @Override

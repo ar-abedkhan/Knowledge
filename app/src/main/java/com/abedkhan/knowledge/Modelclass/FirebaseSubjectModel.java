@@ -1,10 +1,10 @@
 package com.abedkhan.knowledge.Modelclass;
 
 public class FirebaseSubjectModel {
-    String firebaseStorageID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription;
+    String ID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription;
 
     public FirebaseSubjectModel(String firebaseStorageID, String subjectName, String chapterNumber, String chapterName, String writerName, String question, String rightAnswer, String option1, String option2, String option3, String answerDescription) {
-        this.firebaseStorageID = firebaseStorageID;
+        this.ID = firebaseStorageID;
         this.subjectName = subjectName;
         this.chapterNumber = chapterNumber;
         this.chapterName = chapterName;
@@ -19,8 +19,8 @@ public class FirebaseSubjectModel {
     public FirebaseSubjectModel() {
     }
 
-    public String getFirebaseStorageID() {
-        return firebaseStorageID;
+    public String getID() {
+        return ID;
     }
 
     public String getSubjectName() {
