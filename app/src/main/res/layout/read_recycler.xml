@@ -93,7 +93,6 @@
 
 
 
-
             <TextView
                 app:layout_constraintTop_toBottomOf="@id/answare"
                 app:layout_constraintStart_toStartOf="parent"
