@@ -12,7 +12,7 @@ import com.abedkhan.knowledge.R;
 
 public class ChapterViewholder extends RecyclerView.ViewHolder {
     public TextView chapter,chapterNo,chapterName,chapterWriter;
-    public ImageView readOffline;
+//    public ImageView readOffline;
     public CardView cardView;
 
     public ChapterViewholder(@NonNull View itemView) {
@@ -24,6 +24,6 @@ public class ChapterViewholder extends RecyclerView.ViewHolder {
         chapterWriter=itemView.findViewById(R.id.topicWriterName);
         cardView=itemView.findViewById(R.id.chapterCard);
 
-        readOffline = itemView.findViewById(R.id.readOfflineBtn);
+//        readOffline = itemView.findViewById(R.id.readOfflineBtn);
     }
 }

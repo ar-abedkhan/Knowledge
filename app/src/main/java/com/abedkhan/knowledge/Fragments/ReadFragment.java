@@ -1,5 +1,4 @@
 package com.abedkhan.knowledge.Fragments;
-
 import android.content.Intent;
 import android.os.Bundle;
 
@@ -25,8 +24,6 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 import java.util.List;
-
-
 public class ReadFragment extends Fragment implements RecyclerDataListener{
 
     public ReadFragment() {
