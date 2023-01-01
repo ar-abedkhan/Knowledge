@@ -29,10 +29,12 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
     ActivityGiveExamOrReadQuestionsBinding binding;
     List<QuestionListModel>questionListModelList;
-    List<FirebaseSubjectModel>firebaseSubjectModelList;
+    List<FirebaseSubjectModel> firebaseSubjectModelList;
     ViewPager viewPager;
     Intent intent;
     String storageId,chapterNo,chaptername, subjectName;
+    boolean isExam;
+
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
 
@@ -50,8 +52,10 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
         intent = getIntent();
 //        storageId=intent.getStringExtra("firebaseStorageID");
         chapterNo=intent.getStringExtra("chapterNo");
-        chaptername=intent.getStringExtra("chaptername");
+        chaptername=intent.getStringExtra("chapterName");
         subjectName=intent.getStringExtra("subjectName");
+
+        isExam = intent.getBooleanExtra("isExam", false);   //--- checking if it is for exam or only reading
 
 
 //        questionListModelList=new ArrayList<>();
@@ -69,14 +73,32 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
 
 
-        if (intent.getBooleanExtra("isExam", false)){
-
+        if (isExam){
             binding.readQuestionListRecycler.setVisibility(View.GONE);
             binding.examLayout.setVisibility(View.VISIBLE);
+
+            Log.i("TAG", "--------------------EXAM---------------------------");
+//            FirebaseSubjectModel model = firebaseSubjectModelList.get(0);
+//            TODO: ekhane firebaseSubject model theke data pacche nah
+
+//            Log.i("TAG", "---------Exam--: "+model.getQuestion());
+//            Log.i("TAG", "---------Exam--: "+model.getOption1());
+
+//            binding.questionTv.setText(model.getQuestion());
+//
+//            binding.questionTv.setText(model.getQuestion());
+//
+//            binding.answerOne.setText(model.getRightAnswer());
+//            binding.answerTwo.setText(model.getOption1());
+//            binding.answerThree.setText(model.getOption2());
+//            binding.answerFour.setText(model.getOption3());
 
         }
         else {
 //                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
+            binding.readQuestionListRecycler.setVisibility(View.VISIBLE);
+            binding.examLayout.setVisibility(View.GONE);
+
             QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
             binding.readQuestionListRecycler.setAdapter(questionListAdapter);
             Log.i("tag", "question: "+questionListAdapter);
@@ -106,12 +128,11 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
     }
 
     private void showDataToAdapter(String chapterNo) {
-//        databaseReference.child(chaptername).addValueEventListener(new ValueEventListener() {
         databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 firebaseSubjectModelList.clear();
-                Log.i("tag", "question: ");
+//                Log.i("tag", "question: ");
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel subjectModel=dataSnapshot.getValue(FirebaseSubjectModel.class);
                     if (subjectModel.getChapterNumber().equals(chapterNo)) {
