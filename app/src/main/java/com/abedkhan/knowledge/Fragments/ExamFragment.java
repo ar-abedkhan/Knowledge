@@ -53,7 +53,7 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
         showDataToAdapter(subjectName);
 
         firebaseSubjectModelList=new ArrayList<>();
-        chapterNo=firebaseSubjectModelList.size()+1;
+        chapterNo=firebaseSubjectModelList.size()+1; //--------
 
         binding.subjectName.setText(subjectName);
 
@@ -64,7 +64,7 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
 
     private void showDataToAdapter(String subjectName) {
 
-        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName).child(String.valueOf(chapterNo)).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Log.i("tag", "exam data: ");

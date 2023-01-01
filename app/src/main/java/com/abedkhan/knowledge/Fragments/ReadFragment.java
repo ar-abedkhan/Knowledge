@@ -67,7 +67,7 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
 
     private void showDataToAdapter(String subjectName) {
 
-        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName).child(String.valueOf(chapterno)).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 

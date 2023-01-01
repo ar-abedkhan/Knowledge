@@ -120,7 +120,7 @@ public class AddFragment extends Fragment {
         addData.put("answerDescription", answerDescription);
 
 //        ------------------ Adding data to the firebase storage ------------------
-        databaseReference.child(subjectName).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
+        databaseReference.child(subjectName).child(chapterNumber).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
                 Toast.makeText(getContext(), "Data added successfully <3", Toast.LENGTH_SHORT).show();

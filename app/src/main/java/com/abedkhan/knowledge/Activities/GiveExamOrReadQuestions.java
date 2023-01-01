@@ -51,9 +51,9 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 //        viewPager = findViewById(R.id.examOrReadFragmentHolder);
         intent = getIntent();
 //        storageId=intent.getStringExtra("firebaseStorageID");
-        chapterNo=intent.getStringExtra("chapterNo");
-        chaptername=intent.getStringExtra("chapterName");
-        subjectName=intent.getStringExtra("subjectName");
+        chapterNo =intent.getStringExtra("chapterNo");
+        chaptername =intent.getStringExtra("chapterName");
+        subjectName =intent.getStringExtra("subjectName");
 
         isExam = intent.getBooleanExtra("isExam", false);   //--- checking if it is for exam or only reading
 
@@ -101,7 +101,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
             QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
             binding.readQuestionListRecycler.setAdapter(questionListAdapter);
-            Log.i("tag", "question: "+questionListAdapter);
+//            Log.i("tag", "???//question: "+ firebaseSubjectModelList.get(0).getQuestion());
 
         }
 
@@ -128,7 +128,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
     }
 
     private void showDataToAdapter(String chapterNo) {
-        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName).child(chapterNo).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 firebaseSubjectModelList.clear();
