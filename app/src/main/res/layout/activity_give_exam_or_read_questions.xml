@@ -28,7 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/chapter_name"
         android:paddingTop="@dimen/_6sdp"
-        android:paddingBottom="@dimen/_1sdp"
+        android:paddingBottom="@dimen/_6sdp"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_8sdp"
         android:inputType="text"
@@ -90,7 +90,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/readQuestionListRecycler"
-        android:visibility="gone"
+        android:visibility="visible"
 
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         android:layout_width="match_parent"
@@ -112,7 +112,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         >
 

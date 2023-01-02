@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -32,8 +33,8 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
     List<FirebaseSubjectModel> firebaseSubjectModelList;
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
-    int chapterno;
-    String currentID, subjectName;
+    String chapterno;
+    String currentID , subjectName;
     Intent intent;
 
     @Override
@@ -47,15 +48,18 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
         firebaseSubjectModelList = new ArrayList<>(); //-------- Getting data from firebase ---------
 
 //        _____________________ Getting subject Name from previous Activity _______________________
+
         intent = getActivity().getIntent();
         subjectName = intent.getStringExtra("subjectName");
 
         showDataToAdapter(subjectName);
 
-        chapterno=firebaseSubjectModelList.size()+1;
+//        chapterno=firebaseSubjectModelList.size()+1;
+FirebaseSubjectModel firebaseSubjectModel=new FirebaseSubjectModel();
 
-   binding.subjectNameTitle.setText(subjectName);
-
+//   binding.subjectNameTitle.setText(subjectName);
+//
+//       chapterno=firebaseSubjectModel.getChapterNumber();
 
 //        binding.readOfflineBtn.setOnClickListener(view -> {
 //
@@ -67,17 +71,23 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
 
     private void showDataToAdapter(String subjectName) {
 
-        databaseReference.child(subjectName).child(String.valueOf(chapterno)).addValueEventListener(new ValueEventListener() {
+
+
+        databaseReference.child(subjectName).child(chapterno).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-
+                Log.i("tag", "chapter");
                 firebaseSubjectModelList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel modelList = dataSnapshot.getValue(FirebaseSubjectModel.class);
                     firebaseSubjectModelList.add(modelList);
+                    Log.i("tag", "chapter"+modelList);
+
                 }
                 ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireActivity(),false,ReadFragment.this);
                 binding.readRecycler.setAdapter(chapterAdapter);
+                Log.i("tag", "adapter"+chapterAdapter);
+
             }
 
             @Override
