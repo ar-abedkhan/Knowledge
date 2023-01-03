@@ -73,7 +73,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
     }
 
     private void showDataToAdapter() {
-        databaseReference.child(subjectName + " "+ chapterNo).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName+" chapter").child(subjectName + " "+ chapterNo).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 firebaseSubjectModelList.clear();

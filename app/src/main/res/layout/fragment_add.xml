@@ -109,7 +109,7 @@
             android:paddingBottom="@dimen/_2sdp"
             android:id="@+id/chapterNumber"
             android:background="@drawable/department_clicked"
-            android:inputType="textMultiLine"
+            android:inputType="text"
             android:hint="@string/chapter_no"
             android:paddingStart="@dimen/_10sdp"
             android:layout_marginBottom="@dimen/_8sdp"

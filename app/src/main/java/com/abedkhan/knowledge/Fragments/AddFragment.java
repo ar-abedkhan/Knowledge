@@ -61,7 +61,7 @@ public class AddFragment extends Fragment {
 
                 "বাংলা সাহিত্য",
                 "বাংলা ভাষার ব্যাকরণ",
-                "English for Toady",
+                "English for Today",
                 "গণিত",
                 "English Grammar and Composition",
                 "তথ্য ও যোগাযোগ প্রযুক্তি",
@@ -183,7 +183,7 @@ public class AddFragment extends Fragment {
                     addData.put("answerDescription", answerDescription);
 
 //        ------------------ Passing data to the firebase storage ------------------
-                    databaseReference.child(subjectName + " " + chapterNumber).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    databaseReference.child(subjectName+" chapter").child(subjectName + " " + chapterNumber).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void unused) {
                             Toast.makeText(getContext(), "Data added successfully <3", Toast.LENGTH_SHORT).show();

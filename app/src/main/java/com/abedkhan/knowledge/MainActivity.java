@@ -110,7 +110,7 @@ FirebaseAuth firebaseAuth;
             finish();
         });
 
- //.......................................................................
+ //....................................................................... subject name for Business study
 
         binding.financeCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
@@ -137,7 +137,7 @@ FirebaseAuth firebaseAuth;
             finish();
         });
 
-  //................................................
+  //................................................subject name for Humanities
 
         binding.pouronitiCard.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, ReadAndExam.class);
@@ -161,16 +161,6 @@ FirebaseAuth firebaseAuth;
 
   //...........................General subject clicked to read and exam fragment....................
 
-
-
-
-
-
-
-
-
-
-
     }
 
 
@@ -180,7 +170,7 @@ FirebaseAuth firebaseAuth;
 
         subjectModelClassList.add(new SubjectModelClass("বাংলা সাহিত্য",R.drawable.banlamin));
         subjectModelClassList.add(new SubjectModelClass("বাংলা ভাষার ব্যাকরণ",R.drawable.banlamin));
-        subjectModelClassList.add(new SubjectModelClass("English for Toady",R.drawable.engmin));
+        subjectModelClassList.add(new SubjectModelClass("English for Today",R.drawable.engmin));
         subjectModelClassList.add(new SubjectModelClass("English Grammar and Composition",R.drawable.engmin));
         subjectModelClassList.add(new SubjectModelClass("গণিত",R.drawable.math1min));
         subjectModelClassList.add(new SubjectModelClass("তথ্য ও যোগাযোগ প্রযুক্তি",R.drawable.ict));
@@ -277,7 +267,7 @@ FirebaseAuth firebaseAuth;
 
 
 
- //................................Working on back button and back dialog..............Strart..........................................
+ //................................Working on back button and back dialog..............Start..........................................
     @Override
     public void onBackPressed() {
         if (isDepartmentClicked) {
