@@ -100,7 +100,6 @@ public class AddFragment extends Fragment {
             answerDescription = binding.answerDescription.getText().toString().trim();
 
 //            ------------------ Checking if there are any Item with the same name in the firebase ------------------
-//            Log.i("TAG", "Getting chapter number ****** ");
             databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -112,14 +111,14 @@ public class AddFragment extends Fragment {
                     boolean isChapterMatched = false;
                     for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                         FirebaseChapterNoModel chapterNoModel = dataSnapshot.getValue(FirebaseChapterNoModel.class);
-                        Log.i("TAG", "Chapter number firebase--->: "+ chapterNoModel.getChapterNumber());
-                        Log.i("TAG", "Chapter number----------->>> "+ chapterNumber);
+//                        Log.i("TAG", "Chapter number firebase--->: "+ chapterNoModel.getChapterNumber());
+//                        Log.i("TAG", "Chapter number----------->>> "+ chapterNumber);
 
 //                        ------------ If the chapter No. matches that means there are no need for new chapter id ------------
                         String tempChapterNo = chapterNoModel.getChapterNumber();
                         if (tempChapterNo.equals(chapterNumber)){
                             chapterId = chapterNoModel.getChapterId();
-                            Log.i("TAG", "----------------same chapter id----------------");
+//                            Log.i("TAG", "----------------same chapter id----------------");
                             isChapterMatched = true;
                             break;
                         }
@@ -145,7 +144,6 @@ public class AddFragment extends Fragment {
                 }
             });
 
-//            saveDataToFirebase(subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription);
 
         });
 
@@ -157,7 +155,7 @@ public class AddFragment extends Fragment {
     private void saveDataToFirebase(String subjectName, String chapterNumber, String chapterName, String writerName, String question, String rightAnswer, String option1, String option2, String option3, String answerDescription) {
         currentID = databaseReference.push().getKey();
 
-//---------------------------- temporary data save START --------------------------
+//---------------------------- Chapter Number data save START --------------------------
 
         HashMap<String, Object> myData = new HashMap<>();
         myData.put("chapterId", chapterId);
@@ -230,53 +228,7 @@ public class AddFragment extends Fragment {
             }
         });
 
-//---------------------------- temporary data save END --------------------------
-//
-//
-//        if(answerDescription == null){
-//            answerDescription = "";
-//        }
-//
-//        HashMap<String, Object> addData = new HashMap<>();
-//        addData.put("subjectName", subjectName);
-//        addData.put("ID", currentID);
-//        addData.put("chapterNumber", chapterNumber);
-//        addData.put("chapterName", chapterName);
-//        addData.put("writerName", writerName);
-//        addData.put("question", question);
-//        addData.put("rightAnswer", rightAnswer);
-//        addData.put("option1", option1);
-//        addData.put("option2", option2);
-//        addData.put("option3", option3);
-//        addData.put("answerDescription", answerDescription);
-
-//        ------------------ Adding data to the firebase storage ------------------
-
-//        databaseReference.child(subjectName + " " + chapterNumber).child(currentID).setValue(addData).addOnSuccessListener(new OnSuccessListener<Void>() {
-//            @Override
-//            public void onSuccess(Void unused) {
-//                Toast.makeText(getContext(), "Data added successfully <3", Toast.LENGTH_SHORT).show();
-//                blankAllFields();
-//            }
-//        }).addOnFailureListener(new OnFailureListener() {
-//            @Override
-//            public void onFailure(@NonNull Exception e) {
-//
-//                AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-//                builder.setTitle("Error!");
-//                builder.setMessage("Sorry, there was an error while saving data");
-//                builder.setIcon(R.drawable.warning_icon);
-//                builder.setPositiveButton("Okay", new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//
-//                    }
-//                });
-//                AlertDialog dialog = builder.create();
-//                dialog.show();
-//
-//            }
-//        });
+//---------------------------- Chapter Number data save END --------------------------
 
 
     }

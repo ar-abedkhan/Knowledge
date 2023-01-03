@@ -77,7 +77,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 firebaseSubjectModelList.clear();
-//                Log.i("tag", "question: ");
+
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel subjectModel=dataSnapshot.getValue(FirebaseSubjectModel.class);
                         firebaseSubjectModelList.add(subjectModel);
@@ -86,8 +86,6 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
                     binding.chapterNo.setText(chapterNo);
                     binding.chapterName.setText(subjectModel.getChapterName());
                 }
-
-//                examOrRead(firebaseSubjectModelList);
 
                 if (isExam){
                     binding.readQuestionListRecycler.setVisibility(View.GONE);
@@ -127,42 +125,5 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
             }
         });
-    }
-
-    private void examOrRead(List<FirebaseSubjectModel> firebaseSubjectModelList) {
-
-        Log.i("TAG", "*************** examOrRead: "+ firebaseSubjectModelList);
-//        Log.i("TAG", "*************** examOrRead: "+ firebaseSubjectModelList.get(0).getQuestion());
-
-        if (isExam){
-            binding.readQuestionListRecycler.setVisibility(View.GONE);
-            binding.examLayout.setVisibility(View.VISIBLE);
-
-            Log.i("TAG", "--------------------EXAM---------------------------");
-            FirebaseSubjectModel model = firebaseSubjectModelList.get(0);
-//            TODO: ekhane firebaseSubject model theke data pacche nah
-
-            Log.i("TAG", "---------Exam--: "+model.getQuestion());
-            Log.i("TAG", "---------Exam--: "+model.getOption1());
-            binding.questionTv.setText(model.getQuestion());
-
-            binding.answerOne.setText(model.getRightAnswer());
-            binding.answerTwo.setText(model.getOption1());
-            binding.answerThree.setText(model.getOption2());
-            binding.answerFour.setText(model.getOption3());
-
-        }
-        else {
-//                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
-            Log.i("TAG", "------------------Read------------------ ");
-            binding.readQuestionListRecycler.setVisibility(View.VISIBLE);
-            binding.examLayout.setVisibility(View.GONE);
-
-            QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
-            binding.readQuestionListRecycler.setAdapter(questionListAdapter);
-
-        }
-
-
     }
 }
