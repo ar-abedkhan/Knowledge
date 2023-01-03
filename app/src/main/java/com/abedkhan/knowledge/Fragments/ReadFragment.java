@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Database.SubjectDatabase;
 import com.abedkhan.knowledge.Database.SubjectModel;
+import com.abedkhan.knowledge.Modelclass.FirebaseChapterNoModel;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentReadBinding;
@@ -30,10 +31,13 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
     public ReadFragment() {
     }
     FragmentReadBinding binding;
-    List<FirebaseSubjectModel> firebaseSubjectModelList;
+//    List<FirebaseSubjectModel> firebaseSubjectModelList;
+    List<FirebaseChapterNoModel> noModelList;
+
+
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
-    String chapterno;
+    String chapterNo;
     String currentID , subjectName;
     Intent intent;
 
@@ -45,17 +49,19 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
         firebaseAuth = FirebaseAuth.getInstance();
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        firebaseSubjectModelList = new ArrayList<>(); //-------- Getting data from firebase ---------
+//        firebaseSubjectModelList = new ArrayList<>(); //-------- Getting data from firebase with all details---------
+        noModelList = new ArrayList<>(); //-------- Getting data from firebase subject---------
 
 //        _____________________ Getting subject Name from previous Activity _______________________
 
         intent = getActivity().getIntent();
         subjectName = intent.getStringExtra("subjectName");
 
+        binding.subjectNameTitle.setText(subjectName);
+
         showDataToAdapter(subjectName);
 
-//        chapterno=firebaseSubjectModelList.size()+1;
-FirebaseSubjectModel firebaseSubjectModel=new FirebaseSubjectModel();
+//        FirebaseSubjectModel firebaseSubjectModel=new FirebaseSubjectModel();
 
 //   binding.subjectNameTitle.setText(subjectName);
 //
@@ -71,50 +77,60 @@ FirebaseSubjectModel firebaseSubjectModel=new FirebaseSubjectModel();
 
     private void showDataToAdapter(String subjectName) {
 
+        try {
+//        ------------------------- Retrieving data from firebase start-------------------------------
+                databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+                    //            databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        Log.i("tag", "chapter");
+                        noModelList.clear();
+
+                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                            FirebaseChapterNoModel modelList = dataSnapshot.getValue(FirebaseChapterNoModel.class);
+                            noModelList.add(modelList);
+//                            Log.i("tag", "chapter" + modelList.getQuestion());
+                        }
+
+                        ChapterAdapter chapterAdapter = new ChapterAdapter(noModelList, requireActivity(), false, ReadFragment.this);
+                        binding.readRecycler.setAdapter(chapterAdapter);
+                        Log.i("tag", "Read fragment ended-----------------------------");
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+//        ------------------------- Retrieving data from firebase END-------------------------------
+        }catch (Exception e){
+            Log.i("TAG", "Error: "+ e);
+        }
 
 
-        databaseReference.child(subjectName).child(chapterno).addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Log.i("tag", "chapter");
-                firebaseSubjectModelList.clear();
-                for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    FirebaseSubjectModel modelList = dataSnapshot.getValue(FirebaseSubjectModel.class);
-                    firebaseSubjectModelList.add(modelList);
-                    Log.i("tag", "chapter"+modelList);
-
-                }
-                ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireActivity(),false,ReadFragment.this);
-                binding.readRecycler.setAdapter(chapterAdapter);
-                Log.i("tag", "adapter"+chapterAdapter);
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
     }
 
 
 
 
 //    --------------------- Starting download from the firebase -------------------------
+//    TODO: EKhane FirebaseSubjectModel onujayi data boshbe
+
     @Override
     public void downloadSubjectData(String currentFirebaseID) {
         //            TODO: take the subject from the firebase and save it to the room database
         databaseReference.child(subjectName).child(currentFirebaseID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                firebaseSubjectModelList.clear();
+                noModelList.clear(); //    TODO: EKhane FirebaseSubjectModel er list onujayi data boshbe
 
                 for (DataSnapshot dataSnapshot: snapshot.getChildren()){
-                    FirebaseSubjectModel subjectModel = dataSnapshot.getValue(FirebaseSubjectModel.class);
-                    firebaseSubjectModelList.add(subjectModel);
+                    FirebaseChapterNoModel subjectModel = dataSnapshot.getValue(FirebaseChapterNoModel.class); //-------TODO: EKhane FirebaseSubjectModel onujayi data boshbe
+                    noModelList.add(subjectModel);
                 }
                 //----------------- saveDataToRoom ---------
-                saveDataToRoom(firebaseSubjectModelList);
+//                saveDataToRoom(noModelList);
 
             }
 

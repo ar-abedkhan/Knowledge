@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.abedkhan.knowledge.Activities.GiveExamOrReadQuestions;
 import com.abedkhan.knowledge.Fragments.ReadFragment;
 import com.abedkhan.knowledge.Modelclass.ChapterModelClass;
+import com.abedkhan.knowledge.Modelclass.FirebaseChapterNoModel;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.R;
 import com.abedkhan.knowledge.ReadAndExam;
@@ -22,12 +23,12 @@ import com.abedkhan.knowledge.Viewholders.ChapterViewholder;
 import java.util.List;
 
 public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
-    List<FirebaseSubjectModel>chapterModelClasses;
+    List<FirebaseChapterNoModel> chapterModelClasses;
     Context context;
     boolean isExam;
     RecyclerDataListener listener;
 
-    public ChapterAdapter(List<FirebaseSubjectModel> chapterModelClasses, Context context, boolean isExam, RecyclerDataListener listener) {
+    public ChapterAdapter(List<FirebaseChapterNoModel> chapterModelClasses, Context context, boolean isExam, RecyclerDataListener listener) {
         this.chapterModelClasses = chapterModelClasses;
         this.context = context;
         this.isExam = isExam;
@@ -45,7 +46,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
     @Override
     public void onBindViewHolder(@NonNull ChapterViewholder holder, int position) {
 
-        FirebaseSubjectModel chapterModelClass=chapterModelClasses.get(position);
+        FirebaseChapterNoModel chapterModelClass=chapterModelClasses.get(position);
 
 //"অধ্যায় : "
 
@@ -62,6 +63,7 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
 holder.itemView.setOnClickListener(view -> {
     Intent intent=new Intent(context, GiveExamOrReadQuestions.class);
 //    intent.putExtra("firebaseStorageID",chapterModelClass.getFirebaseStorageID());
+
     intent.putExtra("isExam", isExam);
 
     intent.putExtra("subjectName",chapterModelClass.getSubjectName());

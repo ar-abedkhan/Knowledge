@@ -14,6 +14,7 @@ import android.view.ViewGroup;
 import com.abedkhan.knowledge.Adapters.ChapterAdapter;
 import com.abedkhan.knowledge.Database.SubjectDatabase;
 import com.abedkhan.knowledge.Database.SubjectModel;
+import com.abedkhan.knowledge.Modelclass.FirebaseChapterNoModel;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.RecyclerDataListener;
 import com.abedkhan.knowledge.databinding.FragmentExamBinding;
@@ -32,8 +33,9 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
     }
 
     FragmentExamBinding binding;
-    List<FirebaseSubjectModel>firebaseSubjectModelList;
-    int chapterNo;
+    List<FirebaseSubjectModel> firebaseSubjectModelList;
+    List<FirebaseChapterNoModel> chapterNoModelList;
+//    int chapterNo=1;
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     Intent intent;
@@ -52,8 +54,8 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
         subjectName=intent.getStringExtra("subjectName");
         showDataToAdapter(subjectName);
 
-        firebaseSubjectModelList=new ArrayList<>();
-        chapterNo=firebaseSubjectModelList.size()+1; //--------
+        chapterNoModelList =new ArrayList<>();
+//        chapterNo =firebaseSubjectModelList.size()+1; //--------
 
         binding.subjectName.setText(subjectName);
 
@@ -64,17 +66,17 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
 
     private void showDataToAdapter(String subjectName) {
 
-        databaseReference.child(subjectName).child(String.valueOf(chapterNo)).addValueEventListener(new ValueEventListener() {
+        databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Log.i("tag", "exam data: ");
-                firebaseSubjectModelList.clear();
+                chapterNoModelList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
-                    FirebaseSubjectModel firebaseSubjectModel=dataSnapshot.getValue(FirebaseSubjectModel.class);
-                    firebaseSubjectModelList.add(firebaseSubjectModel);
+                    FirebaseChapterNoModel firebaseSubjectModel=dataSnapshot.getValue(FirebaseChapterNoModel.class);
+                    chapterNoModelList.add(firebaseSubjectModel);
                     Log.i("tag", "exam data: "+firebaseSubjectModel.getSubjectName());
                 }
-                ChapterAdapter chapterAdapter=new ChapterAdapter(firebaseSubjectModelList,requireContext(), true, ExamFragment.this);
+                ChapterAdapter chapterAdapter=new ChapterAdapter(chapterNoModelList, requireContext(), true, ExamFragment.this);
                 binding.examRecycler.setAdapter(chapterAdapter);
 
             }
@@ -87,12 +89,16 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
 
     }
 
+//    ------------------------- Saving data for offline --------------------------
+
     @Override
     public void downloadSubjectData(String currentFirebaseID) {
 
         databaseReference.child(subjectName).child(currentFirebaseID).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
+                firebaseSubjectModelList = new ArrayList<>();
+
                 firebaseSubjectModelList.clear();
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel firebaseSubjectModel=snapshot.getValue(FirebaseSubjectModel.class);
