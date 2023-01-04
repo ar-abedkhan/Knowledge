@@ -35,7 +35,7 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
     FragmentExamBinding binding;
     List<FirebaseSubjectModel> firebaseSubjectModelList;
     List<FirebaseChapterNoModel> chapterNoModelList;
-//    int chapterNo=1;
+    //    int chapterNo=1;
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     Intent intent;
@@ -136,4 +136,4 @@ public class ExamFragment extends Fragment implements RecyclerDataListener {
 
     }
 
-    }
+}

@@ -6,8 +6,13 @@ import androidx.viewpager.widget.ViewPager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.abedkhan.knowledge.Adapters.QuestionListAdapter;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
@@ -26,15 +31,23 @@ import java.util.List;
 public class GiveExamOrReadQuestions extends AppCompatActivity {
 
     ActivityGiveExamOrReadQuestionsBinding binding;
-    List<QuestionListModel>questionListModelList;
     List<FirebaseSubjectModel> firebaseSubjectModelList;
     ViewPager viewPager;
     Intent intent;
     String storageId,chapterNo, chapterName, subjectName;
     boolean isExam;
-
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
+
+    CountDownTimer countDownTimer;
+    int timelimit = 10;
+    int count= 2000;
+    TextView question, scoretv;
+    int currentindex = 0, score = 0, totalquestion=0, questionno = 1;
+    String userselectedans;
+    Boolean isoptionselected=false;
+    int rightans=0;
+    int wrongans = 0;
 
 
     @Override
@@ -45,29 +58,15 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
         firebaseAuth=FirebaseAuth.getInstance();
         databaseReference= FirebaseDatabase.getInstance().getReference();
-
-//        viewPager = findViewById(R.id.examOrReadFragmentHolder);
         intent = getIntent();
-//        storageId=intent.getStringExtra("firebaseStorageID");
         chapterNo =intent.getStringExtra("chapterNo");
         chapterName =intent.getStringExtra("chapterName");
         subjectName =intent.getStringExtra("subjectName");
-
         isExam = intent.getBooleanExtra("isExam", false);   //--- checking if it is for exam or only reading
-
-
-//        questionListModelList=new ArrayList<>();
         firebaseSubjectModelList=new ArrayList<>();
         showDataToAdapter();
-
         binding.chapterNo.setText(chapterNo);
 
-
-
-// vai ekhane ami data bse use kore call korsi adapter theke bt question show hoi na besh kichu bhul ase bujte parsi..dekhte hobe...ami asi check korbo...
- // ar questionlist name j model korsi oita bad diya sob firebasemodel e ani dekhbo taile hobe asha kori ar ekta jamela ase..
- //seta hocche amra to sob gula list e rakhsi chapter no er under e rakhi nai so dekgte gobe chapte no call korle sob ase kina..
- //r apni puarata 1bar check diyen....give questionExam page e layout bosaisi gone kre rakhsi r question er kj korsi
 
 
     }
@@ -80,9 +79,8 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
                 for (DataSnapshot dataSnapshot:snapshot.getChildren()){
                     FirebaseSubjectModel subjectModel=dataSnapshot.getValue(FirebaseSubjectModel.class);
-                        firebaseSubjectModelList.add(subjectModel);
+                    firebaseSubjectModelList.add(subjectModel);
 //                    Log.i("tag", "Chapter Number: "+subjectModel.getChapterNumber());
-
                     binding.chapterNo.setText(chapterNo);
                     binding.chapterName.setText(subjectModel.getChapterName());
                 }
@@ -93,16 +91,20 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
                     Log.i("TAG", "--------------------EXAM---------------------------");
                     FirebaseSubjectModel model = firebaseSubjectModelList.get(0);
-//            TODO: ekhane firebaseSubject model theke data pacche nah
+//                  TODO: ekhane firebaseSubject model theke data pacche nah
 
                     Log.i("TAG", "---------Exam--: "+model.getQuestion());
                     Log.i("TAG", "---------Exam--: "+model.getOption1());
                     binding.questionTv.setText(model.getQuestion());
 
                     binding.answerOne.setText(model.getRightAnswer());
-                    binding.answerTwo.setText(model.getOption1());
+                    binding.answertwo.setText(model.getOption1());
                     binding.answerThree.setText(model.getOption2());
                     binding.answerFour.setText(model.getOption3());
+
+
+                    showQuestion();
+
 
                 }
                 else {
@@ -125,5 +127,116 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void showQuestion() {
+
+        QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
+        binding.readQuestionListRecycler.setAdapter(questionListAdapter);
+
+        setQuestuin(currentindex);
+
+binding.optionGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+    totalquestion= firebaseSubjectModelList.size();
+
+    RadioButton selectedoption =findViewById(i);
+    userselectedans =selectedoption.getText().toString();
+    isoptionselected=true;
+    Log.i("TAG", "option selected: " +userselectedans);
+
+});
+
+
+        binding.submitAns.setOnClickListener(view -> {
+            checkRightAns();
+            if (isoptionselected=false){
+
+            }else {
+                return;
+            }
+
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    }
+
+    private void setQuestuin(int currentindex) {
+
+
+        if (currentindex==firebaseSubjectModelList.size()){
+            finishQuiz();
+            return;
+
+        }
+//            timer();
+
+
+//        activityQuizItBinding.scoretv.setText("SCORE:"+score);
+        binding.questionNo.setText(questionno+"/"+totalquestion);
+//        activityQuizItBinding.rightAns.setText("Right Ans :"+ rightans+"/"+totalquestion);
+//        activityQuizItBinding.wrongAns.setText("Wrong Ans :"+wrongans+"/"+totalQuestion);
+
+
+        binding.questionTv.setText(firebaseSubjectModelList.get(currentindex).getQuestion());
+        binding.answerOne.setText(firebaseSubjectModelList.get(currentindex).getOption1());
+        binding.answertwo.setText(firebaseSubjectModelList.get(currentindex).getOption2());
+        binding.answerThree.setText(firebaseSubjectModelList.get(currentindex).getOption3());
+        binding.answerFour.setText(firebaseSubjectModelList.get(currentindex).getRightAnswer());
+
+        binding.answerOne.setChecked(false);
+        binding.answertwo.setChecked(false);
+        binding.answerThree.setChecked(false);
+        binding.answerFour.setChecked(false);
+
+    }
+    private void finishQuiz() {
+
+//        Intent intent =new Intent(this,dashboard.class);
+//        intent.putExtra("rightans",rightans);
+//        intent.putExtra("wrongans",wrongans);
+//        intent.putExtra("score",score);
+//        intent.putExtra("totalquestion",totalquestion);
+//        startActivity(intent);
+
+
+
+    }
+
+
+
+
+    private void checkRightAns() {
+
+        if (firebaseSubjectModelList.get(currentindex).getRightAnswer().equals(userselectedans)){
+            score = score+5;
+            rightans++;
+            questionno++;
+            currentindex++;
+            setQuestuin(currentindex);
+            Toast.makeText(this, "Right ans.CONGRATULATION!You won 5 point", Toast.LENGTH_SHORT).show();
+
+        }else {
+            score =score-5;
+            currentindex++;
+            questionno++;
+            wrongans++;
+            setQuestuin(currentindex);
+            Log.i("TAG", "wrong ans: ");
+            Toast.makeText(this, "Wrong ans.You lose 5 point.", Toast.LENGTH_SHORT).show();
+
+        }
     }
 }

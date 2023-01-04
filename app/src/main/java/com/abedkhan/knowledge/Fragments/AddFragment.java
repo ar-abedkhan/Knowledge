@@ -104,9 +104,9 @@ public class AddFragment extends Fragment {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot snapshot) {
                     /*
-                    * Ekhane firebase theke data niye agee dekha hocche same chapter ki agee thekei include kora ache kina
-                    * jodi na thake tahole notun kore include kora hocche r jodi thake tahole just data include kora hocche
-                    * */
+                     * Ekhane firebase theke data niye agee dekha hocche same chapter ki agee thekei include kora ache kina
+                     * jodi na thake tahole notun kore include kora hocche r jodi thake tahole just data include kora hocche
+                     * */
 
                     boolean isChapterMatched = false;
                     for (DataSnapshot dataSnapshot:snapshot.getChildren()){
@@ -122,9 +122,7 @@ public class AddFragment extends Fragment {
                             isChapterMatched = true;
                             break;
                         }
-
                     }
-
                     if (isChapterMatched == false){
 //                        Log.i("TAG", "_______________________ Task false ____________________________ ");
                         chapterId = databaseReference.push().getKey();
@@ -205,7 +203,6 @@ public class AddFragment extends Fragment {
                             });
                             AlertDialog dialog = builder.create();
                             dialog.show();
-
                         }
                     });
 
@@ -238,7 +235,7 @@ public class AddFragment extends Fragment {
         binding.subjectName.getSelectedItem();
 //        binding.chapterName.setText("");
 //        binding.chapterNumber.setText("");
-        binding.writerName.setText("");
+//        binding.writerName.setText("");
         binding.mainQuestion.setText("");
         binding.rightAns.setText("");
         binding.answarwOne.setText("");

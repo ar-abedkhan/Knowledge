@@ -19,7 +19,6 @@
 
     <TextView
         android:id="@+id/chapterName"
-
         android:includeFontPadding="false"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
@@ -33,7 +32,6 @@
         android:paddingEnd="@dimen/_8sdp"
         android:inputType="text"
         android:maxLines="1"
-
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
@@ -90,12 +88,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/readQuestionListRecycler"
-        android:visibility="visible"
-
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         tools:listitem="@layout/read_recycler"
         android:layout_margin="@dimen/_5sdp"
         android:paddingBottom="@dimen/_50sdp"
@@ -107,12 +103,11 @@
 
 
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+ <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/examLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         >
 
@@ -272,65 +267,78 @@
                 android:layout_marginTop="@dimen/_15sdp"
                 >
 
-
-                <TextView
-                    android:id="@+id/answerOne"
+                <RadioGroup
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="This is option one..................."
-
-                    android:background="@drawable/department_clicked_null_back"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/black_textColor"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:textSize="@dimen/_18sdp"
-                    android:inputType="textMultiLine"
-                    />
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:id="@+id/optionGroup"
+                    >
 
 
-                <TextView
-                    android:id="@+id/answerTwo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="This is option Two..................."
-
-                    android:background="@drawable/department_clicked_null_back"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/black_textColor"
-                    android:textSize="@dimen/_18sdp"
-                    android:inputType="textMultiLine"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    />
 
 
-                <TextView
-                    android:id="@+id/answerThree"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="This is option Three..................."
+                    <RadioButton
+                                        android:id="@+id/answerOne"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="This is option one..................."
+                                        android:background="@drawable/department_clicked_null_back"
+                                        android:padding="@dimen/_10sdp"
+                                        android:textColor="@color/black_textColor"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:textSize="@dimen/_18sdp"
+                                        android:inputType="textMultiLine"
+                        />
 
-                    android:background="@drawable/department_clicked_null_back"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/black_textColor"
-                    android:textSize="@dimen/_18sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:inputType="textMultiLine"
-                    />
+
+                    <RadioButton
+                                        android:id="@+id/answertwo"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="This is option one..................."
+                                        android:background="@drawable/department_clicked_null_back"
+                                        android:padding="@dimen/_10sdp"
+                                        android:textColor="@color/black_textColor"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:textSize="@dimen/_18sdp"
+                                        android:inputType="textMultiLine"
+                        />
 
 
-                <TextView
-                    android:id="@+id/answerFour"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="This is option Four..................."
+                    <RadioButton
+                                        android:id="@+id/answerThree"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="This is option one..................."
+                                        android:background="@drawable/department_clicked_null_back"
+                                        android:padding="@dimen/_10sdp"
+                                        android:textColor="@color/black_textColor"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:textSize="@dimen/_18sdp"
+                                        android:inputType="textMultiLine"
+                        />
 
-                    android:background="@drawable/department_clicked_null_back"
-                    android:padding="@dimen/_10sdp"
-                    android:textColor="@color/black_textColor"
-                    android:textSize="@dimen/_18sdp"
-                    android:layout_marginBottom="@dimen/_10sdp"
-                    android:inputType="textMultiLine"
-                    />
+
+                    <RadioButton
+                                        android:id="@+id/answerFour"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="wrap_content"
+                                        android:text="This is option one..................."
+                                        android:background="@drawable/department_clicked_null_back"
+                                        android:padding="@dimen/_10sdp"
+                                        android:textColor="@color/black_textColor"
+                                        android:layout_marginBottom="@dimen/_10sdp"
+                                        android:textSize="@dimen/_18sdp"
+                                        android:inputType="textMultiLine"
+                        />
+
+
+
+
+
+
+
+                                </RadioGroup>
 
 
                 <androidx.appcompat.widget.AppCompatButton

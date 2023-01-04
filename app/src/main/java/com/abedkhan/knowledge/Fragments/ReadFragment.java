@@ -31,10 +31,8 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
     public ReadFragment() {
     }
     FragmentReadBinding binding;
-//    List<FirebaseSubjectModel> firebaseSubjectModelList;
+    //    List<FirebaseSubjectModel> firebaseSubjectModelList;
     List<FirebaseChapterNoModel> noModelList;
-
-
     FirebaseAuth firebaseAuth;
     DatabaseReference databaseReference;
     String chapterNo;
@@ -51,26 +49,12 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
 
 //        firebaseSubjectModelList = new ArrayList<>(); //-------- Getting data from firebase with all details---------
         noModelList = new ArrayList<>(); //-------- Getting data from firebase subject---------
-
 //        _____________________ Getting subject Name from previous Activity _______________________
 
         intent = getActivity().getIntent();
         subjectName = intent.getStringExtra("subjectName");
-
         binding.subjectNameTitle.setText(subjectName);
-
         showDataToAdapter(subjectName);
-
-//        FirebaseSubjectModel firebaseSubjectModel=new FirebaseSubjectModel();
-
-//   binding.subjectNameTitle.setText(subjectName);
-//
-//       chapterno=firebaseSubjectModel.getChapterNumber();
-
-//        binding.readOfflineBtn.setOnClickListener(view -> {
-//
-//        });
-
 
         return binding.getRoot();
     }
@@ -79,40 +63,33 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
 
         try {
 //        ------------------------- Retrieving data from firebase start-------------------------------
-                databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
-                    //            databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        Log.i("tag", "chapter");
-                        noModelList.clear();
+            databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+                //            databaseReference.child(subjectName).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    Log.i("tag", "chapter");
+                    noModelList.clear();
 
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            FirebaseChapterNoModel modelList = dataSnapshot.getValue(FirebaseChapterNoModel.class);
-                            noModelList.add(modelList);
+                    for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
+                        FirebaseChapterNoModel modelList = dataSnapshot.getValue(FirebaseChapterNoModel.class);
+                        noModelList.add(modelList);
 //                            Log.i("tag", "chapter" + modelList.getQuestion());
-                        }
-
-                        ChapterAdapter chapterAdapter = new ChapterAdapter(noModelList, requireActivity(), false, ReadFragment.this);
-                        binding.readRecycler.setAdapter(chapterAdapter);
-                        Log.i("tag", "Read fragment ended-----------------------------");
-
                     }
+                    ChapterAdapter chapterAdapter = new ChapterAdapter(noModelList, requireActivity(), false, ReadFragment.this);
+                    binding.readRecycler.setAdapter(chapterAdapter);
+                    Log.i("tag", "Read fragment ended-----------------------------");
+                }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
 
-                    }
-                });
+                }
+            });
 //        ------------------------- Retrieving data from firebase END-------------------------------
         }catch (Exception e){
             Log.i("TAG", "Error: "+ e);
         }
-
-
     }
-
-
-
 
 //    --------------------- Starting download from the firebase -------------------------
 //    TODO: EKhane FirebaseSubjectModel onujayi data boshbe
@@ -131,12 +108,9 @@ public class ReadFragment extends Fragment implements RecyclerDataListener{
                 }
                 //----------------- saveDataToRoom ---------
 //                saveDataToRoom(noModelList);
-
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
-
             }
         });
 
