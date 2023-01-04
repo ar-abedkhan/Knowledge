@@ -23,8 +23,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         android:text="@string/chapter_name"
         android:paddingTop="@dimen/_6sdp"
         android:paddingBottom="@dimen/_6sdp"
@@ -35,7 +33,7 @@
         android:textSize="@dimen/_20sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
-        android:gravity="center"
+        android:gravity="start"
         />
 
 
@@ -45,15 +43,14 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/sky"
-        android:gravity="center"
-
-        app:layout_constraintTop_toBottomOf="@id/chapterName">
+        app:layout_constraintTop_toBottomOf="@id/chapterName"
+        >
 
 
     <TextView
         app:layout_constraintTop_toBottomOf="@id/chapterName"
         android:includeFontPadding="false"
-
+        android:layout_gravity="start"
         android:layout_width="wrap_content"
         android:layout_height="@dimen/_40sdp"
         app:layout_constraintStart_toStartOf="parent"

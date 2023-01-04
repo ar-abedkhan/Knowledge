@@ -88,19 +88,19 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
                 if (isExam){
                     binding.readQuestionListRecycler.setVisibility(View.GONE);
                     binding.examLayout.setVisibility(View.VISIBLE);
-
-                    Log.i("TAG", "--------------------EXAM---------------------------");
-                    FirebaseSubjectModel model = firebaseSubjectModelList.get(0);
-//                  TODO: ekhane firebaseSubject model theke data pacche nah
-
-                    Log.i("TAG", "---------Exam--: "+model.getQuestion());
-                    Log.i("TAG", "---------Exam--: "+model.getOption1());
-                    binding.questionTv.setText(model.getQuestion());
-
-                    binding.answerOne.setText(model.getRightAnswer());
-                    binding.answertwo.setText(model.getOption1());
-                    binding.answerThree.setText(model.getOption2());
-                    binding.answerFour.setText(model.getOption3());
+//
+//                    Log.i("TAG", "--------------------EXAM---------------------------");
+//                    FirebaseSubjectModel model = firebaseSubjectModelList.get(0);
+////                  TODO: ekhane firebaseSubject model theke data pacche nah
+//
+//                    Log.i("TAG", "---------Exam--: "+model.getQuestion());
+//                    Log.i("TAG", "---------Exam--: "+model.getOption1());
+//                    binding.questionTv.setText(model.getQuestion());
+//
+//                    binding.answerOne.setText(model.getRightAnswer());
+//                    binding.answertwo.setText(model.getOption1());
+//                    binding.answerThree.setText(model.getOption2());
+//                    binding.answerFour.setText(model.getOption3());
 
 
                     showQuestion();
@@ -131,18 +131,16 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
     private void showQuestion() {
 
-        QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
-        binding.readQuestionListRecycler.setAdapter(questionListAdapter);
 
-        setQuestuin(currentindex);
+    setQuestuin(currentindex);
 
-binding.optionGroup.setOnCheckedChangeListener((radioGroup, i) -> {
+    binding.optionGroup.setOnCheckedChangeListener((radioGroup, i) -> {
     totalquestion= firebaseSubjectModelList.size();
-
-    RadioButton selectedoption =findViewById(i);
-    userselectedans =selectedoption.getText().toString();
+    RadioButton selectedOption =findViewById(i);
+    userselectedans =selectedOption.getText().toString();
     isoptionselected=true;
     Log.i("TAG", "option selected: " +userselectedans);
+
 
 });
 
@@ -156,19 +154,6 @@ binding.optionGroup.setOnCheckedChangeListener((radioGroup, i) -> {
             }
 
         });
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     }
@@ -214,9 +199,6 @@ binding.optionGroup.setOnCheckedChangeListener((radioGroup, i) -> {
 
 
     }
-
-
-
 
     private void checkRightAns() {
 

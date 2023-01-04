@@ -9,7 +9,6 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
-import com.abedkhan.knowledge.Modelclass.QuestionListModel;
 import com.abedkhan.knowledge.R;
 import com.abedkhan.knowledge.Viewholders.QuestionListViewholder;
 
@@ -38,10 +37,12 @@ public class QuestionListAdapter extends RecyclerView.Adapter<QuestionListViewho
 
 //        QuestionListModel questionListModel=questionListModelList.get(position);
         FirebaseSubjectModel firebaseSubjectModel=firebaseSubjectModelList.get(position);
+        int questiono= 0;
 
         holder.mainQuestion.setText(firebaseSubjectModel.getQuestion());
         holder.mainAns.setText(firebaseSubjectModel.getRightAnswer());
         holder.ansDescription.setText(firebaseSubjectModel.getAnswerDescription());
+//        holder.questionNo.setText(questiono++);
 
 //        holder.mainQuestion.setText(questionListModel.getMainQuestion());
 //        holder.questionNo.setText(questionListModel.getQuestionNo());
