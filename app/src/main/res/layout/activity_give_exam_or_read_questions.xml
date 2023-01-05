@@ -100,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:id="@+id/view"
-        android:background="@color/background"
+        ></View>
 
 
     <androidx.recyclerview.widget.RecyclerView
