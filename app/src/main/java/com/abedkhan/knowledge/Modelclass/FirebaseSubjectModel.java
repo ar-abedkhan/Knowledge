@@ -2,11 +2,7 @@ package com.abedkhan.knowledge.Modelclass;
 
 public class FirebaseSubjectModel {
     String ID, subjectName, chapterNumber, chapterName, writerName, question, rightAnswer, option1, option2, option3, answerDescription,questionNo;
-    int questionNO;
 
-    public FirebaseSubjectModel(int questionNO) {
-        this.questionNO = questionNO;
-    }
 
     public FirebaseSubjectModel(String ID, String subjectName, String chapterNumber, String chapterName, String writerName, String question, String rightAnswer, String option1, String option2, String option3, String answerDescription, String questionNo) {
         this.ID = ID;
@@ -26,9 +22,9 @@ public class FirebaseSubjectModel {
     public FirebaseSubjectModel() {
     }
 
-    public int getQuestionNO() {
-        return questionNO;
-    }
+//    public int getQuestionNO() {
+//        return questionNO;
+//    }
 
     public String getID() {
         return ID;

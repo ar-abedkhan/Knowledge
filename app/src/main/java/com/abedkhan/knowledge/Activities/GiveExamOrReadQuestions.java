@@ -43,7 +43,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
     int timelimit = 10;
     int count= 2000;
     TextView question, scoretv;
-    int currentindex = 0, score = 0, totalquestion=0, questionno = 1;
+    int currentindex = 0, score = 0, totalquestion=0, questionno = 0;
     String userselectedans;
     Boolean isoptionselected=false;
     int rightans=0;
@@ -187,6 +187,40 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
         binding.answerFour.setChecked(false);
 
     }
+
+//    private void timer() {
+//        countDownTimer = new CountDownTimer(50000,1000) {
+//            @Override
+//            public void onTick(long l) {
+//                binding.playQuizTimer.setText("00:"+timelimit);
+//                timelimit--;
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                    currentindex++;
+//                setQuestuin(currentindex);
+//                finishtimer();
+//
+//            }
+//
+//            private void finishtimer() {
+//
+//                countDownTimer.cancel();
+//                binding.questionTv.setClickable(false);
+//                binding.answerOne.setClickable(false);
+//                binding.answertwo.setClickable(false);
+//                binding.answerThree.setClickable(false);
+//                binding.answerFour.setClickable(false);
+//
+//                setQuestuin(currentindex);
+////                Intent splashintent=new Intent(quiz_it.this,dashboard.class);
+////                startActivity(splashintent);
+//            }
+//        }.start();
+//    }
+
+
     private void finishQuiz() {
 
 //        Intent intent =new Intent(this,dashboard.class);

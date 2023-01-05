@@ -26,11 +26,12 @@
         android:text="@string/chapter_name"
         android:paddingTop="@dimen/_6sdp"
         android:paddingBottom="@dimen/_6sdp"
+        android:background="@color/sky"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_8sdp"
         android:inputType="text"
         android:maxLines="1"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_18sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
         android:gravity="start"
@@ -58,7 +59,7 @@
         android:id="@+id/chapter"
         android:paddingStart="@dimen/_10sdp"
         android:paddingEnd="@dimen/_5sdp"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_18sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
         android:gravity="center"
@@ -74,7 +75,7 @@
         android:text="@string/chapter_no"
         android:paddingEnd="@dimen/_5sdp"
         android:id="@+id/chapterNo"
-        android:textSize="@dimen/_20sdp"
+        android:textSize="@dimen/_18sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
         android:gravity="center"
@@ -82,10 +83,9 @@
     </LinearLayout>
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/readQuestionListRecycler"
-        android:visibility="gone"
+        android:visibility="visible"
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -97,14 +97,11 @@
 
 
 
-
-
-
  <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/examLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="visible"
+        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         >
 

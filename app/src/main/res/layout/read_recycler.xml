@@ -26,7 +26,7 @@
                 android:paddingStart="@dimen/_2sdp"
                 android:id="@+id/question"
                 android:textStyle="bold"
-                android:textSize="@dimen/_16sdp"
+                android:textSize="@dimen/_13sdp"
                 />
             <TextView
                 app:layout_constraintTop_toTopOf="parent"
@@ -36,7 +36,7 @@
                 android:text="01"
                 android:id="@+id/questionNumber"
                 android:textStyle="bold"
-                android:textSize="@dimen/_16sdp"
+                android:textSize="@dimen/_13sdp"
                 />
 
 
@@ -86,7 +86,6 @@
                 android:text="this is the ans"
                 android:textColor="@color/black_textColor"
                 android:id="@+id/mainAnsware"
-                android:textStyle="bold"
                 android:textSize="@dimen/_18sdp"
                 />
 
