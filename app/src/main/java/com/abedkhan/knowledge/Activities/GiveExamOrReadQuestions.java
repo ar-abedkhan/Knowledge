@@ -170,7 +170,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
 
 //        activityQuizItBinding.scoretv.setText("SCORE:"+score);
-        binding.questionNo.setText(questionno+"/"+totalquestion);
+        binding.questionNo.setText("Question : "+questionno+"/"+totalquestion);
 //        activityQuizItBinding.rightAns.setText("Right Ans :"+ rightans+"/"+totalquestion);
 //        activityQuizItBinding.wrongAns.setText("Wrong Ans :"+wrongans+"/"+totalQuestion);
 

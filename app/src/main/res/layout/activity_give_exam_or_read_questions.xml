@@ -34,7 +34,15 @@
         android:textSize="@dimen/_18sdp"
         android:textStyle="bold"
         android:textColor="@color/black_textColor"
-        android:gravity="start"
+        android:gravity="center"
+        />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/chapterName"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_2sdp"
+        android:id="@+id/view2"
+        android:background="@color/background"
         />
 
 
@@ -44,7 +52,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:background="@color/sky"
-        app:layout_constraintTop_toBottomOf="@id/chapterName"
+        app:layout_constraintTop_toBottomOf="@id/view2"
         >
 
 
@@ -80,13 +88,25 @@
         android:textColor="@color/black_textColor"
         android:gravity="center"
         />
+
+
+
+
+
     </LinearLayout>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:id="@+id/view"
+        android:background="@color/background"
 
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/readQuestionListRecycler"
         android:visibility="visible"
-        app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
+        app:layout_constraintTop_toBottomOf="@id/view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/read_recycler"
@@ -95,13 +115,19 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        >
 
 
  <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/examLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
         app:layout_constraintTop_toBottomOf="@id/chapterDetailsBucket"
         >
 
@@ -114,7 +140,7 @@
 
             <ImageView
                 android:layout_width="@dimen/_550sdp"
-                android:layout_height="@dimen/_280sdp"
+                android:layout_height="@dimen/_230sdp"
                 android:layout_marginTop="-0dp"
                 android:src="@drawable/circle"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,7 +149,7 @@
 
             <ImageView
                 android:layout_width="@dimen/_500sdp"
-                android:layout_height="@dimen/_300sdp"
+                android:layout_height="match_parent"
                 android:src="@drawable/circle"
                 android:layout_marginEnd="@dimen/_190sdp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -148,29 +174,21 @@
 <!--                android:gravity="center"-->
 <!--                />-->
 
-            <View
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/_1sdp"
-                android:id="@+id/view"
-                android:background="@color/background"
-                />
 
 
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/topDisplay"
-                app:layout_constraintTop_toBottomOf="@id/view"
+                app:layout_constraintTop_toTopOf="parent"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:paddingTop="@dimen/_15sdp"
+                android:paddingTop="@dimen/_5sdp"
                 android:layout_marginStart="@dimen/_10sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 >
 
 
                 <TextView
-
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     android:layout_width="wrap_content"
@@ -182,26 +200,26 @@
                     android:textSize="@dimen/_16sdp"
                     />
 
-                <ImageView
-                    android:layout_width="@dimen/_29sdp"
-                    android:layout_height="@dimen/_40sdp"
-                    android:padding="@dimen/_2sdp"
-                    android:src="@drawable/ic_baseline_access_time_24"
-                    app:layout_constraintEnd_toStartOf="@id/play_quiz_timer"
-                    tools:ignore="MissingConstraints" />
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_29sdp"-->
+<!--                    android:layout_height="@dimen/_40sdp"-->
+<!--                    android:padding="@dimen/_2sdp"-->
+<!--                    android:src="@drawable/ic_baseline_access_time_24"-->
+<!--                    app:layout_constraintEnd_toStartOf="@id/play_quiz_timer"-->
+<!--                    tools:ignore="MissingConstraints" />-->
 
-                <TextView
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    android:id="@+id/play_quiz_timer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="00:10"
-                    android:textColor="@color/background"
-                    android:textStyle="bold"
-                    android:layout_gravity="end"
-                    android:gravity="start"
-                    android:textSize="@dimen/_27sdp" />
+<!--                <TextView-->
+<!--                    app:layout_constraintEnd_toEndOf="parent"-->
+<!--                    app:layout_constraintTop_toTopOf="parent"-->
+<!--                    android:id="@+id/play_quiz_timer"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:text="00:10"-->
+<!--                    android:textColor="@color/background"-->
+<!--                    android:textStyle="bold"-->
+<!--                    android:layout_gravity="end"-->
+<!--                    android:gravity="start"-->
+<!--                    android:textSize="@dimen/_27sdp" />-->
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -232,7 +250,6 @@
                         android:id="@+id/questionTv"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-
                         android:textStyle="normal"
                         android:text="This a question"
                         android:inputType="textMultiLine"
@@ -258,7 +275,7 @@
                 android:orientation="vertical"
                 app:layout_constraintTop_toBottomOf="@id/Tv"
                 android:padding="@dimen/_10sdp"
-                android:layout_marginTop="@dimen/_15sdp"
+                android:layout_marginTop="@dimen/_10sdp"
                 >
 
                 <RadioGroup
@@ -266,6 +283,7 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:id="@+id/optionGroup"
+
                     >
 
 
@@ -275,9 +293,9 @@
                                         android:id="@+id/answerOne"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:text="This is option one..................."
+                                        android:text="This is option one"
                                         android:background="@drawable/department_clicked_null_back"
-                                        android:padding="@dimen/_10sdp"
+                                        android:padding="@dimen/_6sdp"
                                         android:textColor="@color/black_textColor"
                                         android:layout_marginBottom="@dimen/_10sdp"
                                         android:textSize="@dimen/_18sdp"
@@ -291,7 +309,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="This is option one..................."
                                         android:background="@drawable/department_clicked_null_back"
-                                        android:padding="@dimen/_10sdp"
+                                        android:padding="@dimen/_6sdp"
                                         android:textColor="@color/black_textColor"
                                         android:layout_marginBottom="@dimen/_10sdp"
                                         android:textSize="@dimen/_18sdp"
@@ -305,7 +323,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="This is option one..................."
                                         android:background="@drawable/department_clicked_null_back"
-                                        android:padding="@dimen/_10sdp"
+                                        android:padding="@dimen/_6sdp"
                                         android:textColor="@color/black_textColor"
                                         android:layout_marginBottom="@dimen/_10sdp"
                                         android:textSize="@dimen/_18sdp"
@@ -319,7 +337,7 @@
                                         android:layout_height="wrap_content"
                                         android:text="This is option one..................."
                                         android:background="@drawable/department_clicked_null_back"
-                                        android:padding="@dimen/_10sdp"
+                                        android:padding="@dimen/_6sdp"
                                         android:textColor="@color/black_textColor"
                                         android:layout_marginBottom="@dimen/_10sdp"
                                         android:textSize="@dimen/_18sdp"
@@ -337,12 +355,11 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/submitAns"
-
                     android:layout_width="match_parent"
                     android:layout_height="@dimen/_40sdp"
                     android:text="Submit Ans"
                     android:textAllCaps="false"
-                    android:textSize="@dimen/_15sdp"
+                    android:textSize="@dimen/_18sdp"
                     android:layout_marginTop="@dimen/_10sdp"
                     android:background="@drawable/department_clicked"
 
@@ -371,6 +388,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    </ScrollView>
 
 
 
