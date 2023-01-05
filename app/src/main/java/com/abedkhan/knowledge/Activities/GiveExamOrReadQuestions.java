@@ -87,7 +87,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
                 if (isExam){
                     binding.readQuestionListRecycler.setVisibility(View.GONE);
-                    binding.examLayout.setVisibility(View.VISIBLE);
+                    binding.scrollView.setVisibility(View.VISIBLE);
 //
 //                    Log.i("TAG", "--------------------EXAM---------------------------");
 //                    FirebaseSubjectModel model = firebaseSubjectModelList.get(0);
@@ -111,7 +111,7 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 //                   ..................TODO: ekhane read er jonnu fragment ta open korben...................
                     Log.i("TAG", "------------------Read------------------ ");
                     binding.readQuestionListRecycler.setVisibility(View.VISIBLE);
-                    binding.examLayout.setVisibility(View.GONE);
+                    binding.scrollView.setVisibility(View.GONE);
 
                     QuestionListAdapter questionListAdapter=new QuestionListAdapter(firebaseSubjectModelList,GiveExamOrReadQuestions.this);
                     binding.readQuestionListRecycler.setAdapter(questionListAdapter);

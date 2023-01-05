@@ -100,7 +100,7 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
         android:id="@+id/view"
-        ></View>
+        />
 
 
     <androidx.recyclerview.widget.RecyclerView
@@ -119,7 +119,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintTop_toBottomOf="@id/view"
         >
 
