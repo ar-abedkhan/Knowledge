@@ -15,6 +15,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.abedkhan.knowledge.Adapters.QuestionListAdapter;
+import com.abedkhan.knowledge.Fragments.DashboardFragment;
 import com.abedkhan.knowledge.Modelclass.FirebaseSubjectModel;
 import com.abedkhan.knowledge.Modelclass.QuestionListModel;
 import com.abedkhan.knowledge.databinding.ActivityGiveExamOrReadQuestionsBinding;
@@ -165,26 +166,27 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
             finishQuiz();
             return;
 
-        }
+        }else {
 //            timer();
 
 
 //        activityQuizItBinding.scoretv.setText("SCORE:"+score);
-        binding.questionNo.setText("Question : "+questionno+"/"+totalquestion);
+            binding.questionNo.setText("Question : " + questionno + "/" + totalquestion);
 //        activityQuizItBinding.rightAns.setText("Right Ans :"+ rightans+"/"+totalquestion);
 //        activityQuizItBinding.wrongAns.setText("Wrong Ans :"+wrongans+"/"+totalQuestion);
 
 
-        binding.questionTv.setText(firebaseSubjectModelList.get(currentindex).getQuestion());
-        binding.answerOne.setText(firebaseSubjectModelList.get(currentindex).getOption1());
-        binding.answertwo.setText(firebaseSubjectModelList.get(currentindex).getOption2());
-        binding.answerThree.setText(firebaseSubjectModelList.get(currentindex).getOption3());
-        binding.answerFour.setText(firebaseSubjectModelList.get(currentindex).getRightAnswer());
+            binding.questionTv.setText(firebaseSubjectModelList.get(currentindex).getQuestion());
+            binding.answerOne.setText(firebaseSubjectModelList.get(currentindex).getOption1());
+            binding.answertwo.setText(firebaseSubjectModelList.get(currentindex).getOption2());
+            binding.answerThree.setText(firebaseSubjectModelList.get(currentindex).getOption3());
+            binding.answerFour.setText(firebaseSubjectModelList.get(currentindex).getRightAnswer());
 
-        binding.answerOne.setChecked(false);
-        binding.answertwo.setChecked(false);
-        binding.answerThree.setChecked(false);
-        binding.answerFour.setChecked(false);
+            binding.answerOne.setChecked(false);
+            binding.answertwo.setChecked(false);
+            binding.answerThree.setChecked(false);
+            binding.answerFour.setChecked(false);
+        }
 
     }
 
@@ -223,35 +225,46 @@ public class GiveExamOrReadQuestions extends AppCompatActivity {
 
     private void finishQuiz() {
 
-//        Intent intent =new Intent(this,dashboard.class);
-//        intent.putExtra("rightans",rightans);
-//        intent.putExtra("wrongans",wrongans);
-//        intent.putExtra("score",score);
-//        intent.putExtra("totalquestion",totalquestion);
-//        startActivity(intent);
+        Intent intent =new Intent(this, DashboardFragment.class);
+        intent.putExtra("rightAns",rightans);
+        intent.putExtra("wrongAns",wrongans);
+        intent.putExtra("totalquestion",totalquestion);
+        startActivity(intent);
 
+//        binding.examAndReadLayout.setVisibility(View.GONE);
+//        binding.resultLayout.setVisibility(View.VISIBLE);
+//
+//        binding.rightans.setText(rightans);
+//        binding.wrongans.setText(wrongans);
+//
 
 
     }
 
     private void checkRightAns() {
 
-        if (firebaseSubjectModelList.get(currentindex).getRightAnswer().equals(userselectedans)){
-            score = score+5;
-            rightans++;
-            questionno++;
-            currentindex++;
-            setQuestuin(currentindex);
-            Toast.makeText(this, "Right ans.CONGRATULATION!You won 5 point", Toast.LENGTH_SHORT).show();
+        if (userselectedans!=null) {
 
+
+            if (firebaseSubjectModelList.get(currentindex).getRightAnswer().equals(userselectedans)) {
+                score = score + 5;
+                rightans++;
+                questionno++;
+                currentindex++;
+                setQuestuin(currentindex);
+                Toast.makeText(this, "Right ans.CONGRATULATION!You won 5 point", Toast.LENGTH_SHORT).show();
+
+            } else {
+                score = score - 5;
+                currentindex++;
+                questionno++;
+                wrongans++;
+                setQuestuin(currentindex);
+                Log.i("TAG", "wrong ans: ");
+                Toast.makeText(this, "Wrong ans.You lose 5 point.", Toast.LENGTH_SHORT).show();
+
+            }
         }else {
-            score =score-5;
-            currentindex++;
-            questionno++;
-            wrongans++;
-            setQuestuin(currentindex);
-            Log.i("TAG", "wrong ans: ");
-            Toast.makeText(this, "Wrong ans.You lose 5 point.", Toast.LENGTH_SHORT).show();
 
         }
     }

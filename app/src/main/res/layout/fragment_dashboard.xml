@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/background"
+    tools:context=".Fragments.DashboardFragment">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:id="@+id/resultLayout"
+        android:layout_gravity="center"
+        >
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:text="Exam Reasult Board"
+            android:textSize="@dimen/_20sdp"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:layout_marginBottom="@dimen/_25sdp"
+            android:gravity="center"
+            android:padding="@dimen/_8sdp"
+            />
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center"
+            >
+            <com.mikhaellopez.circularprogressbar.CircularProgressBar
+                android:id="@+id/circularProgressBar"
+                android:layout_width="180dp"
+                android:layout_height="wrap_content"
+                app:cpb_background_progressbar_color="@android:color/holo_red_light"
+                app:cpb_background_progressbar_width="10dp"
+                app:cpb_progress="5"
+                app:cpb_progress_direction="to_right"
+                app:cpb_progress_max="10"
+                app:cpb_progressbar_color="@color/green"
+                app:cpb_progressbar_width="10dp"
+                app:cpb_round_border="false" />
+
+
+            <TextView
+                android:id="@+id/progressscore"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/black_textColor"
+                android:text="5/10"
+                android:layout_marginTop="-110dp"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textSize="30dp"
+
+                />
+
+        </LinearLayout>
+
+
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="15dp"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/_50sdp"
+            android:weightSum="2">
+
+
+            <LinearLayout
+                android:id="@+id/play_quiz"
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:padding="@dimen/_5sdp"
+                android:background="@drawable/buttonback"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_baseline_check_circle_outline_24" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:textColor="@color/black_textColor"
+                    android:text="CURRECT ANS :"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+                <TextView
+                    android:id="@+id/rightans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="00"
+                    android:textColor="@color/green"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="150dp"
+                android:layout_height="130dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:background="@drawable/buttonback"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_baseline_cancel_24" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="WRONG ANS :"
+                    android:textColor="@color/black_textColor"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />
+
+                <TextView
+                    android:id="@+id/wrongans"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:gravity="center_horizontal"
+                    android:text="00"
+                    android:textColor="@android:color/holo_red_light"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"
+                    android:textSize="20dp" />
+
+
+            </LinearLayout>
+
+
+            <!--                    <LinearLayout-->
+            <!--                        android:id="@+id/competetion"-->
+            <!--                        android:layout_width="150dp"-->
+            <!--                        android:layout_height="120dp"-->
+            <!--                        android:layout_margin="10dp"-->
+            <!--                        android:layout_weight="1"-->
+            <!--                        android:background="@color/light"-->
+            <!--                        android:orientation="vertical">-->
+
+
+            <!--                        <TextView-->
+            <!--                            android:layout_width="match_parent"-->
+            <!--                            android:layout_height="wrap_content"-->
+            <!--                            android:gravity="center_horizontal"-->
+            <!--                            android:text="GET COMPETETION"-->
+            <!--                            android:textAlignment="center"-->
+            <!--                            android:textAppearance="@style/TextAppearance.Material3.TitleMedium" />-->
+
+            <!--                    </LinearLayout>-->
+
+
+            <!--            <LinearLayout-->
+            <!--                android:id="@+id/my_profile"-->
+            <!--                android:layout_margin="10dp"-->
+            <!--                android:layout_weight="1"-->
+            <!--                android:layout_width="150dp"-->
+            <!--                android:layout_height="120dp"-->
+            <!--                android:background="@color/light"-->
+            <!--                android:orientation="vertical"-->
+            <!--                >-->
+
+            <!--                <ImageView-->
+            <!--                    android:layout_width="50dp"-->
+            <!--                    android:layout_height="80dp"-->
+            <!--                    android:layout_gravity="center"-->
+
+            <!--                    android:src="@drawable/ic_baseline_account" />-->
+
+            <!--                <TextView-->
+            <!--                    android:layout_width="match_parent"-->
+            <!--                    android:layout_height="wrap_content"-->
+            <!--                    android:gravity="center_horizontal"-->
+            <!--                    android:text="MY PROFILE"-->
+            <!--                    android:textAppearance="@style/TextAppearance.Material3.TitleMedium"-->
+            <!--                    android:textAlignment="center" />-->
+
+            <!--            </LinearLayout>-->
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2"
+            android:padding="@dimen/_5sdp"
+
+            >
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/reExam"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Re Exam"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/department_clicked"
+
+            />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/readAgain"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Read Again"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/department_clicked"
+
+            />
+
+
+        </LinearLayout>
+
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/backToHome"
+            android:layout_width="@dimen/_150sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:text="Back to Home"
+            android:textAllCaps="false"
+            android:textSize="@dimen/_18sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:background="@drawable/toolback"
+
+            />
+
+
+
+
+    </LinearLayout>
+
+
+
+</FrameLayout>

@@ -22,13 +22,7 @@
     <color name="white_background">#FFFFFFFF</color>
     <color name="black_textColor">#FF000000</color>
     <color name="background">#e1e6ec</color>
-
-
-
-
-
-
-
+    <color name="green">#28CA2F</color>
 
 
 </resources>
