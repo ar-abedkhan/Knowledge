@@ -60,7 +60,13 @@ public class ChapterAdapter extends RecyclerView.Adapter<ChapterViewholder> {
             holder.chapterNo.setText(chapterModelClass.getChapterNumber());
             holder.cardView.setAnimation(AnimationUtils.loadAnimation(holder.itemView.getContext(), R.anim.animation));
 
-holder.itemView.setOnClickListener(view -> {
+        String subject_name = chapterModelClass.getSubjectName();
+
+        if (subject_name.equals("English for Today") || subject_name.equals("English Grammar and Composition")){
+            holder.chapter.setText("Lesson: ");
+        }
+
+    holder.itemView.setOnClickListener(view -> {
     Intent intent=new Intent(context, GiveExamOrReadQuestions.class);
 //    intent.putExtra("firebaseStorageID",chapterModelClass.getFirebaseStorageID());
 
