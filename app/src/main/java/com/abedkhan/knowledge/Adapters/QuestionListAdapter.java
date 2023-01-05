@@ -37,7 +37,7 @@ public class QuestionListAdapter extends RecyclerView.Adapter<QuestionListViewho
 
 //        QuestionListModel questionListModel=questionListModelList.get(position);
         FirebaseSubjectModel firebaseSubjectModel=firebaseSubjectModelList.get(position);
-        int questiono= 0;
+//        int questiono= 0;
 
         holder.mainQuestion.setText(firebaseSubjectModel.getQuestion());
         holder.mainAns.setText(firebaseSubjectModel.getRightAnswer());
