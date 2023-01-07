@@ -87,6 +87,10 @@ public class AddFragment extends Fragment {
 
 //        ----------------------- Add button settings ----------------
         binding.addDataBtn.setOnClickListener(view -> {
+//            ------------------------------ A random test ----------------------
+            binding.addDataBtn.setEnabled(false);
+            binding.progressBar.setVisibility(View.VISIBLE);
+
 //            subjectName = binding.subjectName.getSelectedItem().toString();
             subjectName = binding.subjectName.getSelectedItem().toString().trim();
             chapterName = binding.chapterName.getText().toString().trim();
@@ -123,6 +127,7 @@ public class AddFragment extends Fragment {
                             break;
                         }
                     }
+
                     if (isChapterMatched == false){
 //                        Log.i("TAG", "_______________________ Task false ____________________________ ");
                         chapterId = databaseReference.push().getKey();
@@ -186,10 +191,18 @@ public class AddFragment extends Fragment {
                         public void onSuccess(Void unused) {
                             Toast.makeText(getContext(), "Data added successfully <3", Toast.LENGTH_SHORT).show();
                             blankAllFields();
+
+                            //            ------------------------------ A random test ----------------------
+                            binding.addDataBtn.setEnabled(true);
+                            binding.progressBar.setVisibility(View.GONE);
                         }
                     }).addOnFailureListener(new OnFailureListener() {
                         @Override
                         public void onFailure(@NonNull Exception e) {
+
+                            //            ------------------------------ A random test ----------------------
+                            binding.addDataBtn.setEnabled(true);
+                            binding.progressBar.setVisibility(View.GONE);
 
                             AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                             builder.setTitle("Error!");
@@ -209,6 +222,10 @@ public class AddFragment extends Fragment {
 
                 }
                 else {
+                    //            ------------------------------ A random test ----------------------
+                    binding.addDataBtn.setEnabled(true);
+                    binding.progressBar.setVisibility(View.GONE);
+
                     AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                     builder.setTitle("Error!");
                     builder.setMessage(task.getException().getLocalizedMessage());
